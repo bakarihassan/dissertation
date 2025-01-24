@@ -1,0 +1,78 @@
+\contentsline {chapter}{List of Figures}{v}{}%
+\contentsline {chapter}{List of Tables}{viii}{}%
+\contentsline {chapter}{\chapternumberline {1}Background}{1}{}%
+\contentsline {section}{\numberline {1.1}Material representation and acquisition}{1}{}%
+\contentsline {paragraph}{Representation}{1}{}%
+\contentsline {paragraph}{Phase function from single scattering models}{2}{}%
+\contentsline {section}{\numberline {1.2}Speckle Correlations}{2}{}%
+\contentsline {section}{\numberline {1.3}Related work}{2}{}%
+\contentsline {section}{\numberline {1.4}Path-space framework}{4}{}%
+\contentsline {section}{\numberline {1.5}Single-scattering approximation for speckle correlation}{5}{}%
+\contentsline {subsection}{\numberline {1.5.1}Phase function from speckle images}{6}{}%
+\contentsline {paragraph}{Validating extended range phase functions}{6}{}%
+\contentsline {chapter}{\chapternumberline {2}Scatterometer design}{7}{}%
+\contentsline {section}{\numberline {2.1}System design}{7}{}%
+\contentsline {subsection}{\numberline {2.1.1}Acquisition camera}{7}{}%
+\contentsline {paragraph}{Lens Focal Length}{8}{}%
+\contentsline {subsection}{\numberline {2.1.2}Illuminator assembly}{9}{}%
+\contentsline {subsection}{\numberline {2.1.3}Sample assembly}{10}{}%
+\contentsline {subsubsection}{Sample Mount}{11}{}%
+\contentsline {chapter}{\chapternumberline {3}Scatterometer calibration and alignment}{13}{}%
+\contentsline {section}{\numberline {3.1}Calibration and alignment}{13}{}%
+\contentsline {section}{\numberline {3.2}Lower Stage Calibration}{13}{}%
+\contentsline {paragraph}{Azimuth Stage Rotation Axis}{14}{}%
+\contentsline {paragraph}{Beam Direction for $\theta = 0$}{14}{}%
+\contentsline {subsection}{\numberline {3.2.1}Stage Position \& Beam Direction as a Function of $\theta $}{14}{}%
+\contentsline {subsection}{\numberline {3.2.2}Azimuth Stage Location}{15}{}%
+\contentsline {subsection}{\numberline {3.2.3}Ray Envelope Center}{16}{}%
+\contentsline {subsection}{\numberline {3.2.4}Ray Envelope Isoline}{17}{}%
+\contentsline {subsection}{\numberline {3.2.5}Training \& Validation Datasets}{17}{}%
+\contentsline {section}{\numberline {3.3}Sample Motion Assembly Calibration}{18}{}%
+\contentsline {paragraph}{Rotation Stage Pose}{18}{}%
+\contentsline {paragraph}{Translation Stage Axes}{18}{}%
+\contentsline {paragraph}{Tip \& Tilt Stage Axes}{18}{}%
+\contentsline {section}{\numberline {3.4}Aligning Sample and Illuminator Assemblies}{18}{}%
+\contentsline {subsection}{\numberline {3.4.1}Rotation}{18}{}%
+\contentsline {paragraph}{Translation}{19}{}%
+\contentsline {section}{\numberline {3.5}Aligning Calibration Target with Sample Motion Assembly Rotation Axis}{19}{}%
+\contentsline {section}{\numberline {3.6}Aligning Sample Motion Assembly and Illumination Beams}{20}{}%
+\contentsline {paragraph}{Beams equianglular with respect to RT-3 and RT-5 axes}{20}{}%
+\contentsline {section}{\numberline {3.7}Aligning Calibration Target with Illumination Beams}{21}{}%
+\contentsline {section}{\numberline {3.8}Note: Poporsal:Acquisition Camera Calibration}{21}{}%
+\contentsline {subsection}{\numberline {3.8.1}Intrinsics}{22}{}%
+\contentsline {subsection}{\numberline {3.8.2}Extrinsics \& Lens Distortion}{23}{}%
+\contentsline {subsection}{\numberline {3.8.3}Validation}{23}{}%
+\contentsline {paragraph}{Validation Results}{23}{}%
+\contentsline {section}{\numberline {3.9}Note: Poporsal:Illuminator Assembly Calibration}{24}{}%
+\contentsline {paragraph}{Note: Poporsal:Azimuth Stage Rotation Axis}{24}{}%
+\contentsline {paragraph}{Note: Poporsal:Beam Direction Vector}{24}{}%
+\contentsline {subsection}{\numberline {3.9.1}Note: Poporsal:Stage Position \& Beam Direction as a Function of $\theta $}{24}{}%
+\contentsline {subsection}{\numberline {3.9.2}Note: Poporsal:Azimuth Stage Location}{25}{}%
+\contentsline {subsection}{\numberline {3.9.3}Note: Poporsal:Ray Envelope Center}{26}{}%
+\contentsline {subsection}{\numberline {3.9.4}Note: Poporsal:Ray Envelope Isoline}{27}{}%
+\contentsline {section}{\numberline {3.10}Acquisition Camera Calibration}{27}{}%
+\contentsline {section}{\numberline {3.11}Note: Proposal:Acquisition Light Efficiency}{28}{}%
+\contentsline {subsubsection}{Note: Proposal:Fresnel Formulae}{29}{}%
+\contentsline {subsubsection}{Note: Poporsal:Effects of Polarization on Fresnel Formulae}{30}{}%
+\contentsline {section}{\numberline {3.12}Note: Proposal:Expected Results}{31}{}%
+\contentsline {chapter}{\chapternumberline {4}Acquisition}{33}{}%
+\contentsline {section}{\numberline {4.1}Scattering Samples}{33}{}%
+\contentsline {section}{\numberline {4.2}Acquisition}{33}{}%
+\contentsline {section}{\numberline {4.3}Maximizing Light Scattered Towards Camera}{33}{}%
+\contentsline {section}{\numberline {4.4}Illumination Polarization}{33}{}%
+\contentsline {subsection}{\numberline {4.4.1}Optimizing Illumination \& Sample Orientation to Maximize Light Transmission}{34}{}%
+\contentsline {subsubsection}{Fresnel Formulae}{34}{}%
+\contentsline {subsubsection}{Effects of Polarization on Fresnel Formulae}{35}{}%
+\contentsline {subsubsection}{Fresnel Relations as Mueller Matrices}{37}{}%
+\contentsline {paragraph}{Transmission}{37}{}%
+\contentsline {paragraph}{Scattering}{37}{}%
+\contentsline {subsubsection}{Simulation Results}{38}{}%
+\contentsline {paragraph}{Unpolarized Beam}{38}{}%
+\contentsline {paragraph}{Linearly Polarized Beam}{38}{}%
+\contentsline {subsection}{\numberline {4.4.2}Simulation}{38}{}%
+\contentsline {subsection}{\numberline {4.4.3}Depolarizer Spatial Characterization}{38}{}%
+\contentsline {chapter}{\chapternumberline {5}Appendices}{41}{}%
+\contentsline {section}{\numberline {5.1}Calibration Target Design}{41}{}%
+\contentsline {section}{\numberline {5.2}Sample Preparation}{42}{}%
+\contentsline {section}{\numberline {5.3}Ziegler-Nichols Tuning Method}{46}{}%
+\contentsline {chapter}{Bibliography}{47}{}%

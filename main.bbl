@@ -1,0 +1,228 @@
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{alterman2022direct}
+Marina Alterman, Evgeniia Saiko, and Anat Levin.
+\newblock Direct acquisition of volumetric scattering phase function using
+  speckle correlations.
+\newblock In {\em SIGGRAPH Asia 2022 Conference Papers}, pages 1--9, 2022.
+
+\bibitem{bal2009inverse}
+Guillaume Bal.
+\newblock Inverse transport theory and applications.
+\newblock {\em Inverse Problems}, 25(5):053001, 2009.
+
+\bibitem{bar2019monte}
+Chen Bar, Marina Alterman, Ioannis Gkioulekas, and Anat Levin.
+\newblock A monte carlo framework for rendering speckle statistics in
+  scattering media.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 38(4):1--22, 2019.
+
+\bibitem{bar2021single}
+Chen Bar, Marina Alterman, Loannis Gkioulekas, and Anat Levin.
+\newblock Single scattering modeling of speckle correlation.
+\newblock In {\em 2021 IEEE International Conference on Computational
+  Photography (ICCP)}, pages 1--16. IEEE, 2021.
+
+\bibitem{berne2000dynamic}
+Bruce~J Berne and Robert Pecora.
+\newblock {\em Dynamic light scattering: with applications to chemistry,
+  biology, and physics}.
+\newblock Courier Corporation, 2000.
+
+\bibitem{boas2001imaging}
+David~A Boas, Dana~H Brooks, Eric~L Miller, Charles~A DiMarzio, Misha Kilmer,
+  Richard~J Gaudette, and Quan Zhang.
+\newblock Imaging the body with diffuse optical tomography.
+\newblock {\em IEEE signal processing magazine}, 18(6):57--75, 2001.
+
+\bibitem{bohren2008absorption}
+Craig~F Bohren and Donald~R Huffman.
+\newblock {\em Absorption and scattering of light by small particles}.
+\newblock John Wiley \& Sons, 2008.
+
+\bibitem{born2013principles}
+Max Born and Emil Wolf.
+\newblock {\em Principles of optics: electromagnetic theory of propagation,
+  interference and diffraction of light}.
+\newblock Elsevier, 2013.
+
+\bibitem{che2020towards}
+Chengqian Che, Fujun Luan, Shuang Zhao, Kavita Bala, and Ioannis Gkioulekas.
+\newblock Towards learning-based inverse subsurface scattering.
+\newblock In {\em 2020 IEEE International Conference on Computational
+  Photography (ICCP)}, pages 1--12. IEEE, 2020.
+
+\bibitem{durduran2010diffuse}
+Turgut Durduran, Regine Choe, Wesley~B Baker, and Arjun~G Yodh.
+\newblock Diffuse optics for tissue monitoring and tomography.
+\newblock {\em Reports on progress in physics}, 73(7):076701, 2010.
+
+\bibitem{dutre2018advanced}
+Philip Dutre, Philippe Bekaert, and Kavita Bala.
+\newblock {\em Advanced global illumination}.
+\newblock AK Peters/CRC Press, 2018.
+
+\bibitem{farrell1992diffusion}
+Thomas~J Farrell, Michael~S Patterson, and Brian Wilson.
+\newblock A diffusion theory model of spatially resolved, steady-state diffuse
+  reflectance for the noninvasive determination of tissue optical properties in
+  vivo.
+\newblock {\em Medical physics}, 19(4):879--888, 1992.
+
+\bibitem{frisvad2007computing}
+Jeppe~Revall Frisvad, Niels~J{\o}rgen Christensen, and Henrik~Wann Jensen.
+\newblock Computing the scattering properties of participating media using
+  lorenz-mie theory.
+\newblock In {\em ACM SIGGRAPH 2007 papers}, pages 60--es. 2007.
+
+\bibitem{gkioulekas2016evaluation}
+Ioannis Gkioulekas, Anat Levin, and Todd Zickler.
+\newblock An evaluation of computational imaging techniques for heterogeneous
+  inverse scattering.
+\newblock In {\em Computer Vision--ECCV 2016: 14th European Conference,
+  Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part III 14},
+  pages 685--701. Springer, 2016.
+
+\bibitem{gkioulekas2013inverse}
+Ioannis Gkioulekas, Shuang Zhao, Kavita Bala, Todd Zickler, and Anat Levin.
+\newblock Inverse volume rendering with material dictionaries.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 32(6):1--13, 2013.
+
+\bibitem{henyey1940diffuse}
+Louis~George Henyey and Jesse~L Greenstein.
+\newblock Diffuse radiation in the galaxy.
+\newblock {\em Annales d'Astrophysique, Vol. 3, p. 117}, 3:117, 1940.
+
+\bibitem{hulst1981light}
+Hendrik~Christoffel Hulst and Hendrik~C van~de Hulst.
+\newblock {\em Light scattering by small particles}.
+\newblock Courier Corporation, 1981.
+
+\bibitem{khungurn2015matching}
+Pramook Khungurn, Daniel Schroeder, Shuang Zhao, Kavita Bala, and Steve
+  Marschner.
+\newblock Matching real fabrics with micro-appearance models.
+\newblock {\em ACM Trans. Graph.}, 35(1):1--1, 2015.
+
+\bibitem{loper2014opendr}
+Matthew~M Loper and Michael~J Black.
+\newblock Opendr: An approximate differentiable renderer.
+\newblock In {\em Computer Vision--ECCV 2014: 13th European Conference, Zurich,
+  Switzerland, September 6-12, 2014, Proceedings, Part VII 13}, pages 154--169.
+  Springer, 2014.
+
+\bibitem{luyben1986simple}
+William~L Luyben.
+\newblock Simple method for tuning siso controllers in multivariable systems.
+\newblock {\em Industrial \& Engineering Chemistry Process Design and
+  Development}, 25(3):654--660, 1986.
+
+\bibitem{munoz2011bssrdf}
+Adolfo Munoz, Jose~I Echevarria, Francisco~J Seron, Jorge Lopez-Moreno,
+  Mashhuda Glencross, and Diego Gutierrez.
+\newblock Bssrdf estimation from single images.
+\newblock In {\em Computer Graphics Forum}, volume~30, pages 455--464. Wiley
+  Online Library, 2011.
+
+\bibitem{narasimhan2006acquiring}
+Srinivasa~G Narasimhan, Mohit Gupta, Craig Donner, Ravi Ramamoorthi, Shree~K
+  Nayar, and Henrik~Wann Jensen.
+\newblock Acquiring scattering properties of participating media by dilution.
+\newblock In {\em ACM SIGGRAPH 2006 Papers}, pages 1003--1012. 2006.
+
+\bibitem{newton2002three}
+Roger~G Newton.
+\newblock Three-dimensional direct scattering theory.
+\newblock In {\em Scattering}, pages 686--701. Elsevier, 2002.
+
+\bibitem{nimier2020radiative}
+Merlin Nimier-David, S{\'e}bastien Speierer, Beno{\^\i}t Ruiz, and Wenzel
+  Jakob.
+\newblock Radiative backpropagation: An adjoint method for lightning-fast
+  differentiable rendering.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 39(4):146--1, 2020.
+
+\bibitem{nimier2019mitsuba}
+Merlin Nimier-David, Delio Vicini, Tizian Zeltner, and Wenzel Jakob.
+\newblock Mitsuba 2: A retargetable forward and inverse renderer.
+\newblock {\em ACM Transactions on Graphics (ToG)}, 38(6):1--17, 2019.
+
+\bibitem{novak2018monte}
+Jan Nov{\'a}k, Iliyan Georgiev, Johannes Hanika, and Wojciech Jarosz.
+\newblock Monte carlo methods for volumetric light transport simulation.
+\newblock In {\em Computer graphics forum}, volume~37, pages 551--576. Wiley
+  Online Library, 2018.
+
+\bibitem{papas2013fabricating}
+Marios Papas, Christian Regg, Wojciech Jarosz, Bernd Bickel, Philip Jackson,
+  Wojciech Matusik, Steve Marschner, and Markus Gross.
+\newblock Fabricating translucent materials using continuous pigment mixtures.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 32(4):1--12, 2013.
+
+\bibitem{pine1990diffusing}
+Dave~J Pine, Dave~A Weitz, JX Zhu, and Eric Herbolzheimer.
+\newblock Diffusing-wave spectroscopy: dynamic light scattering in the multiple
+  scattering limit.
+\newblock {\em Journal de Physique}, 51(18):2101--2127, 1990.
+
+\bibitem{sumin2019geometry}
+Denis Sumin, Tobias Rittig, Vahid Babaei, Thomas Nindel, Alexander Wilkie,
+  Piotr Didyk, Bernd Bickel, J K{\c{R}}iv{\'a}nek, Karol Myszkowski, and Tim
+  Weyrich.
+\newblock Geometry-aware scattering compensation for 3d printing.
+\newblock {\em ACM Transactions on Graphics}, 38(4), 2019.
+
+\bibitem{thierry2015mu}
+Bertrand Thierry, Xavier Antoine, Chokri Chniti, and Hasan Alzubaidi.
+\newblock $\mu$-diff: An open-source matlab toolbox for computing multiple
+  scattering problems by disks.
+\newblock {\em Computer Physics Communications}, 192:348--362, 2015.
+
+\bibitem{treeby2010k}
+Bradley~E Treeby and Benjamin~T Cox.
+\newblock k-wave: Matlab toolbox for the simulation and reconstruction of
+  photoacoustic wave fields.
+\newblock {\em Journal of biomedical optics}, 15(2):021314--021314, 2010.
+
+\bibitem{twersky1964propagation}
+Victor Twersky.
+\newblock On propagation in random media of discrete scatterers.
+\newblock In {\em Proc. Symp. Appl. Math}, volume~16, pages 84--116, 1964.
+
+\bibitem{wu2017neural}
+Jiajun Wu, Joshua~B Tenenbaum, and Pushmeet Kohli.
+\newblock Neural scene de-rendering.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 699--707, 2017.
+
+\bibitem{wyman1989similarity}
+Douglas~R Wyman, Michael~S Patterson, and Brian~C Wilson.
+\newblock Similarity relations for the interaction parameters in radiation
+  transport.
+\newblock {\em Applied optics}, 28(24):5243--5249, 1989.
+
+\bibitem{yee1966numerical}
+Kane Yee.
+\newblock Numerical solution of initial boundary value problems involving
+  maxwell's equations in isotropic media.
+\newblock {\em IEEE Transactions on antennas and propagation}, 14(3):302--307,
+  1966.
+
+\bibitem{zhao2014high}
+Shuang Zhao, Ravi Ramamoorthi, and Kavita Bala.
+\newblock High-order similarity relations in radiative transfer.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 33(4):1--12, 2014.
+
+\bibitem{zheng2021neural}
+Quan Zheng, Gurprit Singh, and Hans-Peter Seidel.
+\newblock Neural relightable participating media rendering.
+\newblock {\em Advances in Neural Information Processing Systems},
+  34:15203--15215, 2021.
+
+\bibitem{ziegler1942optimum}
+John~G Ziegler and Nathaniel~B Nichols.
+\newblock Optimum settings for automatic controllers.
+\newblock {\em Transactions of the American society of mechanical engineers},
+  64(8):759--765, 1942.
+
+\end{thebibliography}

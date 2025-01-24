@@ -1,0 +1,31 @@
+\section{Ziegler-Nichols Tuning Method}
+The Ziegler-Nichols tuning method is a PID tuning heuristic based on two principal characteristics affecting process controllability \cite{ziegler1942optimum}:
+\begin{enumerate}
+    \item The ultimate gain $K_u$ is the proportional gain above which oscillations will increase to a maximum amplitude, and below which oscillations will decay to zero response.
+    \item The period of oscillation $T_u$ is the period in minutes of constant-amplitude oscillations corresponding to a P controller with gain $K_u$.
+\end{enumerate}
+It defines the necessary proportional ($K_p$), integral ($K_i$), and derivative ($K_d$) gains for control stability given the ultimate gain and period of oscillation.
+
+\begin{table}[htbp]
+    \renewcommand{\arraystretch}{1.25}
+    \caption{Ziegler-Nichols method}
+    \begin{center}
+        \begin{tabular}{ l l l l l l }
+        \toprule[2pt]
+         \textbf{Control Type} & $\vec{K_p}$ & $\vec{T_i}$ & $\vec{T_d}$ & $\vec{K_i}$ & $\vec{K_d}$ \\
+         \midrule[0.75pt]
+         \textbf{P} & 0.5 $K_u$ & - & - & - & - \\
+         \textbf{PI} & 0.45 $K_u$ & 0.83 $T_u$ & - & 0.54 $K_u/T_u$ & - \\
+         \textbf{PD} & 0.3 $K_u$ & - & 0.125 $T_u$ & - & 0.10 $K_u T_u$ \\
+         \textbf{classic PID} & 0.6 $K_u$ & 0.5 $T_u$ & 0.125 $T_u$ & 1.2 $K_u/T_u$ & 0.075 $K_u T_u$ \\
+         \textbf{Pessen Integral Rule} & 0.7 $K_u$ & 0.4 $T_u$ & 0.15 $T_u$ & 1.75 $K_u/T_u$ & 0.105 $K_u T_u$ \\
+         \textbf{some overshoot} & 0.33 $K_u$ & 0.50 $T_u$ & 0.33 $T_u$ & 0.66 $K_u/T_u$ & 0.11 $K_u T_u$ \\
+         \textbf{no overshoot} & 0.20 $K_u$ & 0.50 $T_u$ & 0.33 $T_u$ & 0.40 $K_u/T_u$ & 0.066 $K_u T_u$ \\
+         \bottomrule[2pt]
+        \end{tabular}
+        \label{tab:ziegler-nichols}
+    \end{center}
+\end{table}
+
+Note: Alternative is Tyreus-Luyben method \cite{luyben1986simple}
+For example, assume the error is directly proportional to the actuation distance of a translation stage. If the initial

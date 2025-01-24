@@ -1,0 +1,15 @@
+\documentclass{memoir}
+\usepackage{preamble_page}
+\usepackage{mathdef}
+\usepackage{import}
+
+\begin{document}
+\input{front_page}
+\subimport{background}{chapter}
+\subimport{design}{chapter}
+\subimport{calibration_alignment}{chapter}
+\subimport{acquisition}{chapter}
+\subimport{appendices}{chapter}
+\bibliographystyle{ieee_fullname}
+\bibliography{egbib}
+\end{document}

@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+The style file: ieee_fullname.bst
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+Database file #1: egbib.bib
+Warning--empty publisher in frisvad2007computing
+Warning--can't use both volume and number fields in munoz2011bssrdf
+Warning--empty publisher in narasimhan2006acquiring
+Warning--can't use both volume and number fields in novak2018monte
+You've used 38 entries,
+            2120 wiz_defined-function locations,
+            738 strings with 11096 characters,
+and the built_in function-call counts, 15062 in all, are:
+= -- 1492
+> -- 769
+< -- 15
++ -- 305
+- -- 264
+* -- 1126
+:= -- 2440
+add.period$ -- 123
+call.type$ -- 38
+change.case$ -- 241
+chr.to.int$ -- 0
+cite$ -- 42
+duplicate$ -- 555
+empty$ -- 1125
+format.name$ -- 264
+if$ -- 3164
+int.to.chr$ -- 0
+int.to.str$ -- 38
+missing$ -- 43
+newline$ -- 193
+num.names$ -- 76
+pop$ -- 257
+preamble$ -- 1
+purify$ -- 208
+quote$ -- 0
+skip$ -- 389
+stack$ -- 0
+substring$ -- 973
+swap$ -- 146
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 142
+warning$ -- 4
+while$ -- 149
+width$ -- 40
+write$ -- 425
+(There were 4 warnings)

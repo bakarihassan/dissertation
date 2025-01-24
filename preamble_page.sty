@@ -1,0 +1,89 @@
+% for chapter styling
+\usepackage[tt=false]{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage[T1]{fontenc}
+
+\setSingleSpace{1.5}
+\SingleSpacing
+\usepackage{xcolor}
+\definecolor{chaptercolor}{gray}{0.8}
+% helper macros
+\newcommand\numlifter[1]{\raisebox{-2cm}[0pt][0pt]{\smash{#1}}}
+\newcommand\numindent{\kern37pt}
+\newlength\chaptertitleboxheight
+\makechapterstyle{hansen}{
+	\renewcommand\printchaptername{\raggedleft}
+	\renewcommand\printchapternum{%
+		\begingroup%
+		\leavevmode%
+		\chapnumfont%
+		\strut%
+		\numlifter{\thechapter}%
+		\numindent%
+		\endgroup%
+	}
+	\renewcommand*{\printchapternonum}{%
+		\vphantom{\begingroup%
+			\leavevmode%
+			\chapnumfont%
+			\numlifter{\vphantom{9}}%
+			\numindent%
+			\endgroup}
+		\afterchapternum}
+	\setlength\midchapskip{0pt}
+	\setlength\beforechapskip{0.5\baselineskip}
+	\setlength{\afterchapskip}{3\baselineskip}
+	\renewcommand\chapnumfont{%
+		\fontsize{4cm}{0cm}%
+		\bfseries%
+		\sffamily%
+		\color{chaptercolor}%
+	}
+	\renewcommand\chaptitlefont{%
+		\normalfont%
+		\huge%
+		\bfseries%
+		\raggedleft%
+	}%
+	\settototalheight\chaptertitleboxheight{%
+		\parbox{\textwidth}{\chaptitlefont \strut bg\\bg\strut}}
+	\renewcommand\printchaptertitle[1]{%
+		\parbox[t][\chaptertitleboxheight][t]{\textwidth}{%
+			%\microtypesetup{protrusion=false}% add this if you use microtype
+			\chaptitlefont\strut ##1\strut}%
+}}
+
+%%  section styling
+%\setsecheadstyle{\Large\bfseries\raggedright}
+%\setsubsecheadstyle{\large\bfseries\raggedright}
+%\setsubsubsecheadstyle{\bfseries\raggedright}
+
+\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
+\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+
+%% page margin
+\usepackage{geometry}
+% PDF VIEW
+% \geometry{total={210mm,297mm},
+% left=25mm,right=25mm,%
+% bindingoffset=0mm, top=25mm,bottom=25mm}
+% PRINT
+\geometry{left=30mm,right=30mm,
+	bindingoffset=8.5mm, top=38mm,bottom=35mm}
+
+\usepackage{float}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{microtype}
+\captionsetup[figure]{font=footnotesize}
+\newcommand*{\overrightharpoonup}{\mathpalette{\overarrow@\rightharpoonupfill@}}
+\newcommand{\note}[1]{Note: #1}
+\setkeys{Gin}{width=0.97\linewidth}
+
+\newcommand{\newchapter}[1]{%
+	\chapter{#1}
+	\addcontentsline{lof}{chapter}{%
+		\thechapter \hspace{3.6mm} #1 \vspace{6pt}
+	}
+}

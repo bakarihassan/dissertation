@@ -1,0 +1,91 @@
+
+The scatterometry system primarily consists of a spatially coherent 532nm laser, a reference frame camera, an acquisition camera, and upper and lower assemblies that articulate the sample and rotate the light sources respectively.
+
+The scatterometer consists of two mutually coherent 532 nm laser beams illuminating a scattering sample from two collimating lenses ($\mathbf{i_1, i_2}$) separated by a small angle and an acquisition camera focused at infinity. The illuminators and camera are separated an angle $\beta$ measured from the camera which is fixed in place. Both illuminators are attached to tip-tilt kinematic stages and are rotated over a range of $280^\circ$ by a stage, constituting a 5 DOF lower motion assembly. A 7 DOF upper motion assembly orients and rotates the scattering sample. Accurate measurements require 1) both illuminators' beams to intersect at a point inside the material sample, 2) for this intersection point to be maintained as the illuminators are rotated azimuthally about the sample by the angle $\beta$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/laser_path.png}
+    \caption{Beam path}
+    \label{fig:beam_path}
+\end{figure}
+
+\section{Acquisition Camera}
+The acquisition camera must record high-contrast speckle images and assign directions to light arriving at the camera. A desirable camera and lens combination is one that maximizes angular resolution and light efficiency. Therefore, we choose a camera with a large sensor and small pixel pitch, and a fast lens focused at infinity with a long focal length.
+
+
+\paragraph{Lens Focal Length} Computing the speckle correlation from images produced by the two illuminators requires both beams to fall within the camera's FOV. Since we maximize single-scattered light by minimizing the illuminator separation, a lens with a small FOV corresponds to illuminators with a small angular separation. However, due to the finite size of the kinematic mounts, there is a minimum vertical separation. This minimum vertical separation and the FOV-limited angle between the beams define a triangle whose length is the distance from the illuminators' kinematic mounts to the scattering sample. An 85 mm lens allows a small beam angle $2.47^\circ$ relative to horizontal and an overall setup size that complies with space constraints.
+
+We use a FLIR Grasshopper scientific camera model GS3-PGE-91S6M-C with an AF-S Nikkor 85mm f/1.4G lens for acquisition.
+
+\begin{table}[htbp]
+    \renewcommand{\arraystretch}{1.25}
+    \caption{Acquisition camera specifications}
+    \begin{center}
+        \begin{tabular}{ l l l l l }
+        \toprule[2pt]
+         \textbf{Property} & \textbf{Spec} \\
+         \midrule[0.75pt]
+         Camera Model & GS3-PGE-91S6M-C \\
+         Resolution & $3376 \times 2704$ \\
+         Megapixels & 9.1 \\
+         Pitch & 3.69 $\mu m$ \note{fix script} \\
+         Sensor & Sony ICX814 \\
+         Sensor Type & CCD \\
+         Sensor Size & $12 \times 10$ mm \\
+         Spectrum & Mono \\
+         Lens Make & Nikkor \\
+         Lens Focal Length & 85 mm \\
+         Lens Aperture & f/1.4 \\
+         Lens Working Distance & $\infty$ \\
+         \bottomrule[2pt]
+        \end{tabular}
+        \label{tab:cpu-gpu}
+    \end{center}
+\end{table}
+
+\section{Illuminator Motion Assembly}
+The illuminator motion assembly controls the illumination beams' directions both in azimuth and elevation. The primary design considerations are high angular resolution and repeatability for fine control of the illumination configuration, and structural stability to minimize vibrations. Each illuminator is attached to a 2-axis kinematic mount that allows $\pm 5^\circ$ in tip and  $\pm 3^\circ$ in tilt. Both kinematic mounts are attached to a custom collimator mount that orients them as close a possible while complying with the FOV constraint of $4.93^\circ$ between the illuminators. The collimator mount is attached to the azimuthal rotation stage via a rail whose length is 2.24 ft (682.85mm). We chose a Thorlabs aluminum extrusion rail since they are designed for modularity. However, the illumination beams experienced large, approximately 2 Hz oscillations when the azimuth stage moved. Modular aluminum extrusions have cross-sections that make them light-weight but at the cost of having low bending and torsional stiffness. This means they behave as springs when cantilevered with large weights are attached at the end. The angular displacement of a beam with length L due to an external torque T is
+%
+\begin{equation}
+    \tau = \frac{TL}{GI}
+\end{equation}
+%
+where G is the elastic modulus which is determined by the material of the beam, and I is the torsional moment of inertia determined by the beam's cross-section profile. The beam length is fixed due to setup geometry, as well as the elastic modulus since the extrusion is made of aluminum. The external torque is generated when the azimuth stage accelerates due to the collimator mount's inertia, so we want to choose the cross-section profile that maximizes the torsional moment of inertia. Torsional moment of inertia increases proportionally to the length of the longest connected path in a cross-section profile, but it can only be calculated analytically for a narrow class of profiles. We performed finite element analysis (FEA) to assess a variety of Thorlabs and 80/20 extrusions. The results in Figure \ref{fig:beam_torsion} show that 80/20 extrusions outperformed Thorlabs extrusions, and a small aspect ratio reduces beam deflection by two orders of magnitude. We chose the 80/20 1530-S extrusion. This has a 1:2 aspect ratio with sufficient torsional stiffness without violating space constraints.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/beam_torsion.png}
+    \caption{Left: FEA beam torsion; Right: FEA beam deflection analyses indicate 80/20 rail perform significantly better than Thorlabs optical rails, and that angular beam deflection decreases for decreasing cross-section aspect ratio.}
+    \label{fig:beam_torsion}
+\end{figure}
+
+\subsection{Collimator Mount}
+Calculates the design space for the collimator mount.
+Given acquisition camera position and FOV, it calculates valid combinations of 
+    1) linear collimator separation
+    2) angular collimator separation
+$d_camera = 969.417$ mm
+$r_aperture = 26.73$ mm
+
+\section{Sample Motion Assembly}
+The sample motion assembly is primarily used to rotate the scattering sample in order to maximize the amount of laser light transmitted through the air-glass interface as the illuminators' azimuthal position changes. This rotation is controlled by a small rotation stage which is mounted on an XYZ stage and an tip/tilt stage. These additional stages are used to control the rotation stage's orientation so it can made to be collinear with the lower motion assembly's azimuthal rotation axis. There is an additional translation stage mounted to the rotation stage's motion plate that is used to align the center of a mounted sample with the upper- and lower motion stages' rotation axes.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/assy_upper.png}
+    \caption{Sample motion assembly without sample mount}
+    \label{fig:sample_motion_assy}
+\end{figure}
+
+\subsection{Sample Mount}
+The sample mount is a custom, dual purpose mount used to hold scattering samples during acquisition and checkerboard targets during calibration. It is designed such that the front face of a calibration target is in the same plane as the central plane of a scattering sample. It consists of a base and angle mounts used to attach a square aluminum frame that holds a $10 \times 10$ cm glass window in place through compression by tightening four thumbscrews. Scattering samples are mounted by removing the aluminum frame's front face and attaching an inset frame that holds microscope slides via compression.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/sample_mount.png}
+    \caption{Left: Sample mount configured for calibration target; Right: Sample mount configured for scattering sample on a microscope slide}
+    \label{fig:sample_mount}
+\end{figure}
+
+\section{Microscope}
+
+% The camera measured scattered intensities of $u_1$ and $u_2$ respectively. \note{Each is passed through a 2$\times$2 fiber coupler which sums the two fields and sends half to each output port, introducing a $\pi$ phase shift to one of the ports. These optical signals are sent to an analog differential sensor containing photodiodes which convert each field to intensity and then computes the difference}
