@@ -1,0 +1,48 @@
+# Compiled output
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.dvi
+
+# Backup files
+*.bak
+*~
+
+# Other files
+*.synctex(busy)
+*.synctex.gz(busy)
+*.pdfsync
+*.swp
+*.swo
+*.xdv
+*.upa
+*.upb
+*.pyg
+
+# Directories
+_build/
+auto/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PPT
+*.pptx
+bahn-thesis.pdf

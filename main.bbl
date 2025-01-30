@@ -17,12 +17,6 @@ Chen Bar, Marina Alterman, Ioannis Gkioulekas, and Anat Levin.
   scattering media.
 \newblock {\em ACM Transactions on Graphics (TOG)}, 38(4):1--22, 2019.
 
-\bibitem{bar2021single}
-Chen Bar, Marina Alterman, Loannis Gkioulekas, and Anat Levin.
-\newblock Single scattering modeling of speckle correlation.
-\newblock In {\em 2021 IEEE International Conference on Computational
-  Photography (ICCP)}, pages 1--16. IEEE, 2021.
-
 \bibitem{berne2000dynamic}
 Bruce~J Berne and Robert Pecora.
 \newblock {\em Dynamic light scattering: with applications to chemistry,
@@ -52,6 +46,12 @@ Chengqian Che, Fujun Luan, Shuang Zhao, Kavita Bala, and Ioannis Gkioulekas.
 \newblock In {\em 2020 IEEE International Conference on Computational
   Photography (ICCP)}, pages 1--12. IEEE, 2020.
 
+\bibitem{cornette1992physically}
+William~M Cornette and Joseph~G Shanks.
+\newblock Physically reasonable analytic expression for the single-scattering
+  phase function.
+\newblock {\em Applied optics}, 31(16):3152--3160, 1992.
+
 \bibitem{durduran2010diffuse}
 Turgut Durduran, Regine Choe, Wesley~B Baker, and Arjun~G Yodh.
 \newblock Diffuse optics for tissue monitoring and tomography.
@@ -69,6 +69,12 @@ Thomas~J Farrell, Michael~S Patterson, and Brian Wilson.
   vivo.
 \newblock {\em Medical physics}, 19(4):879--888, 1992.
 
+\bibitem{fisher1953dispersion}
+Ronald~Aylmer Fisher.
+\newblock Dispersion on a sphere.
+\newblock {\em Proceedings of the Royal Society of London. Series A.
+  Mathematical and Physical Sciences}, 217(1130):295--305, 1953.
+
 \bibitem{frisvad2007computing}
 Jeppe~Revall Frisvad, Niels~J{\o}rgen Christensen, and Henrik~Wann Jensen.
 \newblock Computing the scattering properties of participating media using
@@ -83,10 +89,22 @@ Ioannis Gkioulekas, Anat Levin, and Todd Zickler.
   Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part III 14},
   pages 685--701. Springer, 2016.
 
+\bibitem{gkioulekas2013understanding}
+Ioannis Gkioulekas, Bei Xiao, Shuang Zhao, Edward~H Adelson, Todd Zickler, and
+  Kavita Bala.
+\newblock Understanding the role of phase function in translucent appearance.
+\newblock {\em ACM Transactions on graphics (TOG)}, 32(5):1--19, 2013.
+
 \bibitem{gkioulekas2013inverse}
 Ioannis Gkioulekas, Shuang Zhao, Kavita Bala, Todd Zickler, and Anat Levin.
 \newblock Inverse volume rendering with material dictionaries.
 \newblock {\em ACM Transactions on Graphics (TOG)}, 32(6):1--13, 2013.
+
+\bibitem{hara2007mixture}
+Kenji Hara, Ko Nishino, and Katsushi Ikeuchi.
+\newblock Mixture of spherical distributions for single-view relighting.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  30(1):25--35, 2007.
 
 \bibitem{henyey1940diffuse}
 Louis~George Henyey and Jesse~L Greenstein.
@@ -130,11 +148,6 @@ Srinivasa~G Narasimhan, Mohit Gupta, Craig Donner, Ravi Ramamoorthi, Shree~K
 \newblock Acquiring scattering properties of participating media by dilution.
 \newblock In {\em ACM SIGGRAPH 2006 Papers}, pages 1003--1012. 2006.
 
-\bibitem{newton2002three}
-Roger~G Newton.
-\newblock Three-dimensional direct scattering theory.
-\newblock In {\em Scattering}, pages 686--701. Elsevier, 2002.
-
 \bibitem{nimier2020radiative}
 Merlin Nimier-David, S{\'e}bastien Speierer, Beno{\^\i}t Ruiz, and Wenzel
   Jakob.
@@ -165,6 +178,18 @@ Dave~J Pine, Dave~A Weitz, JX Zhu, and Eric Herbolzheimer.
   scattering limit.
 \newblock {\em Journal de Physique}, 51(18):2101--2127, 1990.
 
+\bibitem{rayleigh1899xxxiv}
+Lord Rayleigh.
+\newblock Xxxiv. on the transmission of light through an atmosphere containing
+  small particles in suspension, and on the origin of the blue of the sky.
+\newblock {\em The London, Edinburgh, and Dublin Philosophical Magazine and
+  Journal of Science}, 47(287):375--384, 1899.
+
+\bibitem{reynolds1980approximate}
+LO Reynolds and NJ McCormick.
+\newblock Approximate two-parameter phase function for light scattering.
+\newblock {\em JOSA}, 70(10):1206--1212, 1980.
+
 \bibitem{sumin2019geometry}
 Denis Sumin, Tobias Rittig, Vahid Babaei, Thomas Nindel, Alexander Wilkie,
   Piotr Didyk, Bernd Bickel, J K{\c{R}}iv{\'a}nek, Karol Myszkowski, and Tim
@@ -178,17 +203,6 @@ Bertrand Thierry, Xavier Antoine, Chokri Chniti, and Hasan Alzubaidi.
   scattering problems by disks.
 \newblock {\em Computer Physics Communications}, 192:348--362, 2015.
 
-\bibitem{treeby2010k}
-Bradley~E Treeby and Benjamin~T Cox.
-\newblock k-wave: Matlab toolbox for the simulation and reconstruction of
-  photoacoustic wave fields.
-\newblock {\em Journal of biomedical optics}, 15(2):021314--021314, 2010.
-
-\bibitem{twersky1964propagation}
-Victor Twersky.
-\newblock On propagation in random media of discrete scatterers.
-\newblock In {\em Proc. Symp. Appl. Math}, volume~16, pages 84--116, 1964.
-
 \bibitem{wu2017neural}
 Jiajun Wu, Joshua~B Tenenbaum, and Pushmeet Kohli.
 \newblock Neural scene de-rendering.
@@ -200,13 +214,6 @@ Douglas~R Wyman, Michael~S Patterson, and Brian~C Wilson.
 \newblock Similarity relations for the interaction parameters in radiation
   transport.
 \newblock {\em Applied optics}, 28(24):5243--5249, 1989.
-
-\bibitem{yee1966numerical}
-Kane Yee.
-\newblock Numerical solution of initial boundary value problems involving
-  maxwell's equations in isotropic media.
-\newblock {\em IEEE Transactions on antennas and propagation}, 14(3):302--307,
-  1966.
 
 \bibitem{zhao2014high}
 Shuang Zhao, Ravi Ramamoorthi, and Kavita Bala.

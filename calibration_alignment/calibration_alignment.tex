@@ -203,6 +203,21 @@ The signed error is
 
 \section{Aligning Sample Motion Assembly and Illumination Beams}
 The objectives for beam alignment are to orient the two laser beams such that 1) their intersection point is located on the RT-3 and RT-5 rotation axes, 2) their mean direction is perpendicular to the rotation axis, and 3) they are normal to the calibration target's surface. We will consider the upper and lower stages' axes collinear, and alignment will be discussed with respect to the azimuthal axis of the lower stage assembly.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/beam_intersection_nooutline.png}
+    \caption{}
+    \label{fig:beam_intersection}
+\end{figure}
+%
+\begin{equation}
+    \ell = 2 \frac{d_0}{\sin{\theta}} \cos{\theta/2}
+\end{equation}
+%
+\begin{equation}
+    d = 2 \frac{d_0}{\sin{\theta}} \sin{\theta/2}
+\end{equation}
+
 
 \paragraph{Beams equianglular with respect to RT-3 and RT-5 axes}
 The mean direction is perpendicular to the rotation axis when both beams' projections onto the azimuthal axis are equal and opposite:
@@ -211,7 +226,14 @@ The mean direction is perpendicular to the rotation axis when both beams' projec
     \label{eqn:beam_equiangular_objective}
 \end{equation}
 
-Define both collimators' positions $\vec{c}_a, \vec{c}_b$, and assume both beams intersect at point $\vec{p}$ on the azimuthal axis. The ideal intersection point $\vec{p}^*$ is located at the intersection of the collimators' horizontal plane of symmetry and the azimutahl axis. $\vec{p}$ is offset from the ideal intersection point by displacement vector $\vec{\delta} = \vec{p}^* - \vec{p} = d \cdot \vec{h}$. Equation \ref{eqn:beam_equiangular_objective} can be rewritten in terms of these variables to solve for the displacement distance $d$ along $\uvec{h}$:
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/beam_alignment_geometry.png}
+    \caption{}
+    \label{fig:beam_alignment_geometry}
+\end{figure}
+%
+Define both collimators' positions $\vec{c}_a, \vec{c}_b$, and assume both beams intersect at point $\vec{p}$ on the azimuthal axis. The ideal intersection point $\vec{p}^*$ is located at the intersection of the collimators' horizontal plane of symmetry and the azimuthal axis. $\vec{p}$ is offset from the ideal intersection point by displacement vector $\vec{\delta} = \vec{p}^* - \vec{p} = d \cdot \vec{h}$. Equation \ref{eqn:beam_equiangular_objective} can be rewritten in terms of these variables to solve for the displacement distance $d$ along $\uvec{h}$:
 \begin{equation}
     \begin{split}
     0 &= (\vec{p} + \vec{\delta} - \vec{c_a})^\intercal \vec{h} + (\vec{p} + \vec{\delta} - \vec{c_b})^\intercal \vec{h} \\
@@ -240,7 +262,7 @@ This alignment step determines the "home" position of the sample assembly's rota
     \label{fig:sample_beam_alignment}
 \end{figure}
 
-\section{\note{Poporsal:}Acquisition Camera Calibration}
+\section{\note{Proposal:}Acquisition Camera Calibration}
 The projection matrix can be estimated via PnP in theory. However, we found it challenging in practice due to 3D points at infinity providing no depth information, and the geometry of a camera focused at infinity producing unstable estimates due to an effective coupling of the intrinsic parameters. \note{Add reasons they fail}. Since the acquisition camera maps points from the plane at infinity to the image plane, the homography for these planes is the projection matrix. However, there is an effective coupling of intrinsic parameters that complicates decomposing the projection matrix into a product of intrinsic and extrinsic matrices. 
 
 A camera focused at infinity maps rays along its optical axis to its principal point; all directions measured relative to the optical axis are mapped to image points relative to the principal point. Translating the principal point is similar to rotating the camera externally under the small angle approximation $\tan(\phi) \approx \phi$. Therefore, these two parameters are effectively coupled for a non-WFOV camera. \note{Insert figure showing reprojection error loss vs. pp and rotation}. To avoid this issue, we estimate the focal length using a simple geometric relationship describing pinhole cameras focused at infinity followed principal point estimation via inspection. Once the intrinsics are known, we estimate the rotation matrix and the lens distortion coefficients simultaneously.
@@ -265,16 +287,16 @@ The calibration model is validated on the physical acquisition system by learnin
 
 
 
-\section{\note{Poporsal:}Illuminator Assembly Calibration}
+\section{\note{Proposal:}Illuminator Assembly Calibration}
 The goal for calibrating the illuminator assembly is estimating its rotation axis and the 3D orientation of the illumination beams as a function of the azimuth angle $\theta$. We do so by computing the 3D intersection of each illumination beam with a series of $N$ planes whose poses we know. This process is repeated for all $\theta \in \Theta$ for a total of $2N|\Theta|$ points. From this point set, we can estimate illumination directions for both beams as a function of $\theta$ and the azimuth stage pose up to a rotational ambiguity about its rotation axis.
 
-\paragraph{\note{Poporsal:}Azimuth Stage Rotation Axis}
+\paragraph{\note{Proposal:}Azimuth Stage Rotation Axis}
 Each beam is associated with a set of $N|\Theta|$ points. Define a set of difference vectors $\{\tilde{\vec{k}}_\theta\}, \; |\{\tilde{\vec{k}}_\theta\}| = L$ as the differences between all N permute 2 points along a ray. We define a ray as a beam located at any particular $\theta \in \Theta$. Each $\tilde{\vec{k}}_\theta$ makes an angle $\pi/2 - \alpha$ with the rotation axis. However, the $_L P_2$ 2nd order difference vectors are perpendicular to the azimuth rotation axis $\uvec{h}$, and we estimate $\uvec{h}$ as their null space.
 
-\paragraph{\note{Poporsal:}Beam Direction Vector}
+\paragraph{\note{Proposal:}Beam Direction Vector}
 Once we know the azimuth rotation axis, we can use it to estimate both illuminators' beam directions. For each $\theta \in \Theta$, we compute the centroid $\vecol{p}_\theta = \frac{1}{N} \sum p_n$. We subtract the centroid from the point set so it is zero mean, and we rotate it about $\uvec{h}$ by $-\theta$ so all points are aligned with $\theta = 0$. The beam direction $\vec{k}_0$ is simply the point set's principal component. For any arbitrary azimuthal angle $\theta$, we can compute the beam direction $\vec{k}_0 = \vec{R}_{\uvec{h}} \vec{k}_0$ where $\vec{R}_{\uvec{h}}$ is a $3 \times 3$ rotation matrix with azimuthal axis $\uvec{h}$.
 
-\subsection{\note{Poporsal:}Stage Position \& Beam Direction as a Function of $\theta$}
+\subsection{\note{Proposal:}Stage Position \& Beam Direction as a Function of $\theta$}
 Assume a collimated beam fixed to a rotation stage with location $\vec{r}$ and rotation axis $\uvec{h}$. If the stage is rotated 360 degrees, the pencil of rays created by the rotated beam will form a paraboloid with axis $\uvec{h}$ and small radius $\rho$ equal to the distance of closest encounter of the beam with the paraboloid axis. The locus of these points of closest encounter constitute the beam's ray envelope. The isoline of the ray envelope is
 %
 \begin{figure}
@@ -304,7 +326,7 @@ If $M$ points $\vec{p}_\theta^{(1)}, \vec{p}_\theta^{(2)}, ..., \vec{p}_\theta^{
     \vec{l}_\theta(s) = \vecol{p}_\theta + s \uvec{k}_{\theta}
 \end{align}
 
-\subsection{\note{Poporsal:}Azimuth Stage Location}
+\subsection{\note{Proposal:}Azimuth Stage Location}
 Given the problem formulation, the objective is to find the circular conic section with perimeter $\vec{c}(\theta)$ by choosing $\vec{r}$ such that the circle's radius $\rho$ is minimized. We achieve this by computing the minimum distance of each beam from the axis of rotation and minimizing the variance across all angles:
 %
 \begin{equation}
@@ -343,7 +365,7 @@ set the partial derivative equal to zero, and rearrange it to the form $\vec{A}\
 
 We solve equation \ref{eqn:system2} with the equality constraint $\uvec{h}^\intercal (\vec{r} - \vec{t}_2) = 0$. The resulting RT-5 location $\vec{r}$ is similar to the estimate in the first method with a displacement vector norm of only 0.001 mm, and the mean distance $\overline{\rho} = 0.42$mm (as expected). 
 
-\subsection{\note{Poporsal:}Ray Envelope Center}
+\subsection{\note{Proposal:}Ray Envelope Center}
 Given $\vec{r}$ and $\{\rho_\theta\}_\Theta$, a point $\vec{c}_\theta$ is defined on each ray such that its distance from the RT-5 axis is equal to $\rho_\theta$.
 \begin{equation}
     \vec{c}_\theta = \vecol{p}_\theta + t_\theta \uvec{k}_\theta
@@ -372,7 +394,7 @@ where
 
 The partial derivative is a third degree polynomial whose roots minimize the objective function $g_3(\vec{r}, \delta, \vec{c}_\theta)$.
 
-\subsection{\note{Poporsal:}Ray Envelope Isoline}
+\subsection{\note{Proposal:}Ray Envelope Isoline}
 We find its radius and orientation defined by the vector $\vec{\rho}_0$ such that $\vec{c}(0) = \vec{r} + \delta \uvec{h} + \vec{\rho}_0$ is the point on the ray envelope corresponding to azimuthal position $0^\circ$. Given $\vec{r}$ and $\delta$, and a set of points $\{\vec{c}_\theta\}$ defined by the intersections of rays with the ray envelope plane, we can solve for the least-squares optimal $\vec{\rho}_0$ using Equation \ref{eqn:section}:
 %
 \begin{equation}
@@ -453,7 +475,7 @@ These boundary conditions can be solved for an expression of the transmitted and
     R_{\perp} = \frac{n_1 \cos{\theta_i} - n_2 \cos{\theta_t}}{n_1 \cos{\theta_i} + n_2 \cos{\theta_t}} A_{\perp}.
 \end{align}
 
-\subsubsection{\note{Poporsal:}Effects of Polarization on Fresnel Formulae}
+\subsubsection{\note{Proposal:}Effects of Polarization on Fresnel Formulae}
 
 The light intensity is
 %
