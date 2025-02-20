@@ -1,11 +1,12 @@
 \contentsline {chapter}{List of Figures}{viii}{}%
 \contentsline {chapter}{List of Tables}{xi}{}%
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{}%
+\contentsline {subsection}{\numberline {1.0.1}Thesis contributions}{2}{}%
 \contentsline {section}{\numberline {1.1}Material acquisition (related work)}{2}{}%
-\contentsline {section}{\numberline {1.2}Background}{3}{}%
-\contentsline {subsection}{\numberline {1.2.1}Scattering material representation}{3}{}%
-\contentsline {subsection}{\numberline {1.2.2}Phase function from speckle images}{4}{}%
-\contentsline {paragraph}{Validating extended range phase functions}{4}{}%
+\contentsline {section}{\numberline {1.2}Background}{4}{}%
+\contentsline {subsection}{\numberline {1.2.1}Scattering material representation}{4}{}%
+\contentsline {subsection}{\numberline {1.2.2}Phase function from speckle images}{5}{}%
+\contentsline {paragraph}{Validating extended range phase functions}{5}{}%
 \contentsline {paragraph}{Phase function from single scattering models}{5}{}%
 \contentsline {section}{\numberline {1.3}Thesis contributions}{5}{}%
 \contentsline {chapter}{\chapternumberline {2}Speckle Correlation}{7}{}%

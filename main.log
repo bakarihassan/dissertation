@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.7)  30 JAN 2025 04:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.7)  20 FEB 2025 12:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -981,16 +981,16 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 20.74pt on input line 101.
  (main.toc
 
-[5])
+[5]
 Underfull \vbox (badness 1168) has occurred while \output is active []
 
 
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sl' in size <10> not available
-(Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on input line 103.
+(Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on input line 78.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 103.
-[6]
+(Font)              scaled to size 10.0pt on input line 78.
+[6])
 
 [7] (main.lof
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1060,30 +1060,36 @@ LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
 
 [12
 
-]) (introduction/chapter.tex (introduction/introduction.tex) (introduction/related_work.tex
-
-[1
-
-
-]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 1.
-
-
-[2]) (introduction/background.tex
+]) (introduction/chapter.tex (introduction/introduction.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.95pt on input line 3.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 3.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[1
+
+
+]) (introduction/related_work.tex
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 1.
+
+
+[2]) (introduction/background.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [3]
 
-LaTeX Warning: Reference `eqn:closed-form_correlation' on page 4 undefined on input line 15.
+[4{C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_fygcup.enc}]
 
+LaTeX Warning: Reference `eqn:closed-form_correlation' on page 5 undefined on input line 22.
 
-
-[4{C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_fygcup.enc}]) (introduction/contributions.tex)) (speckle_correlation/chapter.tex
+) (introduction/contributions.tex)) (speckle_correlation/chapter.tex
 
 [5]
 
@@ -1488,15 +1494,15 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16372 strings out of 473681
- 272170 string characters out of 5719672
+ 16378 strings out of 473681
+ 272323 string characters out of 5719672
  694783 words of memory out of 5000000
  38547 multiletter control sequences out of 15000+600000
- 778889 words of font info for 532 fonts, out of 8000000 for 9000
+ 779435 words of font info for 536 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,23n,131p,2205b,570s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBMI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBMI7.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBRM.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI5.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI7.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathRM.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTZ.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsym.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (68 pages, 14515741 bytes).
+Output written on main.pdf (68 pages, 14517080 bytes).
 PDF statistics:
  355 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
