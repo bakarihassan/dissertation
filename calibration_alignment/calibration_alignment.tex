@@ -7,6 +7,9 @@
     \label{fig:3}
 \end{figure*}
 
+\section{Calibration Targets}
+We use two primary checkerboard calibration targets for beam direction and pose estimation during scatterometer calibration and alignment. The first is a $12\times15$ checkerboard with 6.1mm spacing mounted on both faces of a $10\times10$cm Corning Gorilla Glass window. This target is used primarily for estimating rotation and translation stage axes and motion stage pose. The other primary target uses the same checkerboard size, but it is one-sided, and it is missing a $2\times9$ block of cherckerboard squares at its center. We explored many checkerboard sizes and found that squares sizes smaller than 5mm prouced noisy MATLAB camera calibration. We chose 6.1mm squares since it maximizes the checkerboard density while producing stable MATLAB camera calibration. Both targets are laser printed on standard office printer paper, so their actual sizes will differ from their intended sizes due to printer scaling, paper texture, and limited printing precision. One issue with the relatively small square size is that these printing errors become larger with respect to the square size, and errors of approximately 1\% can cause a depth error estimate of greater than 3mm. However, we were only able to measure their sizes to an accuracy of 3.5\%. We use a third $18\times25$ (7.5mm square size) calibration target that is UV printed on a rigid, low-density polyethylene board (LDPE) with 0.04mm precision as a reference. We determine the laser printed targets' square sizes in the following manner. We place all three targets at the same depth, and we estimate the reference target's depth assuming its nominal dimensions as ground truth. For each laser printed target, we find the square size that minimizes the difference between its depth and the reference target's depth. We verified our results by laser printing all targets on the same sheet of paper and confirming all three square size estimates were similar down to tens of microns. We detail the effects of albedo and square size analyses in Appendix \ref{appx:calibration_checkerboard_design}.
+
 \section{Lower Stage Calibration} \label{sec:lower_stage_calibration}
 The goal of calibrating the lower assembly is to estimate its rotation axis and the 3D orientation of the illumination beams as a function of the azimuth angle $\theta$. We do so by computing the 3D intersection of each illumination beam with a series of $N$ planes whose poses we know. This process is repeated for all $\theta \in \Theta$ for a total of $2N|\Theta|$ points. From this set of points, we can estimate the illumination directions for both beams as a function of $\theta$ and the azimuth stage pose up to a rotational ambiguity about its rotation axis.
 
@@ -35,7 +38,7 @@ Assume a collimated beam fixed to a rotation stage with location $\vec{r}$ and r
 %
 \begin{equation}
     \vec{c}(\theta) = \vec{r} + \delta \uvec{h} + r(\theta) \vec{\rho}_0,
-    \label{eqn:section}
+    \label{eqn:envelope}
 \end{equation}
 %
 where $\delta$ is the height of the circle above the stage, $\vec{\rho}$ is a $2 \times 1$ vector. $r(\theta)$ is a $3 \times 2$ matrix consisting of a rotation of two basis vectors $\uvec{i}$ and $\uvec{j}$ through an angle of $\theta$ about the rotation axis $\uvec{h}$ with each basis vector being perpendicular to $\uvec{h}$
@@ -108,7 +111,7 @@ where
     t_\theta = \frac{\vec{m}_\theta^\intercal \vec{B}(\vec{r} - \vecol{p}_\theta)}{\vec{m}_\theta^\intercal \vec{B}\uvec{k}_\theta}, \quad \vec{m}_\theta = \uvec{n}_\theta \times \uvec{k}_\theta
 \end{gather}
 
-Given the set $\{\vec{c}_\theta\}_\Theta$, we solve the following minimization problem to choose the center of the circular ray envelope $\vec{r} + \delta \uvec{h}$ whose radius is $\overline{\rho}_\theta$:
+Given the set $\{\vec{c}_\theta\}_\Theta$, we solve the following minimization problem to find the optimal center of the circular ray envelope $\vec{r} + \delta \uvec{h}$ whose radius is $\overline{\rho}_\theta$ and minimizes the sum of the squared distances of points from the circle:
 \begin{equation}
     \begin{split}
         \min_\delta & \; g_3(\vec{r}, \delta, \vec{c}_\theta) \\
@@ -128,12 +131,12 @@ where
 The partial derivative is a third degree polynomial whose roots minimize the objective function $g_3()$. We find its roots via the roots() method from the numpy.polynomial.Polynomial class.
 
 \subsection{Ray Envelope Isoline}
-We find its radius and orientation defined by the vector $\vec{\rho}_0$ such that $\vec{c}(0) = \vec{r} + \delta \uvec{h} + \vec{\rho}_0$ is the point on the ray envelope corresponding to azimuthal position $0^\circ$. Given $\vec{r}$ and $\delta$, and a set of points $\{\vec{c}_\theta\}$ defined by the intersections of rays with the ray envelope plane, we can solve for the least-squares optimal $\vec{\rho}_0$ using Equation \ref{eqn:section}:
+We find its radius and orientation defined by the vector $\vec{\rho}_0$ such that $\vec{c}(0) = \vec{r} + \delta \uvec{h} + \vec{\rho}_0$ is the point on the ray envelope corresponding to azimuthal position $0^\circ$. Given $\vec{r}$ and $\delta$, and a set of points $\{\vec{c}_\theta\}$ defined by the intersections of rays with the ray envelope plane, we can solve for the least-squares optimal $\vec{\rho}_0$ using Equation \ref{eqn:envelope}:
 %
 \begin{equation}
     \min_{\vec{\rho}_0} \sum_{\theta} \| \vec{R}_\theta \vec{\rho}_0 - (\vec{c} - \vec{r} - \delta \uvec{h}) \|
 \end{equation}
-%
+
 
 \subsection{Training \& Validation Datasets}
 The training set consists of 22 rotation stage positions in $10^\circ$ increments spanning $\pm 50^\circ$ relative to the normal on both faces of a target, totaling $100^\circ$ and a measurement for each target. The differences of these 3D point-plane intersections are computed as the initial beam direction estimates $\mathbf{\overline{k}}$. Given a learned model, the objective is to predict point-plane intersections for new planes and angles. The similar to training but with random target positions and a smaller angular sweep. Actual phase function measurements will be constrained to a $180^\circ$ range. Therefore, the validation set consists of angles within this range, each offset from training angles by $5^\circ$.
@@ -143,11 +146,11 @@ The goal in calibrating the sample motion assembly is estimating the primary rot
 
 \paragraph{Rotation Stage Pose} Estimating the rotation stage pose is similar to the method used to estimate the azimuthal rotation axis. Rather than rotating a laser and computing beam-plane intersections, we we take photos of a series of $N$ rotated planes and detect a 3D grid of $M$ points on each plane. $_N P_2$ 1st-order difference vectors are computed for each of the $M$ points in the grid totaling $M(_N P_2)$ vectors that are in the plane of rotation. The rotation axis $\uvec{w}$ is perpendicular to the plane of rotation and is therefore the null space of the vector set.
 
-\paragraph{Translation Stage Axes} All translation stage axes are estimated by computing 3D coordinates of checkerboard corners at several positions along the translation stage's range of motion. Difference vectors are computed for all combinations of corresponding points on the planes, and the axis is the mean of all difference vectors. The vector is oriented to point in the direction of increasing stage position.
+\paragraph{Translation Stage Axes} \label{proc:translation_stage_calibration} All translation stage axes are estimated by computing 3D coordinates of checkerboard corners at several positions along the translation stage's range of motion. Difference vectors are computed for all combinations of corresponding points on the planes, and the axis is the mean of all difference vectors. The vector is oriented to point in the direction of increasing stage position.
 
 \paragraph{Tip \& Tilt Stage Axes} The sample assembly is oriented using a 2-axis tip/tilt kinematic stage. These axes are not used in any analytical expressions; they are simply used as a 2D basis for azimuthal rotation axis PID alignment. Their limited range of motion and image noise produce unstable estimates, so visually approximated estimates are sufficient as long as the axes are perpendicular.
 
-\section{Aligning Sample and Illuminator Assemblies}
+\section{Aligning Sample and Illuminator Assemblies} % alignRT3()
 The sample and illuminator assemblies are aligned when their rotation axes are collinear. 
 
 \subsection{Rotation}
@@ -167,8 +170,8 @@ Although the tip and tilt axes are perpendicular, they are not independent since
 \paragraph{Translation} Once the two rotation axes are parallel, we use the x- and z-axis translation stages to make the collinear. 
 
 
-\section{Aligning Calibration Target with Sample Motion Assembly Rotation Axis}
-The compact translation stage mounted on top of the RT-3 stage is used to position the calibration target locally such that the RT-3's rotation axis intersects the calibration target's surface at the height of a scattering sample. The error is computed by first defining a horizontal line on the calibration target whose height places it approximately midway along the height of a scattering sample. Define the minimum-length displacement vector between the two axes as $\vec{\delta}$. The error is then the projection of $\vec{\delta}$ onto the stage's translation axis $\vec{m}$.
+\section{Aligning Calibration Target with Sample Motion Assembly Rotation Axis} % alignMS1()
+The compact translation stage mounted on top of the RT-3 stage is used to position the calibration target locally such that the RT-3's rotation axis intersects the calibration target's surface at the height of a scattering sample. The stage is calibrated per Paragraph \ref{proc:translation_stage_calibration}. The alignment error is computed by first defining a horizontal line on the calibration target positioned along the midline of the scattering sample. Define the minimum-length displacement vector between the two axes as $\vec{\delta}$. The error is then the projection of $\vec{\delta}$ onto the stage's translation axis $\vec{m}$.
 
 Define the mean beam direction vector $\vecol{k} = (\uvec{k}^{(a)}_0 + \uvec{k}^{(b)}_0)/2$. For target with plane normal $\uvec{z}$, the objective is
 \begin{equation}
@@ -180,7 +183,7 @@ Two points $\vec{P}_1, \vec{P}_2$ on plane $\Pi_a$ with corresponding image poin
 \begin{equation}
     \uvec{z}' = \frac{(\vec{P}_2 - \vec{P}_1) \times (\vec{P}_3 - \vec{P}_1)}{\|(\vec{P}_2 - \vec{P}_1) \times (\vec{P}_3 - \vec{P}_1)\|}
 \end{equation}
-
+%
 \begin{equation}
     \vec{p}_i = \tau \vec{M}\bigg((\vec{\alpha}^\intercal \uvec{z}') \delta + \uvec{w}(\vec{P}_1 - \vec{P}_{w'})^\intercal \uvec{z}'  + \frac{1}{\tau} \vec{P}_{w'} \bigg)
 \end{equation}
@@ -188,39 +191,49 @@ where $\vec{M}$ is the camera projection matrix, and $\tau = (\vec{w}^\intercal 
 \begin{equation}
     \vec{\ell} = \vec{M} \Big(\big(\vec{\alpha} \times \vec{P}_2 + \vec{P}_1 \times \vec{\alpha}\big)\delta + \vec{P}_1 \times \vec{P}_2 \Big)
 \end{equation}
-
-The signed error is
-\begin{equation}
-    \epsilon = \vec{p}^\intercal_i \vec{\ell}
-\end{equation}
+%
+The signed PID alignment error is $\epsilon = \vec{p}^\intercal_i \vec{\ell}$, and the loop is run until the error is less than a tenth of the thickness of the gene frame with a standard deviation of 0.05 mm across 20 measurements.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figures/compact_alignment.png}
     \caption{Sample motion assembly without sample mount}
-    \label{fig:sample_motion_assy}
+    \label{fig:compact_alignment}
 \end{figure}
 
-\section{Aligning Sample Motion Assembly and Illumination Beams}
-The objectives for beam alignment are to orient the two laser beams such that 1) their intersection point is located on the RT-3 and RT-5 rotation axes, 2) their mean direction is perpendicular to the rotation axis, and 3) they are normal to the calibration target's surface. We will consider the upper and lower stages' axes collinear, and alignment will be discussed with respect to the azimuthal axis of the lower stage assembly.
+\section{Aligning Sample Motion Assembly and Illumination Beams} % alignBeams()
+The objectives for beam alignment are to orient the two laser beams such that their intersection point is located on the RT-3 and RT-5 rotation axes, and their mean direction is perpendicular to the rotation axes. This ensures that that both beams' speckle images are generated from the same region in the sample and that the same region is sampled as we rotate the illuminators through the range of scattering angles.
+
+Alignment proceeds as following. Given collinear azimuthal and RT-3 rotation axes, we can treat them as one axes with direction $\uvec{h}$ and location $\vec{P_h}$. This axis is located in the plane of a calibration target from previous alignment steps. For a beam spot a $\vec{Q}_{a_0} \in \mathbb{R}^3$ located on the plane, the displacement vector from the beam spot to the axis is $\vec{\Delta}_0 = \vec{P_h} + \vec{d}_0 - (\vec{P_h} + \uvec{h} \vec{d}_0^\intercal \uvec{h})$. We use a PID controller to displace the beam by $\vec{Delta}_0$ to within a tenth of the beam diameter. We repeat this for the second beam so both beam spots are located on the azimuthal axis. With beam spots a and b now located at $\vec{Q}_{a_1}, \vec{Q}_{b_1}$, we steer both beams to their mean position $\vecol{Q}$ so their intersection is located on the azimuthal axis.
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/beam_intersection_nooutline.png}
-    \caption{}
-    \label{fig:beam_intersection}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figures/beam_intersection_nooutline.png}
+        \caption{Left figure}
+        \label{fig:left}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figures/BeamAlignmentMargin.png}
+        \caption{Right figure}
+        \label{fig:right}
+    \end{subfigure}
+    \caption{Combined figure}
+    \label{fig:beam_intersection_margin}
 \end{figure}
+
 %
 \begin{equation}
     \ell = 2 \frac{d_0}{\sin{\theta}} \cos{\theta/2}
 \end{equation}
 %
 \begin{equation}
-    d = 2 \frac{d_0}{\sin{\theta}} \sin{\theta/2}
+    d = 2 \frac{d_0}{\sin{\theta}} \sin{(\theta/2)}
 \end{equation}
 
-
-\paragraph{Beams equianglular with respect to RT-3 and RT-5 axes}
-The mean direction is perpendicular to the rotation axis when both beams' projections onto the azimuthal axis are equal and opposite:
+Both beams are equiangular with respect to the azimuthal axis when their projections onto the axis are equal and opposite.:
 \begin{equation}
     0 = \uvec{k}_a^\intercal \vec{h} + \uvec{k}_b^\intercal \vec{h}.
     \label{eqn:beam_equiangular_objective}
@@ -233,25 +246,25 @@ The mean direction is perpendicular to the rotation axis when both beams' projec
     \label{fig:beam_alignment_geometry}
 \end{figure}
 %
-Define both collimators' positions $\vec{c}_a, \vec{c}_b$, and assume both beams intersect at point $\vec{p}$ on the azimuthal axis. The ideal intersection point $\vec{p}^*$ is located at the intersection of the collimators' horizontal plane of symmetry and the azimuthal axis. $\vec{p}$ is offset from the ideal intersection point by displacement vector $\vec{\delta} = \vec{p}^* - \vec{p} = d \cdot \vec{h}$. Equation \ref{eqn:beam_equiangular_objective} can be rewritten in terms of these variables to solve for the displacement distance $d$ along $\uvec{h}$:
+Define both beams' collimators positions $\vec{c}_a, \vec{c}_b$. The ideal intersection point $\vec{Q}^*$ is located at the intersection of the collimators' horizontal plane of symmetry and the azimuthal axis. $\vecol{Q}$ is offset from the ideal intersection point by displacement vector $\vec{\delta} = \vec{Q}^* - \vec{Q} = d \cdot \uvec{h}$. Equation \ref{eqn:beam_equiangular_objective} can be rewritten in terms of these variables to solve for the displacement distance $d$ along $\uvec{h}$:
 \begin{equation}
     \begin{split}
-    0 &= (\vec{p} + \vec{\delta} - \vec{c_a})^\intercal \vec{h} + (\vec{p} + \vec{\delta} - \vec{c_b})^\intercal \vec{h} \\
-    2 \vec{\delta}^\intercal \vec{h} &= (\vec{c_a} - \vec{p})^\intercal \vec{h} + (\vec{c_b} - \vec{p})^\intercal \vec{h} \\
-    2 \vec{\delta}^\intercal \vec{h} &= (\vec{c_a} - \vec{p} + \vec{c_b} - \vec{p})^\intercal \vec{h} \\
-    d \cdot \vec{h}^\intercal \vec{h} &= \tfrac{1}{2} (\vec{c_a} - \vec{p} + \vec{c_b} - \vec{p})^\intercal \vec{h} \\
-    d &= \tfrac{1}{2} \big[(\vec{c_a} - \vec{p}) + (\vec{c_b} - \vec{p})\big]^\intercal \vec{h}
+    0 &= (\vec{Q} + \vec{\delta} - \vec{c_a})^\intercal \uvec{h} + (\vec{Q} + \vec{\delta} - \vec{c_b})^\intercal \vec{h} \\
+    2 \vec{\delta}^\intercal \uvec{h} &= (\vec{c_a} - \vec{Q})^\intercal \uvec{h} + (\vec{c_b} - \vec{Qp})^\intercal \vec{h} \\
+    2 \vec{\delta}^\intercal \uvec{h} &= (\vec{c_a} - \vec{Q} + \vec{c_b} - \vec{Q})^\intercal \uvec{h} \\
+    d \cdot \uvec{h}^\intercal \uvec{h} &= \tfrac{1}{2} (\vec{c_a} - \vec{Q} + \vec{c_b} - \vec{Q})^\intercal \uvec{h} \\
+    d &= \tfrac{1}{2} \big[(\vec{c_a} - \vec{Q}) + (\vec{c_b} - \vec{Q})\big]^\intercal \uvec{h}
     \end{split}
 \end{equation}
 %
-The displacement vectors $\vec{c_a} - \vec{p}$ and $\vec{c_b} - \vec{p}$ are unknown since the collimator positions are unknown. However, the normalized beam directions $\uvec{k}_a, \uvec{k}_b$ are parallel to these displacement vectors, so we use a scalar coefficient $s$ to achieve the correct scale. We determine $s$ using the CAD model based on the nominal design geometry, and the final beam intersection displacement expression is
+The displacement vectors $\vec{c_a} - \vec{p}$ and $\vec{c_b} - \vec{Q}$ are unknown since the collimator positions are unknown. However, the normalized beam directions $\uvec{k}_a, \uvec{k}_b$ are parallel to these displacement vectors, so we approximate a scaling coefficient $s$ to achieve the correct scale. We determine $s$ using the CAD model based on the nominal design geometry, and the final beam intersection displacement expression is
 %
 \begin{equation}
-    d = -\frac{s}{2} (\uvec{k}_a + \uvec{k}_b)^\intercal \vec{h}.
+    d = -\frac{s}{2} (\uvec{k}_a + \uvec{k}_b)^\intercal \uvec{h}.
     \label{eqn:beam_alignment_displacement}
 \end{equation}
 
-The alignment procedure is as follows. Since the beams' orientations have been adjusted since their initial estimation, we begin by updating their estimates. We use a method similar to that detailed in section \ref{sec:lower_stage_calibration}, but we make measurements at a single azimuthal position $\theta = 0$. With updated $\uvec{k}_a$ and $\uvec{k}_b$, we compute the required intersection point displacement via Equation \ref{eqn:beam_alignment_displacement}. The displacement is projected into the image frame, and the beams are commanded to the corresponding pixel backprojected to the calibration target. This process is repeated iteratively until the displacement distance is below a threshold due to inaccuracies introduced by the rough estimate of the scale factor $s$ and other noise sources.
+The alignment procedure is as follows. Since the beams' orientations have been adjusted since their initial estimation, we begin by updating their estimates. We use a method similar to that detailed in section \ref{sec:lower_stage_calibration}, but we use a single azimuthal position $\theta = 0$ rather than rotating the beam pair azimuthally. With update $\uvec{k}_a$ and $\uvec{k}_b$, and we compute the required intersection point displacement via Equation \ref{eqn:beam_alignment_displacement}. The displacement is projected into the image frame, and the beams are commanded to the corresponding pixel backprojected to the calibration target. This process is repeated iteratively until the displacement distance is below a threshold due to the approximate scale factor $s$ and other noise sources.
 
 \section{Aligning Calibration Target with Illumination Beams}
 This alignment step determines the "home" position of the sample assembly's rotation stage which corresponds to sample illumination along its normal vector. The home position maximizes the inner product of the target's normal vector and the mean illumination beam vector $\overline{\vec{k}} = (\uvec{k}_a + \uvec{k}_b)/2$.
@@ -308,7 +321,7 @@ Assume a collimated beam fixed to a rotation stage with location $\vec{r}$ and r
 %
 \begin{equation}
     \vec{c}(\theta) = \vec{r} + \delta \uvec{h} + r(\theta) \vec{\rho}_0,
-    \label{eqn:section}
+    \label{eqn:envelope2}
 \end{equation}
 %
 where $\delta$ is the height of the circle above the stage, $\vec{\rho}$ is a $2 \times 1$ vector. $r(\theta)$ is a $3 \times 2$ matrix consisting of a rotation of two basis vectors $\uvec{i}$ and $\uvec{j}$ through an angle of $\theta$ about the rotation axis $\uvec{h}$ with each basis vector being perpendicular to $\uvec{h}$
@@ -325,81 +338,6 @@ If $M$ points $\vec{p}_\theta^{(1)}, \vec{p}_\theta^{(2)}, ..., \vec{p}_\theta^{
 \begin{align}
     \vec{l}_\theta(s) = \vecol{p}_\theta + s \uvec{k}_{\theta}
 \end{align}
-
-\subsection{\note{Proposal:}Azimuth Stage Location}
-Given the problem formulation, the objective is to find the circular conic section with perimeter $\vec{c}(\theta)$ by choosing $\vec{r}$ such that the circle's radius $\rho$ is minimized. We achieve this by computing the minimum distance of each beam from the axis of rotation and minimizing the variance across all angles:
-%
-\begin{equation}
-    \min_{\vec{r}} \sum_{\theta \in \Theta} (\rho_\theta - \overline{\rho})^2
-\end{equation}
-%
-where
-\begin{gather}
-    \rho_\theta = \uvec{n}_\theta^\intercal (\vecol{p}_\theta - \vec{r}), \quad \uvec{n}_\theta = \frac{\uvec{k}_\theta \times \uvec{h}}{\| \uvec{k}_\theta \times \uvec{h} \|}, \quad \overline{\rho} = \frac{1}{|\Theta|} \sum \rho_\theta
-\end{gather}
-%
-We minimize the objective by computing its partial derivative with respect to $\vec{r}$. Firstly we define
-\begin{gather}
-    \vecol{n}_{\vecol{p}} = \frac{1}{|\Theta|} \sum \uvec{n}_\theta^\intercal \vecol{p}_\theta, \quad
-    \vecol{n} = \frac{1}{|\Theta|} \sum_\theta \uvec{n}_\theta,
-\end{gather}
-%
-and compute the partial derivative with respect to $\vec{r}$:
-%
-\begin{align}
-    \frac{\partial g_2(\vec{r})}{\partial \vec{r}} &= \sum_\theta (\rho_\theta - \overline{\rho})(\vecol{n} - \uvec{n}_\theta) \\
-    &= \sum_\theta \bigg[ -(\uvec{n}_\theta^\intercal \vecol{p}_\theta) \uvec{n}_\theta + \vecol{n}_{\vecol{p}} \uvec{n}_\theta + (\uvec{n}_\theta^\intercal \vecol{p}_\theta) \vecol{n} - \vecol{n}_{\vecol{p}} \vecol{n} \bigg] + \sum_\theta \bigg[ (\uvec{n}_\theta^\intercal \vec{r}) \uvec{n}_\theta - (\vecol{n}^\intercal \vec{r}) \uvec{n}_\theta - (\uvec{n}_\theta^\intercal \vec{r}) \vecol{n} + (\vecol{n}^\intercal \vec{r}) \vecol{n} \bigg]
-\end{align}
-%
-We define
-\begin{gather}
-    \vec{N}_\theta = \sum_\theta \uvec{n}_\theta \uvec{n}_\theta^\intercal, \quad \vecol{N}_\theta = \sum_\theta \uvec{n}_\theta \vecol{n}^\intercal, \quad
-    \vecol{N} = \sum_\theta \vecol{n} \vecol{n}^\intercal,
-\end{gather}
-%
-set the partial derivative equal to zero, and rearrange it to the form $\vec{A}\vec{x} = \vec{b}$:
-\begin{equation}
-    \big( \vec{N}_\theta - 2\vecol{N}_\theta + \vecol{N} \big) \vec{r} = \sum_\theta (\uvec{n}_\theta^\intercal \vecol{p}_\theta) \uvec{n}_\theta - |\Theta| \vecol{n}_{\vecol{p}} \vecol{n}
-    \label{eqn:system2}
-\end{equation}
-
-We solve equation \ref{eqn:system2} with the equality constraint $\uvec{h}^\intercal (\vec{r} - \vec{t}_2) = 0$. The resulting RT-5 location $\vec{r}$ is similar to the estimate in the first method with a displacement vector norm of only 0.001 mm, and the mean distance $\overline{\rho} = 0.42$mm (as expected). 
-
-\subsection{\note{Proposal:}Ray Envelope Center}
-Given $\vec{r}$ and $\{\rho_\theta\}_\Theta$, a point $\vec{c}_\theta$ is defined on each ray such that its distance from the RT-5 axis is equal to $\rho_\theta$.
-\begin{equation}
-    \vec{c}_\theta = \vecol{p}_\theta + t_\theta \uvec{k}_\theta
-\end{equation}
-where
-\begin{gather}
-    t_\theta = \frac{\vec{m}_\theta^\intercal \vec{B}(\vec{r} - \vecol{p}_\theta)}{\vec{m}_\theta^\intercal \vec{B}\uvec{k}_\theta}, \quad \vec{m}_\theta = \uvec{n}_\theta \times \uvec{k}_\theta
-\end{gather}
-
-Given the set $\{\vec{c}_\theta\}_\Theta$, we solve the following minimization problem to find the optimal center of the circular ray envelope $\vec{r} + \delta \uvec{h}$ whose radius is $\overline{\rho}_\theta$ and minimizes the sum of the squared distances of points from the circle:
-\begin{equation}
-    \begin{split}
-        \min_\delta & \; g_3(\vec{r}, \delta, \vec{c}_\theta) \\
-        \min_\delta & \sum_{\theta \in \Theta} \big( \| \vec{c}_\theta - \vec{r} - \delta \uvec{h} \|^2 - \overline{\rho}^2 \big)^2
-    \end{split}.
-\end{equation}
-%
-The partial derivative with respect to $\delta$ is
-\begin{equation}
-    \frac{\partial g_3(\vec{r}, \delta, \vec{c}_\theta)}{\partial \delta} = 4 |\Theta| \delta^3 + 3 B \delta^2 + 2 C \delta + D = 0
-\end{equation}
-where
-\begin{gather}
-    B = 4\uvec{h}^\intercal \sum (\vec{r} - \vec{c}_\theta), \quad C = 2\sum \big[2(\vec{r} - \vec{c}_\theta)^\intercal \uvec{h}\uvec{h}^\intercal(\vec{r} - \vec{c}_\theta) + \|\vec{c}_\theta\|^2 - 2\vec{c}^\intercal_\theta \vec{r} + \|\vec{r}\|^2 \big], \quad \\ D = 4\uvec{h}^\intercal \sum (\vec{r} - \vec{c}_\theta)(\|\vec{c}_\theta\|^2 - 2\vec{c}^\intercal_\theta \vec{r} + \|\vec{r}\|^2).
-\end{gather}
-
-The partial derivative is a third degree polynomial whose roots minimize the objective function $g_3(\vec{r}, \delta, \vec{c}_\theta)$.
-
-\subsection{\note{Proposal:}Ray Envelope Isoline}
-We find its radius and orientation defined by the vector $\vec{\rho}_0$ such that $\vec{c}(0) = \vec{r} + \delta \uvec{h} + \vec{\rho}_0$ is the point on the ray envelope corresponding to azimuthal position $0^\circ$. Given $\vec{r}$ and $\delta$, and a set of points $\{\vec{c}_\theta\}$ defined by the intersections of rays with the ray envelope plane, we can solve for the least-squares optimal $\vec{\rho}_0$ using Equation \ref{eqn:section}:
-%
-\begin{equation}
-    \min_{\vec{\rho}_0} \sum_{\theta} \| \vec{R}_\theta \vec{\rho}_0 - (\vec{c} - \vec{r} - \delta \uvec{h}) \|.
-\end{equation}
 
 \section{Acquisition Camera Calibration}
 The projection matrix can be estimated using PnP in theory. However, we found it challenging in practice due to 3-D points at infinity providing no depth information, resulting in unstable estimation. Since the acquisition camera maps points from the plane at infinity to the image plane, the homography relating these planes is the projection matrix. However, there is an effective coupling of intrinsic and extrinsic parameters that complicates decomposing the projection matrix into a product of intrinsic and extrinsic matrices.
@@ -595,14 +533,14 @@ where $n = n_2 / n_1$.
 % %
 % where $N$ and $N_1$ are the medium's and particle's refractive indices respectively \cite{bohren2008absorption}. The scattering Mueller matrix is defined within the scattering plane containing the incoming and outgoing directions as well as the scattering particle.
 
-These relations were used to find the optimal sample assembly rotation angle and the angle of polarization for every acquisition scattering angle. The result is a lookup table plotted as a chart in Figure \ref{fig:polctrl1}.
+These relations were used to find the optimal sample assembly rotation angle and the angle of polarization for every acquisition scattering angle. The result is a lookup table plotted as a chart in Figure \ref{fig:polctrl}.
 %
 \begin{figure}
     \centering
     \includegraphics[width=0.49\linewidth]{figures/polctrl1_traj.png}
     \includegraphics[width=0.49\linewidth]{figures/polctrl1_trans.png}
     \caption{Left: Optimal sample rotation stage position and linear polarization angle as a function of azimuthal illumination angle. The linear polarization angle schedule contains discontinuities in the range $(-50^\circ, 50^\circ)$ due to rounding errors; Right: Comparison of light transmitted towards camera when choosing the optimal sample orientation versus a static sample shows an approximate 15\% increase on average.}
-    \label{fig:polctrl1}
+    \label{fig:polctrl}
 \end{figure}
 
 \section{\note{Proposal:}Expected Results}
@@ -615,7 +553,7 @@ We have identified imaging configurations that produce high-contrast speckle ima
     \label{fig:speckle_collage}
 \end{figure}
 
-A preliminary result that indicates we are on the right track is computing and plotting 2D speckle correlation and showing that this correlation increases with decreasing sample optical density as suggested by Equation \ref{eqn:closed-form_correlation}. Next, we plan to acquire phase functions of materials similar those acquired in \cite{alterman2022direct} over a larger range of scattering angles. Figure \ref{fig:extended_phase_function} shows our planned extension of the scattering angle range. If our phase functions agree with \cite{alterman2022direct}, it will help validate our acquisition configuration and correlation scripts.
+A preliminary result that indicates we are on the right track is computing and plotting 2D speckle correlation and showing that this correlation increases with decreasing sample optical density. Next, we plan to acquire phase functions of materials similar those acquired in \cite{alterman2022direct} over a larger range of scattering angles. Figure \ref{fig:extended_phase_function} shows our planned extension of the scattering angle range. If our phase functions agree with \cite{alterman2022direct}, it will help validate our acquisition configuration and correlation scripts.
 %
 \begin{figure}
     \centering
