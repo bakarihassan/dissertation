@@ -11,23 +11,25 @@
 \addvspace {10pt}
 \contentsline {chapter}{4\hspace {3.6mm} Scatterometer Calibration and Alignment \vspace {6pt} }{15}{}%
 \contentsline {figure}{\numberline {4.1}{\ignorespaces \textbf {a}: Speckle correlation computation pipeline. The sample is illuminated by two beams, and the correlation is computed using a differential sensor. \textbf {b}: Physical setup with sample placed on the circular breadboard. The illumination stand rotates about the sample while the sensing stand measures scattered light. The differential photodetector enables fast correlation computation. \textbf {c}: Geometry used to develop forward model for inverse problem estimation of 3D beam-plane intersection points. \textbf {d}: Mean estimation errors for training and validation phases showing angular dependence of error.}}{15}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Perpendicular offsets of the four observed beam-plane intersections with respect to the estimated beam direction. Each plot is for an azimuthal angle $\theta \in \Theta $. The cause of increasing perpendicular offsets for increasing angle with respect to the plane normal and anti-normal is unknown.}}{16}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces RT-5 Geometry - Frustrum top Surface}}{17}{}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Sample motion assembly without sample mount}}{22}{}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces \relax }}{23}{}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \relax }}{23}{}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Top: Target and beam misaligned due to non-zero angle between the beam and the target normal; Bottom: $\boldsymbol {d}$ aligned with normal vector $\boldsymbol {n}$. Note: Update by replacing d with kbar.}}{24}{}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Left: Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ $. Right: The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis.}}{25}{}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Ray envelope defined as the locus of points of closest encounter between the illumination beam and its rotation axis}}{27}{}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces (a) The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis; (b) Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ $; (c) Reprojection error as a function of principal point shifts along the y-axis and external pitch rotation is not strictly convex, showing the numerical ambiguity of principal point shifting and camera rotation. This ambiguity holds for the x-axis and panning as well.}}{31}{}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Left: Optimal sample rotation stage position and linear polarization angle as a function of azimuthal illumination angle. The linear polarization angle schedule contains discontinuities in the range $(-50^\circ , 50^\circ )$ due to rounding errors; Right: Comparison of light transmitted towards camera when choosing the optimal sample orientation versus a static sample shows an approximate 15\% increase on average.}}{34}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Perpendicular offsets of the four observed beam-plane intersections with respect to the estimated beam direction. Each plot is for an azimuthal angle $\theta \in \Theta $. The cause of increasing perpendicular offsets for increasing angle with respect to the plane normal and anti-normal is unknown.}}{17}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces RT-5 Geometry - Frustrum top Surface}}{18}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Sample motion assembly without sample mount}}{23}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Combined figure}}{24}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \relax }}{24}{}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Top: Target and beam misaligned due to non-zero angle between the beam and the target normal; Bottom: $\boldsymbol {d}$ aligned with normal vector $\boldsymbol {n}$. Note: Update by replacing d with kbar.}}{26}{}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Left: Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ $. Right: The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis.}}{27}{}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Ray envelope defined as the locus of points of closest encounter between the illumination beam and its rotation axis}}{29}{}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces (a) The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis; (b) Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ $; (c) Reprojection error as a function of principal point shifts along the y-axis and external pitch rotation is not strictly convex, showing the numerical ambiguity of principal point shifting and camera rotation. This ambiguity holds for the x-axis and panning as well.}}{30}{}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Left: Optimal sample rotation stage position and linear polarization angle as a function of azimuthal illumination angle. The linear polarization angle schedule contains discontinuities in the range $(-50^\circ , 50^\circ )$ due to rounding errors; Right: Comparison of light transmitted towards camera when choosing the optimal sample orientation versus a static sample shows an approximate 15\% increase on average.}}{33}{}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Speckle images of 10$\mu $m monodisperse SiO$_2$ beads acquired using scatterometer setup. Left: Top illuminator activated; Center: Both illuminators activated; Right: Bottom illuminator activated}}{34}{}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces An expected result is acquiring the scattering phase function for a larger range of scattering angles than the literature.}}{35}{}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces An expected result is acquiring the scattering phase function for a larger range of scattering angles than the literature.}}{34}{}%
 \addvspace {10pt}
-\contentsline {chapter}{5\hspace {3.6mm} Acquisition \vspace {6pt} }{37}{}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \relax }}{38}{}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \relax }}{42}{}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \relax }}{43}{}%
+\contentsline {chapter}{5\hspace {3.6mm} Scattering Sample Preparation \vspace {6pt} }{35}{}%
 \addvspace {10pt}
-\contentsline {chapter}{6\hspace {3.6mm} Appendices \vspace {6pt} }{45}{}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Top row: Original target used for calibration caused irregular beam spot shapes which produced noisy centroids. Bottom row: Windowed target used now to avoid albedo issues when imaging beam spots.}}{45}{}%
+\contentsline {chapter}{6\hspace {3.6mm} Acquisition \vspace {6pt} }{39}{}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \relax }}{40}{}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \relax }}{44}{}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \relax }}{45}{}%
+\addvspace {10pt}
+\contentsline {chapter}{7\hspace {3.6mm} Appendices \vspace {6pt} }{47}{}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Top row: Original target used for calibration caused irregular beam spot shapes which produced noisy centroids. Bottom row: Windowed target used now to avoid albedo issues when imaging beam spots.}}{47}{}%
