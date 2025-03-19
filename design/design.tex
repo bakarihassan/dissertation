@@ -13,9 +13,6 @@ The scatterometer consists of two mutually coherent 532 nm laser beams illuminat
 \section{Acquisition Camera}
 The acquisition camera must record high-contrast speckle images and assign directions to light arriving at the camera. A desirable camera and lens combination is one that maximizes angular resolution and light efficiency. Therefore, we choose a camera with a large sensor and small pixel pitch, and a fast lens focused at infinity with a long focal length.
 
-
-\paragraph{Lens Focal Length} Computing the speckle correlation from images produced by the two illuminators requires both beams to fall within the camera's FOV. Since we maximize single-scattered light by minimizing the illuminator separation, a lens with a small FOV corresponds to illuminators with a small angular separation. However, due to the finite size of the kinematic mounts, there is a minimum vertical separation. This minimum vertical separation and the FOV-limited angle between the beams define a triangle whose length is the distance from the illuminators' kinematic mounts to the scattering sample. An 85 mm lens allows a small beam angle $2.47^\circ$ relative to horizontal and an overall setup size that complies with space constraints.
-
 We use a FLIR Grasshopper scientific camera model GS3-PGE-91S6M-C with an AF-S Nikkor 85mm f/1.4G lens for acquisition.
 
 \begin{table}[htbp]
@@ -43,6 +40,21 @@ We use a FLIR Grasshopper scientific camera model GS3-PGE-91S6M-C with an AF-S N
         \label{tab:cpu-gpu}
     \end{center}
 \end{table}
+
+\paragraph{Lens Focal Length} Computing the speckle correlation from images produced by the two illuminators requires both beams to fall within the camera's FOV. Since we maximize single-scattered light by minimizing the illuminator separation, a lens with a small FOV corresponds to illuminators with a small angular separation. However, due to the finite size of the kinematic mounts, there is a minimum vertical separation. This minimum vertical separation and the FOV-limited angle between the beams define a triangle whose length is the distance from the illuminators' kinematic mounts to the scattering sample. An 85 mm lens allows a small beam angle $2.47^\circ$ relative to horizontal and an overall setup size that complies with space constraints.
+
+\subsection{Acquisition camera modifications}
+The acquisition camera's CCD is protected from debris by a glass window. It is common practice to remove this window under coherent illumination since interference fringes are created when a portion of light passing through the window is reflected internally. However, refraction caused by this window increases the effective focal length of the lens. Camera manufacturers account for this by offsetting the sensor's position along the optical axis so standard lens mounts can be used. Removing the window moves the focus closer to the front of the lens which is an issue when focusing at infinity since the focus will be always located in front of the sensor. The Fotodiox Nik-C (F to C) lens mount consists of a cylindrical component that interlocks with the F lens, and a conical component that matches the camera's C mount threads. To focus at infinity, we shortened the Fotodiox mount by machining 0.5 mm from its conical component to account for removing the glass window. The two lens mount components are secured using four radial screws which must be tightened evenly so their axes are aligned. We designed and 3D printed an alignment fixture that enforces their axial alignment during assembly. See Figure \ref{fig:fotodiox_custom}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/F-to-C_mount2.png}
+    \caption{}
+    \label{fig:fotodiox_custom}
+\end{figure}
+
+\subsection{Camera mount}
+Mounting the camera to the optical table using the FLIR plastic adapter was not stiff enough and caused the camera to pitch downward over the course of several hours. This was an issue for camera calibration due to pose drift, so we chose to mount the camera via the lens' threads used for attachments.
 
 \section{Illuminator Motion Assembly}
 The illuminator motion assembly controls the illumination beams' directions both in azimuth and elevation. The primary design considerations are high angular resolution and repeatability for fine control of the illumination configuration, and structural stability to minimize vibrations. Each illuminator is attached to a 2-axis kinematic mount that allows $\pm 5^\circ$ in tip and  $\pm 3^\circ$ in tilt. Both kinematic mounts are attached to a custom collimator mount that orients them as close a possible while complying with the FOV constraint of $4.93^\circ$ between the illuminators. The collimator mount is attached to the azimuthal rotation stage via a rail whose length is 2.24 ft (682.85mm). We chose a Thorlabs aluminum extrusion rail since they are designed for modularity. However, the illumination beams experienced large, approximately 2 Hz oscillations when the azimuth stage moved. Modular aluminum extrusions have cross-sections that make them light-weight but at the cost of having low bending and torsional stiffness. This means they behave as springs when cantilevered with large weights are attached at the end. The angular displacement of a beam with length L due to an external torque T is
