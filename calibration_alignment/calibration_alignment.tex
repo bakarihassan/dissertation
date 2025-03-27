@@ -2,7 +2,7 @@
 \section{Calibration and alignment}
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{figures/experiment.png}
+    \includegraphics[width=\textwidth]{../figures/experiment.png}
     \caption{\textbf{a}: Speckle correlation computation pipeline. The sample is illuminated by two beams, and the correlation is computed using a differential sensor. \textbf{b}: Physical setup with sample placed on the circular breadboard. The illumination stand rotates about the sample while the sensing stand measures scattered light. The differential photodetector enables fast correlation computation. \textbf{c}: Geometry used to develop forward model for inverse problem estimation of 3D beam-plane intersection points. \textbf{d}: Mean estimation errors for training and validation phases showing angular dependence of error.}
     \label{fig:3}
 \end{figure*}
@@ -21,7 +21,7 @@ Once we know the azimuth rotation axis, we can use it to estimate both illuminat
 %
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/beam_direction_fits.png}
+    \includegraphics[width=1\linewidth]{../figures/beam_direction_fits.png}
     \caption{Perpendicular offsets of the four observed beam-plane intersections with respect to the estimated beam direction. Each plot is for an azimuthal angle $\theta \in \Theta$. The cause of increasing perpendicular offsets for increasing angle with respect to the plane normal and anti-normal is unknown.}
     \label{fig:beam_direction_plane_points}
 \end{figure}
@@ -31,7 +31,7 @@ Assume a collimated beam fixed to a rotation stage with location $\vec{r}$ and r
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/envelope_geometry.png}
+    \includegraphics[width=0.5\linewidth]{../figures/envelope_geometry.png}
     \caption{RT-5 Geometry - Frustrum top Surface}
     \label{fig:frustrum}
 \end{figure}
@@ -196,7 +196,7 @@ The signed PID alignment error is $\epsilon = \vec{p}^\intercal_i \vec{\ell}$, a
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/compact_alignment.png}
+    \includegraphics[width=0.5\linewidth]{../figures/compact_alignment.png}
     \caption{Sample motion assembly without sample mount}
     \label{fig:compact_alignment}
 \end{figure}
@@ -204,26 +204,25 @@ The signed PID alignment error is $\epsilon = \vec{p}^\intercal_i \vec{\ell}$, a
 \section{Aligning Sample Motion Assembly and Illumination Beams} % alignBeams()
 The objectives for beam alignment are to orient the two laser beams such that their intersection point is located on the RT-3 and RT-5 rotation axes, and their mean direction is perpendicular to the rotation axes. This ensures that that both beams' speckle images are generated from the same region in the sample and that the same region is sampled as we rotate the illuminators through the range of scattering angles.
 
-Alignment proceeds as following. Given collinear azimuthal and RT-3 rotation axes, we can treat them as one axes with direction $\uvec{h}$ and location $\vec{P_h}$. This axis is located in the plane of a calibration target from previous alignment steps. For a beam spot a $\vec{Q}_{a_0} \in \mathbb{R}^3$ located on the plane, the displacement vector from the beam spot to the axis is $\vec{\Delta}_0 = \vec{P_h} + \vec{d}_0 - (\vec{P_h} + \uvec{h} \vec{d}_0^\intercal \uvec{h})$. We use a PID controller to displace the beam by $\vec{Delta}_0$ to within a tenth of the beam diameter. We repeat this for the second beam so both beam spots are located on the azimuthal axis. With beam spots a and b now located at $\vec{Q}_{a_1}, \vec{Q}_{b_1}$, we steer both beams to their mean position $\vecol{Q}$ so their intersection is located on the azimuthal axis.
+Alignment proceeds as following. Given collinear azimuthal and RT-3 rotation axes, we can treat them as one axes with direction $\uvec{h}$ and location $\vec{P_h}$. This axis is located in the plane of a calibration target from previous alignment steps. For a beam spot a $\vec{Q}_{a_0} \in \mathbb{R}^3$ located on the plane, the displacement vector from the beam spot to the axis is $\vec{\Delta}_0 = \vec{P_h} + \vec{d}_0 - (\vec{P_h} + \uvec{h} \vec{d}_0^\intercal \uvec{h})$. We use a PID controller to displace the beam by $\vec{\Delta}_0$ to within a tenth of the beam diameter. We repeat this for the second beam so both beam spots are located on the azimuthal axis. With beam spots a and b now located at $\vec{Q}_{a_1}, \vec{Q}_{b_1}$, we steer both beams to their mean position $\vecol{Q}$ so their intersection is located on the azimuthal axis.
 
 \begin{figure}
     \centering
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width = \textwidth]{figures/beam_intersection_nooutline.png}
+        \includegraphics[width = \textwidth]{../figures/beam_intersection_nooutline.png}
         \caption{Left figure}
         \label{fig:left}
     \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.53\textwidth}
         \centering
-        \includegraphics[width = \textwidth]{figures/BeamAlignmentMargin.png}
+        \includegraphics[width = \textwidth]{../figures/BeamAlignmentMargin.png}
         \caption{Right figure}
         \label{fig:right}
     \end{subfigure}
     \caption{Combined figure}
     \label{fig:beam_intersection_margin}
 \end{figure}
-
 %
 \begin{equation}
     \ell = 2 \frac{d_0}{\sin{\theta}} \cos{\theta/2}
@@ -241,7 +240,7 @@ Both beams are equiangular with respect to the azimuthal axis when their project
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/beam_alignment_geometry.png}
+    \includegraphics[width=\linewidth]{../figures/beam_alignment_geometry.png}
     \caption{}
     \label{fig:beam_alignment_geometry}
 \end{figure}
@@ -270,7 +269,7 @@ The alignment procedure is as follows. Since the beams' orientations have been a
 This alignment step determines the "home" position of the sample assembly's rotation stage which corresponds to sample illumination along its normal vector. The home position maximizes the inner product of the target's normal vector and the mean illumination beam vector $\overline{\vec{k}} = (\uvec{k}_a + \uvec{k}_b)/2$.
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/target_alignment.png}
+    \includegraphics[width=0.5\linewidth]{../figures/target_alignment.png}
     \caption{Top: Target and beam misaligned due to non-zero angle between the beam and the target normal; Bottom: $\vec{d}$ aligned with normal vector $\vec{n}$. \note{Update by replacing d with kbar.}}
     \label{fig:sample_beam_alignment}
 \end{figure}
@@ -284,7 +283,7 @@ A camera focused at infinity maps rays along its optical axis to its principal p
 Rays entering the camera at an angle $\phi$ with respect to the optical axis are mapped to a point $f_{px} \tan(\phi)$ pixels from the principal point. This relation can be used to estimate the focal length given a set of rays with known directions and their corresponding image pixel coordinates. Since beam directions are known for all azimuth angles from lower stage calibration \note{Insert reference}, we acquire images of beams rotated azimuthally, we compute the ray angle with respect to the optical axis and the pixel spacing. If we plot the pixel spacing vs. the tangent of the local ray angle, the line of best fit has a slope equal to the equivalent pinhole's focal length. We estimate the principal point by shining a collimated source into the lens oriented so it is approximately parallel to the lens' optical axis. The location of its image is assumed to be the principal point.
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{figures/focal_length_estimate.png}
+    \includegraphics[width=0.75\linewidth]{../figures/focal_length_estimate.png}
     \caption{Left: Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ$. Right: The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis.}
     \label{fig:focal_length_estimate}
 \end{figure}
@@ -314,7 +313,7 @@ Assume a collimated beam fixed to a rotation stage with location $\vec{r}$ and r
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/ray_envelope.png}
+    \includegraphics[width=0.5\linewidth]{../figures/ray_envelope.png}
     \caption{Ray envelope defined as the locus of points of closest encounter between the illumination beam and its rotation axis}
     \label{fig:ray_envelope_geometry}
 \end{figure}
@@ -347,7 +346,7 @@ A camera focused at infinity maps rays parallel to its optical axis to its princ
 Since the focal length is the constant of proportionality for beam angle and image pixel displacement and the beam directions are known for all azimuth angles from illuminator assembly calibration, we can compute the focal length. We acquire images of the two illumination beams rotated azimuthally and compute ray angles with respect to the optical axis. If we plot the pixel spacing vs. the tangent of the local ray angle, the line of best fit has a slope equal to the equivalent pinhole camera's focal length (Figure \ref{fig:acquisition_camera_calibration}(a,b). We separately estimate the principal point by shining a collimated source into the lens oriented so it is approximately parallel to the lens' optical axis. The location of its image is assumed to be the principal point. Finally, we estimate the camera's rotation matrix and lens distortion coefficients numerically as the parameters that minimize the reprojection error given the previously determined focal length and principal point.
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/acqusition_camera_calibration.png}
+    \includegraphics[width=\linewidth]{../figures/acqusition_camera_calibration.png}
     \caption{(a) The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis; (b) Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ$; (c) Reprojection error as a function of principal point shifts along the y-axis and external pitch rotation is not strictly convex, showing the numerical ambiguity of principal point shifting and camera rotation. This ambiguity holds for the x-axis and panning as well.}
     \label{fig:acquisition_camera_calibration}
 \end{figure}
@@ -537,8 +536,8 @@ These relations were used to find the optimal sample assembly rotation angle and
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.49\linewidth]{figures/polctrl1_traj.png}
-    \includegraphics[width=0.49\linewidth]{figures/polctrl1_trans.png}
+    \includegraphics[width=0.49\linewidth]{../figures/polctrl1_traj.png}
+    \includegraphics[width=0.49\linewidth]{../figures/polctrl1_trans.png}
     \caption{Left: Optimal sample rotation stage position and linear polarization angle as a function of azimuthal illumination angle. The linear polarization angle schedule contains discontinuities in the range $(-50^\circ, 50^\circ)$ due to rounding errors; Right: Comparison of light transmitted towards camera when choosing the optimal sample orientation versus a static sample shows an approximate 15\% increase on average.}
     \label{fig:polctrl}
 \end{figure}
@@ -548,7 +547,7 @@ We have identified imaging configurations that produce high-contrast speckle ima
 %
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{figures/speckle_collage.png}
+    \includegraphics[width=\textwidth]{../figures/speckle_collage.png}
     \caption{Speckle images of 10$\mu$m monodisperse SiO$_2$ beads acquired using scatterometer setup. Left: Top illuminator activated; Center: Both illuminators activated; Right: Bottom illuminator activated}
     \label{fig:speckle_collage}
 \end{figure}
@@ -557,7 +556,7 @@ A preliminary result that indicates we are on the right track is computing and p
 %
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{figures/extended_phase_function.png}
+    \includegraphics[width=\textwidth]{../figures/extended_phase_function.png}
     \caption{An expected result is acquiring the scattering phase function for a larger range of scattering angles than the literature.}
     \label{fig:extended_phase_function}
 \end{figure}
