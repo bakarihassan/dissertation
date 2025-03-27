@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.7)  19 MAR 2025 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.7)  27 MAR 2025 09:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -721,9 +721,66 @@ File: pppdftex.def 2025/01/30 v0.6e Pdfpages driver for pdfTeX (AM)
 \AM@lof@heading=\toks42
 \c@AM@survey=\count353
 \AM@templatesizebox=\box64
-)) (mathdef.sty) (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
+) (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+) (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip199
+\multirow@cntb=\count354
+\multirow@dima=\skip256
+\bigstrutjot=\dimen279
+) (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2024-11-19 v3.3.24 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count355
+\l__siunitx_number_exponent_fixed_int=\count356
+\l__siunitx_number_min_decimal_int=\count357
+\l__siunitx_number_min_integer_int=\count358
+\l__siunitx_number_round_precision_int=\count359
+\l__siunitx_number_lower_threshold_int=\count360
+\l__siunitx_number_upper_threshold_int=\count361
+\l__siunitx_number_group_first_int=\count362
+\l__siunitx_number_group_size_int=\count363
+\l__siunitx_number_group_minimum_int=\count364
+\l__siunitx_angle_tmp_dim=\dimen280
+\l__siunitx_angle_marker_box=\box65
+\l__siunitx_angle_unit_box=\box66
+\l__siunitx_compound_count_int=\count365
+ (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+\l__siunitx_table_tmp_box=\box67
+\l__siunitx_table_tmp_dim=\dimen281
+\l__siunitx_table_column_width_dim=\dimen282
+\l__siunitx_table_integer_box=\box68
+\l__siunitx_table_decimal_box=\box69
+\l__siunitx_table_uncert_box=\box70
+\l__siunitx_table_before_box=\box71
+\l__siunitx_table_after_box=\box72
+\l__siunitx_table_before_dim=\dimen283
+\l__siunitx_table_carry_dim=\dimen284
+\l__siunitx_unit_tmp_int=\count366
+\l__siunitx_unit_position_int=\count367
+\l__siunitx_unit_total_int=\count368
+)
+
+Package siunitx Warning: Option "math-micro" has been removed in this release.
+
+
+Package siunitx Warning: Option "text-micro" has been removed in this release.
+
+) (mathdef.sty) (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
 Package: import 2020/04/01  v 6.2
-) (main.aux)
+)
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 6.
+ (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 6.
@@ -760,22 +817,22 @@ LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
 LaTeX Font Info:    ... okay on input line 6.
-\c@mv@tabular=\count354
-\c@mv@boldtabular=\count355
+\c@mv@tabular=\count369
+\c@mv@boldtabular=\count370
 LaTeX Info: Command `\dddot' is already robust on input line 6.
 LaTeX Info: Command `\ddddot' is already robust on input line 6.
  (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count356
-\scratchdimen=\dimen279
-\scratchbox=\box65
-\nofMPsegments=\count357
-\nofMParguments=\count358
+\scratchcounter=\count371
+\scratchdimen=\dimen285
+\scratchbox=\box73
+\nofMPsegments=\count372
+\nofMParguments=\count373
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count359
-\MPscratchDim=\dimen280
-\MPnumerator=\count360
-\makeMPintoPDFobject=\count361
+\MPscratchCnt=\count374
+\MPscratchDim=\dimen286
+\MPnumerator=\count375
+\makeMPintoPDFobject=\count376
 \everyMPtoPDFconversion=\toks44
 ) (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -848,7 +905,11 @@ Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)) (misc/front_page.tex
+)) (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 6.
+ (misc/front_page.tex
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: <default>
@@ -970,8 +1031,16 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 7.3pt on input line 69.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 5.5pt on input line 69.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 69.
+ (C:\Users\d00b\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 69.
+
 LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 69.
- (ts1linuxlibertinet-tlf.fd
+(ts1linuxlibertinet-tlf.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
@@ -1012,6 +1081,9 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
  (main.toc
 
 [5]
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sl' in size <10> not available
 (Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on input line 77.
@@ -1020,7 +1092,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 [6])
 
 [7] (main.lof
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4899) has occurred while \output is active []
 
 
 
@@ -1028,53 +1100,66 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 10.0pt on input line 19.
+(Font)              scaled to size 10.0pt on input line 22.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 7.3pt on input line 19.
+(Font)              scaled to size 7.3pt on input line 22.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 5.5pt on input line 19.
+(Font)              scaled to size 5.5pt on input line 22.
 LaTeX Font Info:    Font shape `OML/nxlmi/b/it' will be
-(Font)              scaled to size 10.0pt on input line 19.
+(Font)              scaled to size 10.0pt on input line 22.
 LaTeX Font Info:    Font shape `OML/nxlmi/b/it' will be
-(Font)              scaled to size 7.3pt on input line 19.
+(Font)              scaled to size 7.3pt on input line 22.
 LaTeX Font Info:    Font shape `OML/nxlmi/b/it' will be
-(Font)              scaled to size 5.5pt on input line 19.
+(Font)              scaled to size 5.5pt on input line 22.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 10.0pt on input line 19.
+(Font)              scaled to size 10.0pt on input line 22.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 7.3pt on input line 19.
+(Font)              scaled to size 7.3pt on input line 22.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 5.5pt on input line 19.
+(Font)              scaled to size 5.5pt on input line 22.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 10.0pt on input line 19.
+(Font)              scaled to size 10.0pt on input line 22.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 7.3pt on input line 19.
+(Font)              scaled to size 7.3pt on input line 22.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 5.5pt on input line 19.
+(Font)              scaled to size 5.5pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 10.0pt on input line 19.
+(Font)              scaled to size 10.0pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 7.3pt on input line 19.
+(Font)              scaled to size 7.3pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 5.5pt on input line 19.
+(Font)              scaled to size 5.5pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 10.0pt on input line 19.
+(Font)              scaled to size 10.0pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 7.3pt on input line 19.
+(Font)              scaled to size 7.3pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 5.5pt on input line 19.
+(Font)              scaled to size 5.5pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 10.0pt on input line 19.
+(Font)              scaled to size 10.0pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 7.3pt on input line 19.
+(Font)              scaled to size 7.3pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 5.5pt on input line 19.
+(Font)              scaled to size 5.5pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 10.0pt on input line 19.
+(Font)              scaled to size 10.0pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 7.3pt on input line 19.
+(Font)              scaled to size 7.3pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 5.5pt on input line 19.
+(Font)              scaled to size 5.5pt on input line 22.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7.3> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 22.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5.5> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 22.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 22.
+
 
 
 [9])
@@ -1125,61 +1210,92 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [8
 
 ] (design/scatterometer_design.tex
-<figures/setup.png, id=83, 2232.34pt x 1256.695pt>
-File: figures/setup.png Graphic file (type png)
-<use figures/setup.png>
-Package pdftex.def Info: figures/setup.png  used on input line 7.
+<design/../figures/setup.png, id=83, 2232.34pt x 1256.695pt>
+File: design/../figures/setup.png Graphic file (type png)
+<use design/../figures/setup.png>
+Package pdftex.def Info: design/../figures/setup.png  used on input line 7.
 (pdftex.def)             Requested size: 314.54523pt x 177.06746pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 8.
-<design/figures/laser_path.png, id=85, 1631.09375pt x 739.76375pt>
-File: design/figures/laser_path.png Graphic file (type png)
-<use design/figures/laser_path.png>
-Package pdftex.def Info: design/figures/laser_path.png  used on input line 14.
+<design/../figures/laser_path.png, id=85, 1631.09375pt x 739.76375pt>
+File: design/../figures/laser_path.png Graphic file (type png)
+<use design/../figures/laser_path.png>
+Package pdftex.def Info: design/../figures/laser_path.png  used on input line 14.
 (pdftex.def)             Requested size: 314.54523pt x 142.65611pt.
 
 
 [9]
 
-[10 <./figures/setup.png> <./design/figures/laser_path.png>]
-<figures/collimator_assembly_summary.png, id=94, 1590.94376pt x 575.14874pt>
-File: figures/collimator_assembly_summary.png Graphic file (type png)
-<use figures/collimator_assembly_summary.png>
-Package pdftex.def Info: figures/collimator_assembly_summary.png  used on input line 57.
-(pdftex.def)             Requested size: 419.39365pt x 151.61507pt.
-<figures/sample_assembly_summary.png, id=95, 1563.8425pt x 554.07pt>
-File: figures/sample_assembly_summary.png Graphic file (type png)
-<use figures/sample_assembly_summary.png>
-Package pdftex.def Info: figures/sample_assembly_summary.png  used on input line 66.
-(pdftex.def)             Requested size: 419.39365pt x 148.58636pt.
-
-
-[11])) (calibration_alignment/chapter.tex
-Underfull \vbox (badness 2990) has occurred while \output is active []
+[10 <./design/../figures/setup.png> <./design/../figures/laser_path.png>]
+Underfull \vbox (badness 3128) has occurred while \output is active []
 
 
 
-[12 <./figures/collimator_assembly_summary.png> <./figures/sample_assembly_summary.png>]
+[11]
+<design/../figures/F-to-C_mount2.png, id=98, 1028.84375pt x 648.92438pt>
+File: design/../figures/F-to-C_mount2.png Graphic file (type png)
+<use design/../figures/F-to-C_mount2.png>
+Package pdftex.def Info: design/../figures/F-to-C_mount2.png  used on input line 59.
+(pdftex.def)             Requested size: 419.39365pt x 264.52594pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[12 <./design/../figures/F-to-C_mount2.png>]
+<design/../figures/beam_torsion.png, id=103, 1025.8325pt x 657.45625pt>
+File: design/../figures/beam_torsion.png Graphic file (type png)
+<use design/../figures/beam_torsion.png>
+Package pdftex.def Info: design/../figures/beam_torsion.png  used on input line 78.
+(pdftex.def)             Requested size: 314.54523pt x 201.59227pt.
+
+Underfull \vbox (badness 1024) has occurred while \output is active []
+
+
 
 [13]
+<design/../figures/collimator_assembly_summary.png, id=107, 1590.94376pt x 575.14874pt>
+File: design/../figures/collimator_assembly_summary.png Graphic file (type png)
+<use design/../figures/collimator_assembly_summary.png>
+Package pdftex.def Info: design/../figures/collimator_assembly_summary.png  used on input line 94.
+(pdftex.def)             Requested size: 419.39365pt x 151.61507pt.
+<design/../figures/sample_assembly_summary.png, id=108, 1563.8425pt x 554.07pt>
+File: design/../figures/sample_assembly_summary.png Graphic file (type png)
+<use design/../figures/sample_assembly_summary.png>
+Package pdftex.def Info: design/../figures/sample_assembly_summary.png  used on input line 103.
+(pdftex.def)             Requested size: 419.39365pt x 148.58636pt.
 
-[14
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] (calibration_alignment/calibration_alignment.tex
-<calibration_alignment/figures/experiment.png, id=111, 1451.4225pt x 503.8825pt>
-File: calibration_alignment/figures/experiment.png Graphic file (type png)
-<use calibration_alignment/figures/experiment.png>
-Package pdftex.def Info: calibration_alignment/figures/experiment.png  used on input line 5.
+
+
+[14 <./design/../figures/beam_torsion.png> <./design/../figures/collimator_assembly_summary.png>]
+<design/../figures/SampleAnalysisStation.png, id=114, 3252.15pt x 1470.49374pt>
+File: design/../figures/SampleAnalysisStation.png Graphic file (type png)
+<use design/../figures/SampleAnalysisStation.png>
+Package pdftex.def Info: design/../figures/SampleAnalysisStation.png  used on input line 114.
+(pdftex.def)             Requested size: 419.39365pt x 189.62268pt.
+)) (calibration_alignment/chapter.tex
+
+[15 <./design/../figures/sample_assembly_summary.png>]
+
+[16 <./design/../figures/SampleAnalysisStation.png>] (calibration_alignment/calibration_alignment.tex
+<calibration_alignment/../figures/experiment.png, id=123, 1451.4225pt x 503.8825pt>
+File: calibration_alignment/../figures/experiment.png Graphic file (type png)
+<use calibration_alignment/../figures/experiment.png>
+Package pdftex.def Info: calibration_alignment/../figures/experiment.png  used on input line 5.
 (pdftex.def)             Requested size: 419.39365pt x 145.59935pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 6.
 
 
-[15 <./calibration_alignment/figures/experiment.png>]
-<calibration_alignment/figures/beam_direction_fits.png, id=116, 1429.5006pt x 369.2997pt>
-File: calibration_alignment/figures/beam_direction_fits.png Graphic file (type png)
-<use calibration_alignment/figures/beam_direction_fits.png>
-Package pdftex.def Info: calibration_alignment/figures/beam_direction_fits.png  used on input line 24.
+[17
+
+ <./calibration_alignment/../figures/experiment.png>]
+<calibration_alignment/../figures/beam_direction_fits.png, id=129, 1429.5006pt x 369.2997pt>
+File: calibration_alignment/../figures/beam_direction_fits.png Graphic file (type png)
+<use calibration_alignment/../figures/beam_direction_fits.png>
+Package pdftex.def Info: calibration_alignment/../figures/beam_direction_fits.png  used on input line 24.
 (pdftex.def)             Requested size: 419.39365pt x 108.34514pt.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 25.
@@ -1218,7 +1334,7 @@ Underfull \vbox (badness 1881) has occurred while \output is active []
 
 
 
-[16]
+[18]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.95pt on input line 29.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
@@ -1251,14 +1367,14 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 10.95pt on input line 29.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.1pt on input line 29.
-<calibration_alignment/figures/envelope_geometry.png, id=120, 610.28pt x 563.10374pt>
-File: calibration_alignment/figures/envelope_geometry.png Graphic file (type png)
-<use calibration_alignment/figures/envelope_geometry.png>
-Package pdftex.def Info: calibration_alignment/figures/envelope_geometry.png  used on input line 34.
+<calibration_alignment/../figures/envelope_geometry.png, id=133, 610.28pt x 563.10374pt>
+File: calibration_alignment/../figures/envelope_geometry.png Graphic file (type png)
+<use calibration_alignment/../figures/envelope_geometry.png>
+Package pdftex.def Info: calibration_alignment/../figures/envelope_geometry.png  used on input line 34.
 (pdftex.def)             Requested size: 209.69682pt x 193.4891pt.
 
 
-[17 <./calibration_alignment/figures/beam_direction_fits.png>]
+[19 <./calibration_alignment/../figures/beam_direction_fits.png>]
 Overfull \hbox (1.29309pt too wide) detected at line 85
 []
  []
@@ -1268,160 +1384,169 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[18 <./calibration_alignment/figures/envelope_geometry.png>]
-
-[19]
-
-[20]
+[20 <./calibration_alignment/../figures/envelope_geometry.png>]
 
 [21]
 
 [22]
-<calibration_alignment/figures/compact_alignment.png, id=147, 699.61375pt x 524.96124pt>
-File: calibration_alignment/figures/compact_alignment.png Graphic file (type png)
-<use calibration_alignment/figures/compact_alignment.png>
-Package pdftex.def Info: calibration_alignment/figures/compact_alignment.png  used on input line 199.
+
+[23]
+
+[24]
+<calibration_alignment/../figures/compact_alignment.png, id=160, 699.61375pt x 524.96124pt>
+File: calibration_alignment/../figures/compact_alignment.png Graphic file (type png)
+<use calibration_alignment/../figures/compact_alignment.png>
+Package pdftex.def Info: calibration_alignment/../figures/compact_alignment.png  used on input line 199.
 (pdftex.def)             Requested size: 209.69682pt x 157.3454pt.
-<figures/beam_intersection_nooutline.png, id=148, 1603.79175pt x 1075.6185pt>
-File: figures/beam_intersection_nooutline.png Graphic file (type png)
-<use figures/beam_intersection_nooutline.png>
-Package pdftex.def Info: figures/beam_intersection_nooutline.png  used on input line 213.
-(pdftex.def)             Requested size: 205.50519pt x 137.81656pt.
+<calibration_alignment/../figures/beam_intersection_nooutline.png, id=161, 1603.79175pt x 1075.6185pt>
+File: calibration_alignment/../figures/beam_intersection_nooutline.png Graphic file (type png)
+<use calibration_alignment/../figures/beam_intersection_nooutline.png>
+Package pdftex.def Info: calibration_alignment/../figures/beam_intersection_nooutline.png  used on input line 213.
+(pdftex.def)             Requested size: 188.72586pt x 126.55753pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 214.
-<calibration_alignment/figures/BeamAlignmentMargin.png, id=149, 774.7344pt x 442.2924pt>
-File: calibration_alignment/figures/BeamAlignmentMargin.png Graphic file (type png)
-<use calibration_alignment/figures/BeamAlignmentMargin.png>
-Package pdftex.def Info: calibration_alignment/figures/BeamAlignmentMargin.png  used on input line 219.
-(pdftex.def)             Requested size: 205.50519pt x 117.32166pt.
+<calibration_alignment/../figures/BeamAlignmentMargin.png, id=162, 690.1785pt x 393.8715pt>
+File: calibration_alignment/../figures/BeamAlignmentMargin.png Graphic file (type png)
+<use calibration_alignment/../figures/BeamAlignmentMargin.png>
+Package pdftex.def Info: calibration_alignment/../figures/BeamAlignmentMargin.png  used on input line 219.
+(pdftex.def)             Requested size: 222.2781pt x 126.84679pt.
 
 
-[23 <./calibration_alignment/figures/compact_alignment.png>]
-<figures/beam_alignment_geometry.png, id=155, 1129.21875pt x 359.3425pt>
-File: figures/beam_alignment_geometry.png Graphic file (type png)
-<use figures/beam_alignment_geometry.png>
-Package pdftex.def Info: figures/beam_alignment_geometry.png  used on input line 244.
+[25 <./calibration_alignment/../figures/compact_alignment.png>]
+<calibration_alignment/../figures/beam_alignment_geometry.png, id=167, 1129.21875pt x 359.3425pt>
+File: calibration_alignment/../figures/beam_alignment_geometry.png Graphic file (type png)
+<use calibration_alignment/../figures/beam_alignment_geometry.png>
+Package pdftex.def Info: calibration_alignment/../figures/beam_alignment_geometry.png  used on input line 243.
 (pdftex.def)             Requested size: 419.39365pt x 133.45908pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[24 <./figures/beam_intersection_nooutline.png> <./calibration_alignment/figures/BeamAlignmentMargin.png> <./figures/beam_alignment_geometry.png>]
-<calibration_alignment/figures/target_alignment.png, id=162, 925.4575pt x 505.89pt>
-File: calibration_alignment/figures/target_alignment.png Graphic file (type png)
-<use calibration_alignment/figures/target_alignment.png>
-Package pdftex.def Info: calibration_alignment/figures/target_alignment.png  used on input line 273.
+[26 <./calibration_alignment/../figures/beam_intersection_nooutline.png> <./calibration_alignment/../figures/BeamAlignmentMargin.png> <./calibration_alignment/../figures/beam_alignment_geometry.png>]
+<calibration_alignment/../figures/target_alignment.png, id=174, 925.4575pt x 505.89pt>
+File: calibration_alignment/../figures/target_alignment.png Graphic file (type png)
+<use calibration_alignment/../figures/target_alignment.png>
+Package pdftex.def Info: calibration_alignment/../figures/target_alignment.png  used on input line 272.
 (pdftex.def)             Requested size: 209.69682pt x 114.62314pt.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 8.0pt on input line 274.
+(Font)              scaled to size 8.0pt on input line 273.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 6.0pt on input line 274.
+(Font)              scaled to size 6.0pt on input line 273.
 LaTeX Font Info:    Font shape `OML/nxlmi/b/it' will be
-(Font)              scaled to size 8.0pt on input line 274.
+(Font)              scaled to size 8.0pt on input line 273.
 LaTeX Font Info:    Font shape `OML/nxlmi/b/it' will be
-(Font)              scaled to size 6.0pt on input line 274.
+(Font)              scaled to size 6.0pt on input line 273.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 8.0pt on input line 274.
+(Font)              scaled to size 8.0pt on input line 273.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 6.0pt on input line 274.
+(Font)              scaled to size 6.0pt on input line 273.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 8.0pt on input line 274.
+(Font)              scaled to size 8.0pt on input line 273.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 6.0pt on input line 274.
+(Font)              scaled to size 6.0pt on input line 273.
 LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 8.0pt on input line 274.
+(Font)              scaled to size 8.0pt on input line 273.
 LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 6.0pt on input line 274.
+(Font)              scaled to size 6.0pt on input line 273.
 LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 8.0pt on input line 274.
+(Font)              scaled to size 8.0pt on input line 273.
 LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 6.0pt on input line 274.
+(Font)              scaled to size 6.0pt on input line 273.
 LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 8.0pt on input line 274.
+(Font)              scaled to size 8.0pt on input line 273.
 LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 6.0pt on input line 274.
+(Font)              scaled to size 6.0pt on input line 273.
 LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 8.0pt on input line 274.
+(Font)              scaled to size 8.0pt on input line 273.
 LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 6.0pt on input line 274.
+(Font)              scaled to size 6.0pt on input line 273.
 
 
-[25]
-<calibration_alignment/figures/focal_length_estimate.png, id=166, 925.056pt x 346.896pt>
-File: calibration_alignment/figures/focal_length_estimate.png Graphic file (type png)
-<use calibration_alignment/figures/focal_length_estimate.png>
-Package pdftex.def Info: calibration_alignment/figures/focal_length_estimate.png  used on input line 287.
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 273.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 273.
+
+
+
+[27]
+<calibration_alignment/../figures/focal_length_estimate.png, id=178, 925.056pt x 346.896pt>
+File: calibration_alignment/../figures/focal_length_estimate.png Graphic file (type png)
+<use calibration_alignment/../figures/focal_length_estimate.png>
+Package pdftex.def Info: calibration_alignment/../figures/focal_length_estimate.png  used on input line 286.
 (pdftex.def)             Requested size: 314.54523pt x 117.95366pt.
 
 Underfull \vbox (badness 2096) has occurred while \output is active []
 
 
 
-[26 <./calibration_alignment/figures/target_alignment.png>]
+[28 <./calibration_alignment/../figures/target_alignment.png>]
 
-[27 <./calibration_alignment/figures/focal_length_estimate.png>]
+[29 <./calibration_alignment/../figures/focal_length_estimate.png>]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 10.95pt on input line 312.
+(Font)              scaled to size 10.95pt on input line 311.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 6.1pt on input line 312.
-<figures/ray_envelope.png, id=175, 610.28pt x 563.10374pt>
-File: figures/ray_envelope.png Graphic file (type png)
-<use figures/ray_envelope.png>
-Package pdftex.def Info: figures/ray_envelope.png  used on input line 317.
+(Font)              scaled to size 6.1pt on input line 311.
+<calibration_alignment/../figures/ray_envelope.png, id=188, 610.28pt x 563.10374pt>
+File: calibration_alignment/../figures/ray_envelope.png Graphic file (type png)
+<use calibration_alignment/../figures/ray_envelope.png>
+Package pdftex.def Info: calibration_alignment/../figures/ray_envelope.png  used on input line 316.
 (pdftex.def)             Requested size: 209.69682pt x 193.4891pt.
 
 
-[28]
+[30]
 
-[29 <./figures/ray_envelope.png>]
-<figures/acqusition_camera_calibration.png, id=184, 1195.46625pt x 351.3125pt>
-File: figures/acqusition_camera_calibration.png Graphic file (type png)
-<use figures/acqusition_camera_calibration.png>
-Package pdftex.def Info: figures/acqusition_camera_calibration.png  used on input line 350.
+[31 <./calibration_alignment/../figures/ray_envelope.png>]
+<calibration_alignment/../figures/acqusition_camera_calibration.png, id=196, 1195.46625pt x 351.3125pt>
+File: calibration_alignment/../figures/acqusition_camera_calibration.png Graphic file (type png)
+<use calibration_alignment/../figures/acqusition_camera_calibration.png>
+Package pdftex.def Info: calibration_alignment/../figures/acqusition_camera_calibration.png  used on input line 349.
 (pdftex.def)             Requested size: 419.39365pt x 123.24532pt.
 
 
-[30 <./figures/acqusition_camera_calibration.png>]
+[32 <./calibration_alignment/../figures/acqusition_camera_calibration.png>]
 
-[31]
+[33]
 
-[32]
-<figures/polctrl1_traj.png, id=195, 693.792pt x 346.896pt>
-File: figures/polctrl1_traj.png Graphic file (type png)
-<use figures/polctrl1_traj.png>
-Package pdftex.def Info: figures/polctrl1_traj.png  used on input line 540.
+[34]
+<calibration_alignment/../figures/polctrl1_traj.png, id=207, 693.792pt x 346.896pt>
+File: calibration_alignment/../figures/polctrl1_traj.png Graphic file (type png)
+<use calibration_alignment/../figures/polctrl1_traj.png>
+Package pdftex.def Info: calibration_alignment/../figures/polctrl1_traj.png  used on input line 539.
 (pdftex.def)             Requested size: 205.50519pt x 102.75159pt.
-<figures/polctrl1_trans.png, id=196, 693.0693pt x 346.896pt>
-File: figures/polctrl1_trans.png Graphic file (type png)
-<use figures/polctrl1_trans.png>
-Package pdftex.def Info: figures/polctrl1_trans.png  used on input line 541.
+<calibration_alignment/../figures/polctrl1_trans.png, id=208, 693.0693pt x 346.896pt>
+File: calibration_alignment/../figures/polctrl1_trans.png Graphic file (type png)
+<use calibration_alignment/../figures/polctrl1_trans.png>
+Package pdftex.def Info: calibration_alignment/../figures/polctrl1_trans.png  used on input line 540.
 (pdftex.def)             Requested size: 205.50519pt x 102.85745pt.
-<figures/speckle_collage.png, id=197, 3388.66pt x 904.37875pt>
-File: figures/speckle_collage.png Graphic file (type png)
-<use figures/speckle_collage.png>
-Package pdftex.def Info: figures/speckle_collage.png  used on input line 551.
+<calibration_alignment/../figures/speckle_collage.png, id=209, 3388.66pt x 904.37875pt>
+File: calibration_alignment/../figures/speckle_collage.png Graphic file (type png)
+<use calibration_alignment/../figures/speckle_collage.png>
+Package pdftex.def Info: calibration_alignment/../figures/speckle_collage.png  used on input line 550.
 (pdftex.def)             Requested size: 419.39365pt x 111.92929pt.
-<figures/extended_phase_function.png, id=198, 1104.125pt x 339.2675pt>
-File: figures/extended_phase_function.png Graphic file (type png)
-<use figures/extended_phase_function.png>
-Package pdftex.def Info: figures/extended_phase_function.png  used on input line 560.
+<calibration_alignment/../figures/extended_phase_function.png, id=210, 1104.125pt x 339.2675pt>
+File: calibration_alignment/../figures/extended_phase_function.png Graphic file (type png)
+<use calibration_alignment/../figures/extended_phase_function.png>
+Package pdftex.def Info: calibration_alignment/../figures/extended_phase_function.png  used on input line 559.
 (pdftex.def)             Requested size: 419.39365pt x 128.87122pt.
 )) (sample_preparation/chapter.tex
 
-[33 <./figures/polctrl1_traj.png> <./figures/polctrl1_trans.png>]
+[35 <./calibration_alignment/../figures/polctrl1_traj.png> <./calibration_alignment/../figures/polctrl1_trans.png>]
 
-[34 <./figures/speckle_collage.png> <./figures/extended_phase_function.png>] (sample_preparation/preparation.tex
+[36 <./calibration_alignment/../figures/speckle_collage.png> <./calibration_alignment/../figures/extended_phase_function.png>] (sample_preparation/preparation.tex
 
-[35
+[37
 
 ]
 
-[36])) (acquisition/chapter.tex
+[38])) (acquisition/chapter.tex
 
-[37]
+[39]
 
-[38
+[40
 
 ] (acquisition/sample_prep.tex) (acquisition/acquisition.tex
 Overfull \hbox (0.25197pt too wide) in paragraph at lines 8--9
@@ -1430,82 +1555,145 @@ Overfull \hbox (0.25197pt too wide) in paragraph at lines 8--9
 
 
 
-[39]
-<acquisition/figures/LPFpwr_vs_RT5.png, id=225, 917.829pt x 468.3096pt>
-File: acquisition/figures/LPFpwr_vs_RT5.png Graphic file (type png)
-<use acquisition/figures/LPFpwr_vs_RT5.png>
-Package pdftex.def Info: acquisition/figures/LPFpwr_vs_RT5.png  used on input line 14.
+[41]
+<figures/LPFpwr_vs_RT5.png, id=238, 917.829pt x 468.3096pt>
+File: figures/LPFpwr_vs_RT5.png Graphic file (type png)
+<use figures/LPFpwr_vs_RT5.png>
+Package pdftex.def Info: figures/LPFpwr_vs_RT5.png  used on input line 14.
 (pdftex.def)             Requested size: 419.39365pt x 213.98872pt.
 
 
-[40 <./acquisition/figures/LPFpwr_vs_RT5.png>]
-
-[41]
-
-[42]
+[42 <./figures/LPFpwr_vs_RT5.png>]
 
 [43]
-<acquisition/figures/polctrl1_traj.png, id=240, 693.792pt x 346.896pt>
-File: acquisition/figures/polctrl1_traj.png Graphic file (type png)
-<use acquisition/figures/polctrl1_traj.png>
-Package pdftex.def Info: acquisition/figures/polctrl1_traj.png  used on input line 207.
+
+[44]
+
+[45]
+<figures/polctrl1_traj.png, id=252, 693.792pt x 346.896pt>
+File: figures/polctrl1_traj.png Graphic file (type png)
+<use figures/polctrl1_traj.png>
+Package pdftex.def Info: figures/polctrl1_traj.png  used on input line 207.
 (pdftex.def)             Requested size: 205.50519pt x 102.75159pt.
-<acquisition/figures/polctrl1_trans.png, id=241, 693.0693pt x 346.896pt>
-File: acquisition/figures/polctrl1_trans.png Graphic file (type png)
-<use acquisition/figures/polctrl1_trans.png>
-Package pdftex.def Info: acquisition/figures/polctrl1_trans.png  used on input line 208.
+<figures/polctrl1_trans.png, id=253, 693.0693pt x 346.896pt>
+File: figures/polctrl1_trans.png Graphic file (type png)
+<use figures/polctrl1_trans.png>
+Package pdftex.def Info: figures/polctrl1_trans.png  used on input line 208.
 (pdftex.def)             Requested size: 205.50519pt x 102.85745pt.
 
 
-[44 <./acquisition/figures/polctrl1_traj.png> <./acquisition/figures/polctrl1_trans.png>]
-<acquisition/figures/depol_spatial.png, id=247, 536.2434pt x 534.0753pt>
-File: acquisition/figures/depol_spatial.png Graphic file (type png)
-<use acquisition/figures/depol_spatial.png>
-Package pdftex.def Info: acquisition/figures/depol_spatial.png  used on input line 220.
+[46 <./figures/polctrl1_traj.png> <./figures/polctrl1_trans.png>]
+<acquisition/../figures/depol_spatial.png, id=259, 536.2434pt x 534.0753pt>
+File: acquisition/../figures/depol_spatial.png Graphic file (type png)
+<use acquisition/../figures/depol_spatial.png>
+Package pdftex.def Info: acquisition/../figures/depol_spatial.png  used on input line 220.
 (pdftex.def)             Requested size: 209.69682pt x 208.85083pt.
 )) (appendices/chapter.tex
 
-[45 <./acquisition/figures/depol_spatial.png>]
+[47 <./acquisition/../figures/depol_spatial.png>]
 
-[46] (appendices/calibration_target_design.tex
-<appendices/figures/CalTarget_Std_vs_Windowed.png, id=255, 1251.67625pt x 558.085pt>
-File: appendices/figures/CalTarget_Std_vs_Windowed.png Graphic file (type png)
-<use appendices/figures/CalTarget_Std_vs_Windowed.png>
-Package pdftex.def Info: appendices/figures/CalTarget_Std_vs_Windowed.png  used on input line 6.
+[48] (appendices/calibration_target_design.tex
+<appendices/../figures/CalTarget_Std_vs_Windowed.png, id=268, 1251.67625pt x 558.085pt>
+File: appendices/../figures/CalTarget_Std_vs_Windowed.png Graphic file (type png)
+<use appendices/../figures/CalTarget_Std_vs_Windowed.png>
+Package pdftex.def Info: appendices/../figures/CalTarget_Std_vs_Windowed.png  used on input line 6.
 (pdftex.def)             Requested size: 419.39365pt x 186.99582pt.
 ) (appendices/sample_preparation_procedure.tex
 
-[47
+[49
 
- <./appendices/figures/CalTarget_Std_vs_Windowed.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ <./appendices/../figures/CalTarget_Std_vs_Windowed.png>]
+
+[50]
+
+[51]) (appendices/ziegler-nichols.tex) (appendices/parts_list.tex
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 62.
 
 
+LaTeX Warning: Float too large for page by 34.62701pt on input line 202.
 
-[48]
 
-[49]
+LaTeX Warning: Float too large for page by 11.32704pt on input line 238.
 
-[50]) (appendices/ziegler-nichols.tex
-
-[51]) (appendices/parts_list.tex) (appendices/thin_lens_macro.tex) (appendices/technical_drawings.tex)) (main.bbl
+) (appendices/thin_lens_macro.tex) (appendices/technical_drawings.tex)) (technical_drawings/chapter.tex
 
 [52]
+
+[53]
+
+[54]
+
+[55]
+
+[56]
+
+[57]
+
+[58]
+
+[59]
+
+[60]
+
+pdfTeX warning: pdflatex (file ./drawings/4423_modified.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<drawings/4423_modified.pdf, id=309, 1195.46625pt x 845.1575pt>
+File: drawings/4423_modified.pdf Graphic file (type pdf)
+<use drawings/4423_modified.pdf>
+Package pdftex.def Info: drawings/4423_modified.pdf  used on input line 5.
+(pdftex.def)             Requested size: 406.81235pt x 287.60767pt.
+
+
+pdfTeX warning: pdflatex (file ./drawings/4423_modified.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./drawings/4423_modified.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<drawings/4423_modified.pdf, id=311, page=1, 1195.46625pt x 845.1575pt>
+File: drawings/4423_modified.pdf Graphic file (type pdf)
+<use drawings/4423_modified.pdf, page 1>
+Package pdftex.def Info: drawings/4423_modified.pdf , page1 used on input line 5.
+(pdftex.def)             Requested size: 1195.46333pt x 845.15544pt.
+File: drawings/4423_modified.pdf Graphic file (type pdf)
+<use drawings/4423_modified.pdf, page 1>
+Package pdftex.def Info: drawings/4423_modified.pdf , page1 used on input line 5.
+(pdftex.def)             Requested size: 1195.46333pt x 845.15544pt.
+
+
+[61
+
+]
+File: drawings/4423_modified.pdf Graphic file (type pdf)
+<use drawings/4423_modified.pdf, page 1>
+Package pdftex.def Info: drawings/4423_modified.pdf , page1 used on input line 5.
+(pdftex.def)             Requested size: 1195.46333pt x 845.15544pt.
+File: drawings/4423_modified.pdf Graphic file (type pdf)
+<use drawings/4423_modified.pdf, page 1>
+Package pdftex.def Info: drawings/4423_modified.pdf , page1 used on input line 5.
+(pdftex.def)             Requested size: 1195.46333pt x 845.15544pt.
+
+
+File: drawings/4423_modified.pdf Graphic file (type pdf)
+<use drawings/4423_modified.pdf, page 1>
+Package pdftex.def Info: drawings/4423_modified.pdf , page1 used on input line 5.
+(pdftex.def)             Requested size: 1195.46333pt x 845.15544pt.
+[62
+
+ <./drawings/4423_modified.pdf>]) (main.bbl
 bibitemlist
 
 
-[53
+[63
 
 ]
 
-[54]
+[64]
 Underfull \vbox (badness 1009) has occurred while \output is active []
 
 
 
-[55])
+[65])
 
-[56]
+[66]
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
@@ -1520,19 +1708,24 @@ Underfull \vbox (badness 1009) has occurred while \output is active []
 LaTeX2e <2024-11-01>
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
+
  ) 
 Here is how much of TeX's memory you used:
- 17392 strings out of 473681
- 292537 string characters out of 5719672
- 710021 words of memory out of 5000000
- 39498 multiletter control sequences out of 15000+600000
- 786063 words of font info for 548 fonts, out of 8000000 for 9000
+ 21589 strings out of 473681
+ 421245 string characters out of 5719672
+ 804206 words of memory out of 5000000
+ 43636 multiletter control sequences out of 15000+600000
+ 793680 words of font info for 563 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,23n,131p,2220b,743s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBMI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBMI7.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBRM.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI5.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI7.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathRM.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTZ.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsym.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (70 pages, 14567439 bytes).
+ 86i,23n,131p,2224b,811s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\d00b\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi600\wasy10.pk><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBMI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBMI7.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathBRM.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI5.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI7.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathRM.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTZ.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsym.pfb><C:/Users/d00b/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (80 pages, 18143330 bytes).
 PDF statistics:
- 363 PDF objects out of 1000 (max. 8388607)
+ 425 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 125049 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 129175 words of extra memory for PDF output out of 154059 (max. 10000000)
 

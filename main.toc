@@ -14,69 +14,75 @@
 \contentsline {section}{\numberline {3.1}System design}{9}{}%
 \contentsline {subsection}{\numberline {3.1.1}Acquisition camera}{9}{}%
 \contentsline {paragraph}{Lens Focal Length}{10}{}%
-\contentsline {subsection}{\numberline {3.1.2}Illuminator assembly}{11}{}%
-\contentsline {subsection}{\numberline {3.1.3}Sample assembly}{12}{}%
-\contentsline {subsubsection}{Sample Mount}{13}{}%
-\contentsline {chapter}{\chapternumberline {4}Scatterometer Calibration and Alignment}{15}{}%
-\contentsline {section}{\numberline {4.1}Calibration and alignment}{15}{}%
-\contentsline {section}{\numberline {4.2}Calibration Targets}{15}{}%
-\contentsline {section}{\numberline {4.3}Lower Stage Calibration}{16}{}%
-\contentsline {paragraph}{Azimuth Stage Rotation Axis}{16}{}%
-\contentsline {paragraph}{Beam Direction for $\theta = 0$}{17}{}%
-\contentsline {subsection}{\numberline {4.3.1}Stage Position \& Beam Direction as a Function of $\theta $}{17}{}%
-\contentsline {subsection}{\numberline {4.3.2}Azimuth Stage Location}{18}{}%
-\contentsline {subsection}{\numberline {4.3.3}Ray Envelope Center}{19}{}%
-\contentsline {subsection}{\numberline {4.3.4}Ray Envelope Isoline}{20}{}%
-\contentsline {subsection}{\numberline {4.3.5}Training \& Validation Datasets}{20}{}%
-\contentsline {section}{\numberline {4.4}Sample Motion Assembly Calibration}{21}{}%
-\contentsline {paragraph}{Rotation Stage Pose}{21}{}%
-\contentsline {paragraph}{Translation Stage Axes}{21}{}%
-\contentsline {paragraph}{Tip \& Tilt Stage Axes}{21}{}%
-\contentsline {section}{\numberline {4.5}Aligning Sample and Illuminator Assemblies}{21}{}%
-\contentsline {subsection}{\numberline {4.5.1}Rotation}{21}{}%
-\contentsline {paragraph}{Translation}{22}{}%
-\contentsline {section}{\numberline {4.6}Aligning Calibration Target with Sample Motion Assembly Rotation Axis}{22}{}%
-\contentsline {section}{\numberline {4.7}Aligning Sample Motion Assembly and Illumination Beams}{23}{}%
-\contentsline {section}{\numberline {4.8}Aligning Calibration Target with Illumination Beams}{25}{}%
-\contentsline {section}{\numberline {4.9}Note: Proposal:Acquisition Camera Calibration}{25}{}%
-\contentsline {subsection}{\numberline {4.9.1}Intrinsics}{26}{}%
-\contentsline {subsection}{\numberline {4.9.2}Extrinsics \& Lens Distortion}{27}{}%
-\contentsline {subsection}{\numberline {4.9.3}Validation}{27}{}%
-\contentsline {paragraph}{Validation Results}{27}{}%
-\contentsline {section}{\numberline {4.10}Note: Proposal:Illuminator Assembly Calibration}{28}{}%
-\contentsline {paragraph}{Note: Proposal:Azimuth Stage Rotation Axis}{28}{}%
-\contentsline {paragraph}{Note: Proposal:Beam Direction Vector}{28}{}%
-\contentsline {subsection}{\numberline {4.10.1}Note: Proposal:Stage Position \& Beam Direction as a Function of $\theta $}{28}{}%
-\contentsline {section}{\numberline {4.11}Acquisition Camera Calibration}{29}{}%
-\contentsline {section}{\numberline {4.12}Note: Proposal:Acquisition Light Efficiency}{30}{}%
-\contentsline {subsubsection}{Note: Proposal:Fresnel Formulae}{31}{}%
-\contentsline {subsubsection}{Note: Proposal:Effects of Polarization on Fresnel Formulae}{32}{}%
-\contentsline {section}{\numberline {4.13}Note: Proposal:Expected Results}{33}{}%
-\contentsline {chapter}{\chapternumberline {5}Scattering Sample Preparation}{35}{}%
-\contentsline {subsection}{\numberline {5.0.1}Equipment}{35}{}%
-\contentsline {subsection}{\numberline {5.0.2}Procedure}{36}{}%
-\contentsline {subsection}{\numberline {5.0.3}Sample Characterization}{37}{}%
-\contentsline {chapter}{\chapternumberline {6}Acquisition}{39}{}%
-\contentsline {section}{\numberline {6.1}Scattering Samples}{39}{}%
-\contentsline {section}{\numberline {6.2}Acquisition}{39}{}%
-\contentsline {section}{\numberline {6.3}Maximizing Light Scattered Towards Camera}{39}{}%
-\contentsline {section}{\numberline {6.4}Illumination Polarization}{39}{}%
-\contentsline {subsection}{\numberline {6.4.1}Optimizing Illumination \& Sample Orientation to Maximize Light Transmission}{40}{}%
-\contentsline {subsubsection}{Fresnel Formulae}{41}{}%
-\contentsline {subsubsection}{Effects of Polarization on Fresnel Formulae}{42}{}%
-\contentsline {subsubsection}{Fresnel Relations as Mueller Matrices}{43}{}%
-\contentsline {paragraph}{Transmission}{43}{}%
-\contentsline {paragraph}{Scattering}{44}{}%
-\contentsline {subsubsection}{Simulation Results}{44}{}%
-\contentsline {paragraph}{Unpolarized Beam}{44}{}%
-\contentsline {paragraph}{Linearly Polarized Beam}{44}{}%
-\contentsline {subsection}{\numberline {6.4.2}Simulation}{45}{}%
-\contentsline {subsection}{\numberline {6.4.3}Depolarizer Spatial Characterization}{45}{}%
-\contentsline {chapter}{\chapternumberline {7}Appendices}{47}{}%
-\contentsline {section}{\numberline {7.1}Calibration Target Design}{47}{}%
-\contentsline {section}{\numberline {7.2}Sample Preparation}{48}{}%
+\contentsline {paragraph}{Lens Focal Length}{11}{}%
+\contentsline {subsection}{\numberline {3.1.2}Acquisition camera modifications}{12}{}%
+\contentsline {subsection}{\numberline {3.1.3}Camera mount}{13}{}%
+\contentsline {subsection}{\numberline {3.1.4}Illuminator Motion assembly}{13}{}%
+\contentsline {subsection}{\numberline {3.1.5}Collimator Mount}{14}{}%
+\contentsline {subsection}{\numberline {3.1.6}Sample assembly}{15}{}%
+\contentsline {section}{\numberline {3.2}Sample Analysis Station}{15}{}%
+\contentsline {chapter}{\chapternumberline {4}Scatterometer Calibration and Alignment}{17}{}%
+\contentsline {section}{\numberline {4.1}Calibration and alignment}{17}{}%
+\contentsline {section}{\numberline {4.2}Calibration Targets}{17}{}%
+\contentsline {section}{\numberline {4.3}Lower Stage Calibration}{18}{}%
+\contentsline {paragraph}{Azimuth Stage Rotation Axis}{18}{}%
+\contentsline {paragraph}{Beam Direction for $\theta = 0$}{19}{}%
+\contentsline {subsection}{\numberline {4.3.1}Stage Position \& Beam Direction as a Function of $\theta $}{19}{}%
+\contentsline {subsection}{\numberline {4.3.2}Azimuth Stage Location}{20}{}%
+\contentsline {subsection}{\numberline {4.3.3}Ray Envelope Center}{21}{}%
+\contentsline {subsection}{\numberline {4.3.4}Ray Envelope Isoline}{22}{}%
+\contentsline {subsection}{\numberline {4.3.5}Training \& Validation Datasets}{22}{}%
+\contentsline {section}{\numberline {4.4}Sample Motion Assembly Calibration}{23}{}%
+\contentsline {paragraph}{Rotation Stage Pose}{23}{}%
+\contentsline {paragraph}{Translation Stage Axes}{23}{}%
+\contentsline {paragraph}{Tip \& Tilt Stage Axes}{23}{}%
+\contentsline {section}{\numberline {4.5}Aligning Sample and Illuminator Assemblies}{23}{}%
+\contentsline {subsection}{\numberline {4.5.1}Rotation}{23}{}%
+\contentsline {paragraph}{Translation}{24}{}%
+\contentsline {section}{\numberline {4.6}Aligning Calibration Target with Sample Motion Assembly Rotation Axis}{24}{}%
+\contentsline {section}{\numberline {4.7}Aligning Sample Motion Assembly and Illumination Beams}{25}{}%
+\contentsline {section}{\numberline {4.8}Aligning Calibration Target with Illumination Beams}{27}{}%
+\contentsline {section}{\numberline {4.9}Note: Proposal:Acquisition Camera Calibration}{27}{}%
+\contentsline {subsection}{\numberline {4.9.1}Intrinsics}{28}{}%
+\contentsline {subsection}{\numberline {4.9.2}Extrinsics \& Lens Distortion}{29}{}%
+\contentsline {subsection}{\numberline {4.9.3}Validation}{29}{}%
+\contentsline {paragraph}{Validation Results}{29}{}%
+\contentsline {section}{\numberline {4.10}Note: Proposal:Illuminator Assembly Calibration}{30}{}%
+\contentsline {paragraph}{Note: Proposal:Azimuth Stage Rotation Axis}{30}{}%
+\contentsline {paragraph}{Note: Proposal:Beam Direction Vector}{30}{}%
+\contentsline {subsection}{\numberline {4.10.1}Note: Proposal:Stage Position \& Beam Direction as a Function of $\theta $}{30}{}%
+\contentsline {section}{\numberline {4.11}Acquisition Camera Calibration}{31}{}%
+\contentsline {section}{\numberline {4.12}Note: Proposal:Acquisition Light Efficiency}{32}{}%
+\contentsline {subsubsection}{Note: Proposal:Fresnel Formulae}{33}{}%
+\contentsline {subsubsection}{Note: Proposal:Effects of Polarization on Fresnel Formulae}{34}{}%
+\contentsline {section}{\numberline {4.13}Note: Proposal:Expected Results}{35}{}%
+\contentsline {chapter}{\chapternumberline {5}Scattering Sample Preparation}{37}{}%
+\contentsline {subsection}{\numberline {5.0.1}Equipment}{37}{}%
+\contentsline {subsection}{\numberline {5.0.2}Procedure}{38}{}%
+\contentsline {subsection}{\numberline {5.0.3}Sample Characterization}{39}{}%
+\contentsline {chapter}{\chapternumberline {6}Acquisition}{41}{}%
+\contentsline {section}{\numberline {6.1}Scattering Samples}{41}{}%
+\contentsline {section}{\numberline {6.2}Acquisition}{41}{}%
+\contentsline {section}{\numberline {6.3}Maximizing Light Scattered Towards Camera}{41}{}%
+\contentsline {section}{\numberline {6.4}Illumination Polarization}{41}{}%
+\contentsline {subsection}{\numberline {6.4.1}Optimizing Illumination \& Sample Orientation to Maximize Light Transmission}{42}{}%
+\contentsline {subsubsection}{Fresnel Formulae}{43}{}%
+\contentsline {subsubsection}{Effects of Polarization on Fresnel Formulae}{44}{}%
+\contentsline {subsubsection}{Fresnel Relations as Mueller Matrices}{45}{}%
+\contentsline {paragraph}{Transmission}{45}{}%
+\contentsline {paragraph}{Scattering}{46}{}%
+\contentsline {subsubsection}{Simulation Results}{46}{}%
+\contentsline {paragraph}{Unpolarized Beam}{46}{}%
+\contentsline {paragraph}{Linearly Polarized Beam}{46}{}%
+\contentsline {subsection}{\numberline {6.4.2}Simulation}{47}{}%
+\contentsline {subsection}{\numberline {6.4.3}Depolarizer Spatial Characterization}{47}{}%
+\contentsline {chapter}{\chapternumberline {7}Appendices}{49}{}%
+\contentsline {section}{\numberline {7.1}Calibration Target Design}{49}{}%
+\contentsline {section}{\numberline {7.2}Sample Preparation}{50}{}%
 \contentsline {section}{\numberline {7.3}Ziegler-Nichols Tuning Method}{52}{}%
-\contentsline {section}{\numberline {7.4}Parts List}{52}{}%
-\contentsline {section}{\numberline {7.5}Thin lens model validation: macro lenses}{52}{}%
-\contentsline {section}{\numberline {7.6}Technical drawings}{52}{}%
-\contentsline {chapter}{Bibliography}{53}{}%
+\contentsline {section}{\numberline {7.4}Parts Lists}{54}{}%
+\contentsline {section}{\numberline {7.5}Thin lens model validation: macro lenses}{54}{}%
+\contentsline {section}{\numberline {7.6}Technical drawings}{54}{}%
+\contentsline {chapter}{\chapternumberline {8}Technical Drawings}{61}{}%
+\contentsline {section}{\numberline {8.1}\ignorespaces 5 Series 20 hole - cross flat plate (P/N 4233-m)}{62}{}%
+\contentsline {chapter}{Bibliography}{63}{}%
