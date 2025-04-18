@@ -1,5 +1,39 @@
 
 \section{Calibration and alignment}
+
+\begin{enumerate}
+    \item Kinematic calibration
+        % "CALIBRATION_RT5"
+    \item Sample motion assembly calibration
+        % "CALIBRATION_XZ"
+        % "CALIBRATION_RT3"
+        % "CALIBRATION_MS1"
+    \item Sample motion assembly alignment
+        % "ALIGNMENT_RT3"
+        % "ALIGNMENT_MS1"
+    \item Illumination alignment
+        % "ALIGNMENT_BEAMS"
+    \item Beam estimate update
+        % "CALIBRATION_BEAMS"
+    \item Target alignment
+        % "ALIGNMENT_TGT"
+    \item Acquisition camera calibration
+        % "CALIBRATION_ACQ"
+\end{enumerate}
+
+% Sequence:
+% "INITIALIZATION",
+% "CALIBRATION_RT5"
+% "CALIBRATION_XZ"
+% "CALIBRATION_RT3"
+% "ALIGNMENT_RT3"
+% "CALIBRATION_MS1"
+% "ALIGNMENT_MS1"
+% "ALIGNMENT_BEAMS"
+% "CALIBRATION_BEAMS"
+% "ALIGNMENT_TGT"
+% "CALIBRATION_ACQ"
+
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{../figures/experiment.png}
@@ -264,6 +298,13 @@ The displacement vectors $\vec{c_a} - \vec{p}$ and $\vec{c_b} - \vec{Q}$ are unk
 \end{equation}
 
 The alignment procedure is as follows. Since the beams' orientations have been adjusted since their initial estimation, we begin by updating their estimates. We use a method similar to that detailed in section \ref{sec:lower_stage_calibration}, but we use a single azimuthal position $\theta = 0$ rather than rotating the beam pair azimuthally. With update $\uvec{k}_a$ and $\uvec{k}_b$, and we compute the required intersection point displacement via Equation \ref{eqn:beam_alignment_displacement}. The displacement is projected into the image frame, and the beams are commanded to the corresponding pixel backprojected to the calibration target. This process is repeated iteratively until the displacement distance is below a threshold due to the approximate scale factor $s$ and other noise sources.
+%
+\begin{figure}  % TODO: Replace with properly-sized figure
+    \centering
+    \includegraphics[width=\linewidth]{../figures/beam_overlap.png}
+    \caption{}
+    \label{fig:beam_overlap}
+\end{figure}
 
 \section{Aligning Calibration Target with Illumination Beams}
 This alignment step determines the "home" position of the sample assembly's rotation stage which corresponds to sample illumination along its normal vector. The home position maximizes the inner product of the target's normal vector and the mean illumination beam vector $\overline{\vec{k}} = (\uvec{k}_a + \uvec{k}_b)/2$.
@@ -294,10 +335,7 @@ Rays entering the camera at an angle $\phi$ with respect to the optical axis are
 \subsection{Validation}
 The calibration model is validated on the physical acquisition system by learning a model on training data and then evaluating performance via a validation dataset. First, a checkerboard calibration target is placed at two different locations, and its poses are determined using a calibrated camera. A laser is attached to a rotation stage, and an image of the beam spot on the target is acquired at each position. The 3D beam-plane intersection point is then calculated using beam spot centroiding to find the pixel coordinates which are backprojected to the camera's frame using the camera matrix. The rotation stage axis $\mathbf{h}$ is determined by placing a target face-up on the stage and estimating the target's normal with the camera.
 
-
 \paragraph{Validation Results} Figure \ref{fig:3}d shows the training and validation estimation errors of 3D points. Angles less than $90^\circ$ correspond to the target illuminated from the front with $0^\circ$ corresponding to Figure \ref{fig:3}c. Those to the right correspond to a back-illuminated target with $180^\circ$ being anti-normal. The training and validation errors have similar trends with reduced validation error, suggesting the data was not over-fit. There is no error benchmark rooted in a performance metric. However, since centroiding and the homography computed during calibration both have sub-pixel accuracy and this is ultimately an interpolation task, the targeted prediction accuracy is sub-pixel. Considering the minimum validation error is 1.5 pixels with a mean error of 2.8 pixels, the targeted accuracy seems achievable if the issue of worsening error with angle of incidence is alleviated and the beam direction estimates are improved.
-
-
 
 \section{\note{Proposal:}Illuminator Assembly Calibration}
 The goal for calibrating the illuminator assembly is estimating its rotation axis and the 3D orientation of the illumination beams as a function of the azimuth angle $\theta$. We do so by computing the 3D intersection of each illumination beam with a series of $N$ planes whose poses we know. This process is repeated for all $\theta \in \Theta$ for a total of $2N|\Theta|$ points. From this point set, we can estimate illumination directions for both beams as a function of $\theta$ and the azimuth stage pose up to a rotational ambiguity about its rotation axis.
@@ -350,6 +388,10 @@ Since the focal length is the constant of proportionality for beam angle and ima
     \caption{(a) The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis; (b) Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ$; (c) Reprojection error as a function of principal point shifts along the y-axis and external pitch rotation is not strictly convex, showing the numerical ambiguity of principal point shifting and camera rotation. This ambiguity holds for the x-axis and panning as well.}
     \label{fig:acquisition_camera_calibration}
 \end{figure}
+
+\subsection{Beam Calibration}
+
+
 
 
 \section{\note{Proposal:}Acquisition Light Efficiency}
