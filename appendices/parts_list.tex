@@ -2,18 +2,20 @@
 
 \begin{table}[htbp]
     \renewcommand{\arraystretch}{1.25}
-    \caption{Parts List - Support Structure}
+    \caption{Parts List - Scatterometer Support Equipment}
     \begin{center}
         \begin{tabular}{ l l l l l }
         \toprule[2pt]
         \textbf{} & \textbf{Description} & \textbf{Model/Part No.}  & \textbf{Vendor} & \textbf{Qty.} \\
         \midrule[0.75pt]
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
+        & Nexus Breadboard, 36" x 48" x 2.4" & B3648F & Thorlabs & 1 \\
+        & Aluminum Breadboard 12" x 24" x 1/2" & MB1224 & Thorlabs & 1 \\
+        & Aluminum Breadboard 12" x 18" x 1/2" & MB1218 & Thorlabs & 1 \\
+        &  & ? & Thorlabs & 1 \\    % OSW shelf
+        & $\diameter$1.5" Damped Post, L = 8" & DP8A & Thorlabs & 3 \\
+        & $\diameter$1.5" Mounting Post, 1/4"-20 Taps, L = 3" & P3 & Thorlabs & 2 \\
+        &  & C1515 & Thorlabs & 1 \\
+        & USB DAQ &  &  &  \\
         &  &  &  &  \\
         &  &  &  &  \\
         &  &  &  &  \\
@@ -33,15 +35,18 @@
         \toprule[2pt]
         \textbf{} & \textbf{Description} & \textbf{Model/Part No.}  & \textbf{Vendor} & \textbf{Qty.} \\
         \midrule[0.75pt]
+        \multirow{10}{*}{\rotatebox[origin=c]{90}{Free Space}} & Polarized Coherent Laser (6W 532\si{nm}) & V6 & Verdi & 1 \\
+        & Filter Wheel &  &  & 1 \\
+        & ND=? Filter &  &  &  \\
+        & ND=? Filter &  &  &  \\
+        & Mirror &  &  & 1 \\
+        & Linear Polarizing Filter &  &  &  \\
+        & LC Polarization Rotator, 532\si{nm} & LCR1-532 &  & 1 \\
+        & K-Cube LC Controller & KLC101 & Thorlabs & 1 \\
+        & FiberPort Coupler &  &  & 1 \\
         &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
+        \hline
+        \multirow{3}{*}{\rotatebox[origin=c]{90}{Fiber Coupled}} &  &  &  &  \\
         &  &  &  &  \\
         &  &  &  &  \\
         \bottomrule[2pt]
@@ -58,27 +63,27 @@
         \toprule[2pt]
         \textbf{} & \textbf{Description} & \textbf{Model/Part No.}  & \textbf{Vendor} & \textbf{Qty.} \\
         \midrule[0.75pt]
-        \multirow{10}{*}{\rotatebox[origin=c]{90}{Main Body}} & Rotation Stage & RT-3 & Newmark & 1 \\
+        \multirow{8}{*}{\rotatebox[origin=c]{90}{Support Structure}} & Rotation Stage & RT-3 & Newmark & 1 \\
         & 5 Series 20 hole - cross flat plate & 4423-m\footnote{\ref{pdf:4423-m}} & 80-20 & 1 \\
         & 1.50” x 3.00” smooth extrusion & 1530-S & 80/20 & 1 \\
         & Sleeve bearing carriage & 60585K76 & McMaster-Carr & 1 \\
-        & Counterweight & Custom & N/A\footnote{\ref{tab:parts_list_counterweight}} & 1 \\
-        & Base plate & Custom & N/A & 1 \\
-        &  &  &  &  \\  % Don't forget to include the custom mount at bottom of collimator stand
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
+        & Counterweight & SCTR-002 & N/A & 1 \\
+        & Base plate & SCTR-003 & N/A & 1 \\
+        & Variable Height P-Post & BLP01 & Thorlabs & 1 \\  % Don't forget to include the custom mount at bottom of collimator stand
+        & $\diameter$1" Pillar Post, L=6" & RS6 & Thorlabs & 1 \\
         \hline
-        \multirow{10}{*}{\rotatebox[origin=c]{90}{Illuminator Assembly}} &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\ 
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
+        \multirow{9}{*}{\rotatebox[origin=c]{90}{Illuminator Assembly}} & SCTR-001-BasePlate & N/A & 1 \\
+        &  & SCTR-001-LeftSupport & N/A & 1 \\
+        &  & SCTR-001-RightSupport & N/A & 1 \\
+        &  & SCTR-001-InterfaceMount & N/A & 1 \\
+        &  & SCTR-001-BusMount & N/A & 1 \\
+        & Kinematic Mount for $\diameter$1" Optic & KC1 & Thorlabs & 2 \\
+        & Fiber Collimator (f=40\si{mm} FC/PC) & C40FC-A & Thorlabs & 2 \\
+        & Motorized Iris Diaphragm & ELL15 & Thorlabs & 2 \\
+        & SM1 Coupler & SM1T2 & Thorlabs & 1 \\
+        \hline
+        \multirow{3}{*}{\rotatebox[origin=c]{90}{Homing Switch}} & Electrical Breadboard &  &  & 1 \\
+        & Translation Stage &  &  &  \\
         &  &  &  &  \\
         \bottomrule[2pt]
         \end{tabular}
@@ -88,16 +93,12 @@
 
 \begin{table}[htbp]
     \renewcommand{\arraystretch}{1.25}
-    \caption{Parts List - Laser Path}
+    \caption{Parts List - Counterweight}
     \begin{center}
         \begin{tabular}{ l l l l l }
         \toprule[2pt]
         \textbf{} & \textbf{Description} & \textbf{Model/Part No.}  & \textbf{Vendor} & \textbf{Qty.} \\
         \midrule[0.75pt]
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
         &  &  &  &  \\
         &  &  &  &  \\
         &  &  &  &  \\
@@ -120,11 +121,11 @@
         \textbf{} & \textbf{Description} & \textbf{Model/Part No.}  & \textbf{Vendor} & \textbf{Qty.} \\
         \midrule[0.75pt]
         &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
+        & RT-3 Base Interface Plate & SCTR-004 & N/A & 1 \\
+        & RT-3 Stage Interface Plate & SCTR-005 & N/A & 1 \\
+        & Angle Bracket & 56-666 & Edmund Optics & 1 \\
+        & Adapter Plate & RB13P1 & Thorlabs & 1 \\
+        & 1" XYZ Translation Stage & PT3 & Thorlabs & 1 \\
         &  &  &  &  \\
         &  &  &  &  \\
         &  &  &  &  \\
@@ -144,17 +145,21 @@
         \toprule[2pt]
         \textbf{} & \textbf{Description} & \textbf{Model/Part No.}  & \textbf{Vendor} & \textbf{Qty.} \\
         \midrule[0.75pt]
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
-        &  &  &  &  \\
+        & Camera &  & Point Grey & 1 \\
+        & Lens Mount &  & Fotodiox & 1 \\
+        &  & XRR1 & Thorlabs & 1 \\
+        &  & DP8A & Thorlabs & 1 \\
+        &  & BLP01 & Thorlabs & 1 \\
+        &  & XT34SD-250 & Thorlabs & 1 \\
+        &  & XT34C2 & Thorlabs & 2 \\
+        &  & XT34D2-30 & Thorlabs & 2 \\
+        &  & LMR3 & Thorlabs & 1 \\
+        &  & SM3A95 & Thorlabs & 1 \\
+        &  & SM3T2 & Thorlabs & 1 \\
+        &  & PH1 & Thorlabs & 1 \\
+        &  & TR075 & Thorlabs & 1 \\
+        &  & XR25DR3 & Thorlabs & 1 \\
+        &  & XR25DR2 & Thorlabs & 2 \\
         \bottomrule[2pt]
         \end{tabular}
         \label{tab:parts_list_acq_assy}
@@ -171,7 +176,7 @@
         \midrule[0.75pt]
         & Aluminum breadboard, 6" $\times$ 18" $\times$ 1/2" & MB618 & Thorlabs & 1 \\
         \hline
-        \multirow{10}{*}{\rotatebox[origin=c]{90}{Optical Density Meter}} & Scientific camera & ???? & Point Grey & 1 \\
+        \multirow{11}{*}{\rotatebox[origin=c]{90}{Optical Density Meter}} & Scientific camera & ???? & Point Grey & 1 \\
         & Prime macro lens & AF-Micro 200\si{mm} f/4 D & Nikon & 1 \\
         & 40X Olympus achromat obective & RMS40X & Thorlabs & 1 \\
         & EF-to-C lens mount & Nik-C  & Fotodiox & 1 \\
@@ -207,13 +212,15 @@
     \begin{center}
         \begin{tabular}{ l l l l l }
         \toprule[2pt]
-        \textbf{Description} & \textbf{Model/Part No.}  & \textbf{Vendor} & \textbf{Qty.} \\
+        \textbf{Description} & \textbf{Model/Part No.} & \textbf{Vendor} & \textbf{Qty.} \\
         \midrule[0.75pt]
         Dry block tube heater & 30392080 & Ohaus & 1 \\
         Module block 20\si{mm} 8 wells & 30400154 & Ohaus & 1 \\
         Module block 50\si{mL}, 15\si{mL}, 1.5\si{mL} & 30400193 & Ohaus & 1 \\
         P1000L 100-1000\si{\micro L} pipette & FA10006M & Gilson & 1 \\
         D1000 tip reload pack & F167014 & Gilson & 1 \\
+        Microscope Slide (frosted) & N9302600 & Perkin Elmer & 1 \\
+        Cover glass & CLS2980245 & Corning & 1 \\
         25\si{\micro L} gene frame & AB0576 & Thermo Fisher & 1 \\
         65\si{\micro L} gene frame & AB0577 & Thermo Fisher & 1 \\
         125\si{\micro L} gene frame & AB0578 & Thermo Fisher & 1 \\
