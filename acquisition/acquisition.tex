@@ -2,29 +2,6 @@
 
 \section{Maximizing Light Scattered Towards Camera}
 
-\section{Illumination Polarization}
-The Verdi output beam is linearly polarized and passed through single-mode (SM) fibers prior to illuminating scattering samples with the resulting beam having an unknown polarization state due to use of non-polarization-maintaining fibers. This raises several questions 1) What is the beam's polarization state?; 2) Is it constant?; and 3) What is the optimal polarization state of the output beam to maximize light transmission into the sample?
-
-Literature suggests the output beam will have an elliptical polarization state (1) that is variable/unstable (2) due to variable birefringence induced in SM fibers caused by variable internal stresses and temperature fluctuations.
-
-The output polarization state's stability was characterized by placing a power meter photodiode with a static LPF to measure the power of a collimator on the dual collimator stand attached to the RT-5 rail. The measured power for 10 sweeps of the RT-5 through a range of 280 degrees is shown in Figure \ref{fig:lpfpwr_RT5}. There is a clear relationship between the measured power through an LPF and the RT-5 stage position which suggests the polarization state does not remain constant across illumination angles. The ellipticity was not investigated due to requiring a circular polarizing filter (CPF). Fluctuations in measured power across sweeps was due to insertion losses caused by motion of unstable FC/PC fiber connectors on the RT-5 rail. Fixing those connectors to the rail saw significant reductions in fluctuations.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{figures/LPFpwr_vs_RT5.png}
-    \caption{}
-    \label{fig:lpfpwr_RT5}
-\end{figure}
-
-Polarization state for Figure \ref{fig:lpfpwr_RT5}:
-\begin{itemize}
-    \item $S_0 = 0.200696$
-    \item $S_1 = -0.028441$
-    \item $S_2 = 0.06834$
-    \item $S_DoP = \sqrt{S_1^2 + S_2^2}/S_0 \approx 0.37$
-\end{itemize}
-
-
 \subsection{Optimizing Illumination \& Sample Orientation to Maximize Light Transmission}
 Given a linearly polarized illumination laser beam, an acquisition sensor offset by some scattering angle, and a scattering sample inside a glass cell, the goal is to determine 1) the optimal sample orientation and 2) the optimal angle of polarization to maximize light transmitted from the illuminator to the acquisition sensor.
 
@@ -225,3 +202,50 @@ One option is to depolarize the illumination beams via Thorlabs DPP25-A liquid c
 The effect of beam size on output polarization state was characterized by measuring the spatial distribution of polarization state using a camera. The Verdi output beam was coupled into a 2-meter single-mode fiber whose output was collimated using Thorlabs C40FC-A. That beam was passed through the depolarizer mounted on Thorlabs CRM1PT followed by a linear polarizing filter mounted on Thorlabs CRM1T. The beam was then passed through an ND=2.0 filter prior to measurement by the camera. The camera was Grasshopper3 GS3-PGE-91S6M with a Leica Summicron-A 50mm 1:2 lens focused at its shortest working distance (1:6.6 magnification). Acquisition consisted of rotating the LPF in 10-degree increments over a range of 170 degrees and acquiring a 16-bit image for each LPF orientation.
 
 The intensity profiles of the depolarized beam for four LPF orientations is shown in Figure \ref{fig:depol_spatial}. Each profile is a Gaussian-enveloped sinusoid whose phase changes with the LPF orientation. Each image is overlaid with 1/$e^2$ beam diameters for two collimators' output beams and the Verdi output beam. The C40FC-A and Verdi beam profiles are large enough to cover at least a full period of the depolarizer's structure, while the CFC2-A beam does not. Therefore, the depolarizer would not be effective if used with the CFC2-A collimator.
+
+\subsection{Data Processing}
+%
+\begin{figure}
+    \centering
+    \includegraphics[trim={0 4cm 0 3.25cm}, clip, width=\textwidth]{../figures/autoROI.eps}
+    \caption{}
+    \label{fig:autoROI}
+\end{figure}
+
+\paragraph{Auto ROI}
+
+
+\begin{forest}
+    for tree={
+      font=\ttfamily,
+      grow'=0,
+      child anchor=west,
+      parent anchor=south,
+      anchor=west,
+      calign=first,
+      edge path={
+        \noexpand\path [draw, \forestoption{edge}]
+        (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
+      },
+      before typesetting nodes={
+        if n=1
+          {insert before={[,phantom]}}
+          {}
+      },
+      fit=band,
+      before computing xy={l=15pt},
+    }
+  [Experiment Name
+    [Azimuth Angle 1
+      [text1.1.1]
+      [params]
+      [text1.1.3]
+    ]
+    [Azimuth Angle 2]
+    [\dots]
+    [\dots]
+    [Azimuth Angle N]
+    [geometry.mat]
+    [aggregate.mat]
+  ] 
+  \end{forest}
