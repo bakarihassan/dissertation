@@ -1,18 +1,21 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {3.1}{\ignorespaces Acquisition camera specifications}}{11}{}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Illumination Configurations}}{10}{}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Acquisition camera specifications}}{12}{}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Cross-sectional \& material properties of aluminum extrusions \cite {ho1997structural}}}{20}{}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Physical paraemters for structural analysis assuming 12 \si {\deg \per \s } azimuthal stage angular rate with 300 \si {\ms } deceleration duration.}}{20}{}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {7.1}{\ignorespaces Ziegler-Nichols method}}{53}{}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Parts List - Support Structure}}{53}{}%
-\contentsline {table}{\numberline {7.3}{\ignorespaces Parts List - Laser Path}}{54}{}%
-\contentsline {table}{\numberline {7.4}{\ignorespaces Parts List - Illuminator Motion Assembly}}{55}{}%
-\contentsline {table}{\numberline {7.5}{\ignorespaces Parts List - Laser Path}}{56}{}%
-\contentsline {table}{\numberline {7.6}{\ignorespaces Parts List - Sample Motion Assembly}}{57}{}%
-\contentsline {table}{\numberline {7.7}{\ignorespaces Parts List - Acquisition Camera Assembly}}{58}{}%
-\contentsline {table}{\numberline {7.8}{\ignorespaces Parts List - Sample Analysis Station}}{59}{}%
-\contentsline {table}{\numberline {7.9}{\ignorespaces Parts List - Sample Preparation \& Analysis}}{60}{}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Ziegler-Nichols method}}{65}{}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Parts List - Scatterometer Support Equipment}}{66}{}%
+\contentsline {table}{\numberline {7.3}{\ignorespaces Parts List - Laser Path}}{67}{}%
+\contentsline {table}{\numberline {7.4}{\ignorespaces Parts List - Illuminator Motion Assembly}}{68}{}%
+\contentsline {table}{\numberline {7.5}{\ignorespaces Parts List - Counterweight}}{69}{}%
+\contentsline {table}{\numberline {7.6}{\ignorespaces Parts List - Sample Motion Assembly}}{69}{}%
+\contentsline {table}{\numberline {7.7}{\ignorespaces Parts List - Acquisition Camera Assembly}}{70}{}%
+\contentsline {table}{\numberline {7.8}{\ignorespaces Parts List - Sample Analysis Station}}{71}{}%
+\contentsline {table}{\numberline {7.9}{\ignorespaces Parts List - Sample Preparation \& Analysis}}{72}{}%
 \addvspace {10pt}

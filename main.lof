@@ -4,37 +4,44 @@
 \contentsline {chapter}{2\hspace {3.6mm} Speckle Correlation \vspace {6pt} }{7}{}%
 \addvspace {10pt}
 \contentsline {chapter}{3\hspace {3.6mm} Scatterometer Design \vspace {6pt} }{9}{}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces CAD rendering of speckle correlation scatterometer}}{10}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces (a) Laboratory scatterometer setup; (b) CAD rendering of speckle correlation scatterometer}}{10}{}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Light path diagram for speckle correlation scatterometer}}{10}{}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \relax }}{12}{}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Left: FEA beam torsion; Right: FEA beam deflection analyses indicate 80/20 rail perform significantly better than Thorlabs optical rails, and that angular beam deflection decreases for decreasing cross-section aspect ratio.}}{14}{}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces (a) CAD front view of collimator mount; (b) CAD side view showing the relative orientations of illumination beams; (c) CAD perspective view; (d) Fully assembled collimator mount which controls vertical and angular illuminator separation. Beam diameter is also controlled using motorized iris diaphragms.}}{14}{}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces (a) Sample motion assembly without sample mount; (b) Sample mount configured for calibration target (not drawn to scale with respect to (a)); (c) Sample mount configured for scattering sample on a microscope slide (not drawn to scale with respect to (a)); (d) Sample mount shown on top of sample assembly with calibration target installed}}{15}{}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces CAD rendering of the sample analysis station}}{16}{}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces (a); (b)}}{11}{}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \relax }}{13}{}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces (a); (b);}}{14}{}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces TODO: Replace with updated figure, add subfigure labels;}}{18}{}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Aluminum extrusion profiles in order of increasing aspect ratio. All dimensions are in inches. TODO: ADD REINSERT CROSS-SECTION LABELS.}}{21}{}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces (a); (b)}}{21}{}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces (a) Maximum beam bending and torsional deflection due to the illuminator assembly TODO: RERUN TORSIONAL ANALYSIS WITH UPDATED PARAMETERS; (b) Natural beam bending frequency due to the illuminator assembly}}{22}{}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces (a) CAD front view of collimator mount; (b) CAD side view showing the relative orientations of illumination beams; (c) CAD perspective view; (d) Fully assembled collimator mount which controls vertical and angular illuminator separation. Beam diameter is also controlled using motorized iris diaphragms.; TODO: Replace single collage with subfigures.}}{23}{}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces (a) Sample motion assembly without sample mount; (b) Sample mount configured for calibration target (not drawn to scale with respect to (a)); (c) Sample mount configured for scattering sample on a microscope slide (not drawn to scale with respect to (a)); (d) Sample mount shown on top of sample assembly with calibration target installed}}{24}{}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces \relax }}{25}{}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces CAD rendering of the sample analysis station}}{26}{}%
 \addvspace {10pt}
-\contentsline {chapter}{4\hspace {3.6mm} Scatterometer Calibration and Alignment \vspace {6pt} }{17}{}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \textbf {a}: Speckle correlation computation pipeline. The sample is illuminated by two beams, and the correlation is computed using a differential sensor. \textbf {b}: Physical setup with sample placed on the circular breadboard. The illumination stand rotates about the sample while the sensing stand measures scattered light. The differential photodetector enables fast correlation computation. \textbf {c}: Geometry used to develop forward model for inverse problem estimation of 3D beam-plane intersection points. \textbf {d}: Mean estimation errors for training and validation phases showing angular dependence of error.}}{17}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Perpendicular offsets of the four observed beam-plane intersections with respect to the estimated beam direction. Each plot is for an azimuthal angle $\theta \in \Theta $. The cause of increasing perpendicular offsets for increasing angle with respect to the plane normal and anti-normal is unknown.}}{19}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces RT-5 Geometry - Frustrum top Surface}}{20}{}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Sample motion assembly without sample mount}}{25}{}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Combined figure}}{26}{}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \relax }}{26}{}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Top: Target and beam misaligned due to non-zero angle between the beam and the target normal; Bottom: $\boldsymbol {d}$ aligned with normal vector $\boldsymbol {n}$. Note: Update by replacing d with kbar.}}{28}{}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Left: Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ $. Right: The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis.}}{29}{}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Ray envelope defined as the locus of points of closest encounter between the illumination beam and its rotation axis}}{31}{}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces (a) The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis; (b) Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ $; (c) Reprojection error as a function of principal point shifts along the y-axis and external pitch rotation is not strictly convex, showing the numerical ambiguity of principal point shifting and camera rotation. This ambiguity holds for the x-axis and panning as well.}}{32}{}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Left: Optimal sample rotation stage position and linear polarization angle as a function of azimuthal illumination angle. The linear polarization angle schedule contains discontinuities in the range $(-50^\circ , 50^\circ )$ due to rounding errors; Right: Comparison of light transmitted towards camera when choosing the optimal sample orientation versus a static sample shows an approximate 15\% increase on average.}}{35}{}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Speckle images of 10$\mu $m monodisperse SiO$_2$ beads acquired using scatterometer setup. Left: Top illuminator activated; Center: Both illuminators activated; Right: Bottom illuminator activated}}{36}{}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces An expected result is acquiring the scattering phase function for a larger range of scattering angles than the literature.}}{36}{}%
+\contentsline {chapter}{4\hspace {3.6mm} Scatterometer Calibration and Alignment \vspace {6pt} }{27}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \textbf {a}: Speckle correlation computation pipeline. The sample is illuminated by two beams, and the correlation is computed using a differential sensor. \textbf {b}: Physical setup with sample placed on the circular breadboard. The illumination stand rotates about the sample while the sensing stand measures scattered light. The differential photodetector enables fast correlation computation. \textbf {c}: Geometry used to develop forward model for inverse problem estimation of 3D beam-plane intersection points. \textbf {d}: Mean estimation errors for training and validation phases showing angular dependence of error.}}{28}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Perpendicular offsets of the four observed beam-plane intersections with respect to the estimated beam direction. Each plot is for an azimuthal angle $\theta \in \Theta $. The cause of increasing perpendicular offsets for increasing angle with respect to the plane normal and anti-normal is unknown.}}{29}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces RT-5 Geometry - Frustrum top Surface}}{30}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Sample motion assembly without sample mount}}{35}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Combined figure}}{36}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \relax }}{36}{}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \relax }}{38}{}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Top: Target and beam misaligned due to non-zero angle between the beam and the target normal; Bottom: $\boldsymbol {d}$ aligned with normal vector $\boldsymbol {n}$. Note: Update by replacing d with kbar.}}{38}{}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Left: Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ $. Right: The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis.}}{39}{}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Ray envelope defined as the locus of points of closest encounter between the illumination beam and its rotation axis}}{41}{}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces (a) The acquisition camera's focal length is the constant of proportionality of image point displacement and the tangent of the internal ray angle with respect to the optical axis; (b) Composite of 11 images of both illuminators spanning an azimuth range $3.5^\circ $; (c) Reprojection error as a function of principal point shifts along the y-axis and external pitch rotation is not strictly convex, showing the numerical ambiguity of principal point shifting and camera rotation. This ambiguity holds for the x-axis and panning as well.}}{43}{}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Left: Optimal sample rotation stage position and linear polarization angle as a function of azimuthal illumination angle. The linear polarization angle schedule contains discontinuities in the range $(-50^\circ , 50^\circ )$ due to rounding errors; Right: Comparison of light transmitted towards camera when choosing the optimal sample orientation versus a static sample shows an approximate 15\% increase on average.}}{46}{}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Speckle images of 10$\mu $m monodisperse SiO$_2$ beads acquired using scatterometer setup. Left: Top illuminator activated; Center: Both illuminators activated; Right: Bottom illuminator activated}}{46}{}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces An expected result is acquiring the scattering phase function for a larger range of scattering angles than the literature.}}{47}{}%
 \addvspace {10pt}
-\contentsline {chapter}{5\hspace {3.6mm} Scattering Sample Preparation \vspace {6pt} }{37}{}%
+\contentsline {chapter}{5\hspace {3.6mm} Scattering Sample Preparation \vspace {6pt} }{49}{}%
 \addvspace {10pt}
-\contentsline {chapter}{6\hspace {3.6mm} Acquisition \vspace {6pt} }{41}{}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces \relax }}{42}{}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces \relax }}{46}{}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces \relax }}{47}{}%
+\contentsline {chapter}{6\hspace {3.6mm} Acquisition \vspace {6pt} }{53}{}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \relax }}{57}{}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \relax }}{58}{}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \relax }}{59}{}%
 \addvspace {10pt}
-\contentsline {chapter}{7\hspace {3.6mm} Appendices \vspace {6pt} }{49}{}%
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Top row: Original target used for calibration caused irregular beam spot shapes which produced noisy centroids. Bottom row: Windowed target used now to avoid albedo issues when imaging beam spots.}}{49}{}%
+\contentsline {chapter}{7\hspace {3.6mm} Appendices \vspace {6pt} }{61}{}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Top row: Original target used for calibration caused irregular beam spot shapes which produced noisy centroids. Bottom row: Windowed target used now to avoid albedo issues when imaging beam spots.}}{61}{}%
 \addvspace {10pt}
-\contentsline {chapter}{8\hspace {3.6mm} Technical Drawings \vspace {6pt} }{61}{}%
+\contentsline {chapter}{8\hspace {3.6mm} Technical Drawings \vspace {6pt} }{73}{}%

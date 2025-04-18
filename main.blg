@@ -6,48 +6,49 @@ The style file: ieee_fullname.bst
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 Database file #1: egbib.bib
 Warning--empty publisher in frisvad2007computing
+Warning--there's a number but no series in ho1997structural
 Warning--can't use both volume and number fields in munoz2011bssrdf
 Warning--empty publisher in narasimhan2006acquiring
 Warning--can't use both volume and number fields in novak2018monte
-You've used 39 entries,
+You've used 42 entries,
             2120 wiz_defined-function locations,
-            748 strings with 11457 characters,
-and the built_in function-call counts, 15163 in all, are:
-= -- 1495
-> -- 803
-< -- 11
-+ -- 318
-- -- 276
-* -- 1167
-:= -- 2493
-add.period$ -- 124
-call.type$ -- 39
-change.case$ -- 250
+            762 strings with 11852 characters,
+and the built_in function-call counts, 16003 in all, are:
+= -- 1570
+> -- 851
+< -- 13
++ -- 337
+- -- 292
+* -- 1219
+:= -- 2641
+add.period$ -- 134
+call.type$ -- 42
+change.case$ -- 263
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 535
-empty$ -- 1110
-format.name$ -- 276
-if$ -- 3140
+cite$ -- 47
+duplicate$ -- 571
+empty$ -- 1176
+format.name$ -- 292
+if$ -- 3315
 int.to.chr$ -- 0
-int.to.str$ -- 39
-missing$ -- 44
-newline$ -- 198
-num.names$ -- 78
-pop$ -- 250
+int.to.str$ -- 42
+missing$ -- 50
+newline$ -- 213
+num.names$ -- 84
+pop$ -- 275
 preamble$ -- 1
-purify$ -- 216
+purify$ -- 229
 quote$ -- 0
-skip$ -- 370
+skip$ -- 389
 stack$ -- 0
-substring$ -- 979
-swap$ -- 123
-text.length$ -- 11
+substring$ -- 994
+swap$ -- 128
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 146
-warning$ -- 4
-while$ -- 150
-width$ -- 41
-write$ -- 433
-(There were 4 warnings)
+type$ -- 152
+warning$ -- 5
+while$ -- 156
+width$ -- 44
+write$ -- 465
+(There were 5 warnings)

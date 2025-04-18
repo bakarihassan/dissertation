@@ -1069,48 +1069,48 @@
       \fi}%
      {\PackageInfo{xcolor}{Redefining color `#1'}}%
   \fi}
-\newenvironment*{testcolors}[1][rgb,cmyk,hsb,HTML]%
- {\let\@@nam\@empty\count@\z@
-  \@for\@@tmp:=#1\do
-    {\advance\count@\@ne
-     \XC@sdef\@@tmp{\@@tmp}\edef\@@nam{\@@nam{\@@tmp}}}%
-  \edef\@@num{\the\count@}%
-  \def\XC@@gt{\textgreater}\def\@@tmp{OT1}%
-  \ifx\f@encoding\@@tmp
-    \@expandtwoargs\in@{,\f@family,}{,cmtt,pcr,}%
-    \ifin@\def\XC@@gt{>}\fi
-  \fi
-  \def\XC@@xcp@{-1}\ifnum\XC@tracing>1 \def\XC@tracing{1}\fi
-  \def\testcolor{\@testopt{\@testcolor}{}}%
-  \def\@testcolor[##1]##2%
-   {\XC@mdef\@@mod{##1}\XC@edef\@@clr{##2}%
-    \ifx\@@mod\@empty
-      \let\@@arg\@@clr\XC@replace\@@arg>\XC@@gt\else
-      \edef\@@arg{[\@@mod]{\@@clr}}\XC@definecolor[]{*}\@@mod\@@clr
-      \def\@@clr{*}\fi
-    \XC@append\@@arg{&}\extractcolorspecs\@@clr\@@mod\@@clr
-    \@testc@lor}%
-  \def\@testc@lor
-   {\count@\z@
-    \expandafter\@tfor\expandafter\@@tmp\expandafter:\expandafter=\@@nam\do
-     {\ifx\@@clr\@empty
-        \edef\@@cmd{\noexpand\textbf{\@@tmp}}%
-      \else
-        \convertcolorspec\@@mod\@@clr\@@tmp\@@cmd
-        \edef\@@cmd
-         {\noexpand\@testc@l@r{\@@tmp}{\@@cmd}%
-          \ifx\@@mod\@@tmp\noexpand\underline\fi
-          {\expandafter\XC@strip@comma\@@cmd,,\@nnil}}%
-      \fi
-      \expandafter\XC@append\expandafter\@@arg\expandafter{\@@cmd}%
-      \advance\count@\@ne
-      \ifnum\count@=\@@num\XC@append\@@arg{\\}\else\XC@append\@@arg{&}\fi}%
-    \@@arg}%
-  \def\@testc@l@r##1##2%
-   {\fboxsep\z@\fbox{\colorbox[##1]{##2}{\phantom{XX}}} }%
-  \tabular{@{}l*{\@@num}{l}@{}}%
-  \def\@@arg{\textbf{color}& }\let\@@clr\@empty\@testc@lor}%
- {\endtabular\ignorespacesafterend}
+% \newenvironment*{testcolors}[1][rgb,cmyk,hsb,HTML]%
+%  {\let\@@nam\@empty\count@\z@
+%   \@for\@@tmp:=#1\do
+%     {\advance\count@\@ne
+%      \XC@sdef\@@tmp{\@@tmp}\edef\@@nam{\@@nam{\@@tmp}}}%
+%   \edef\@@num{\the\count@}%
+%   \def\XC@@gt{\textgreater}\def\@@tmp{OT1}%
+%   \ifx\f@encoding\@@tmp
+%     \@expandtwoargs\in@{,\f@family,}{,cmtt,pcr,}%
+%     \ifin@\def\XC@@gt{>}\fi
+%   \fi
+%   \def\XC@@xcp@{-1}\ifnum\XC@tracing>1 \def\XC@tracing{1}\fi
+%   \def\testcolor{\@testopt{\@testcolor}{}}%
+%   \def\@testcolor[##1]##2%
+%    {\XC@mdef\@@mod{##1}\XC@edef\@@clr{##2}%
+%     \ifx\@@mod\@empty
+%       \let\@@arg\@@clr\XC@replace\@@arg>\XC@@gt\else
+%       \edef\@@arg{[\@@mod]{\@@clr}}\XC@definecolor[]{*}\@@mod\@@clr
+%       \def\@@clr{*}\fi
+%     \XC@append\@@arg{&}\extractcolorspecs\@@clr\@@mod\@@clr
+%     \@testc@lor}%
+%   \def\@testc@lor
+%    {\count@\z@
+%     \expandafter\@tfor\expandafter\@@tmp\expandafter:\expandafter=\@@nam\do
+%      {\ifx\@@clr\@empty
+%         \edef\@@cmd{\noexpand\textbf{\@@tmp}}%
+%       \else
+%         \convertcolorspec\@@mod\@@clr\@@tmp\@@cmd
+%         \edef\@@cmd
+%          {\noexpand\@testc@l@r{\@@tmp}{\@@cmd}%
+%           \ifx\@@mod\@@tmp\noexpand\underline\fi
+%           {\expandafter\XC@strip@comma\@@cmd,,\@nnil}}%
+%       \fi
+%       \expandafter\XC@append\expandafter\@@arg\expandafter{\@@cmd}%
+%       \advance\count@\@ne
+%       \ifnum\count@=\@@num\XC@append\@@arg{\\}\else\XC@append\@@arg{&}\fi}%
+%     \@@arg}%
+%   \def\@testc@l@r##1##2%
+%    {\fboxsep\z@\fbox{\colorbox[##1]{##2}{\phantom{XX}}} }%
+%   \tabular{@{}l*{\@@num}{l}@{}}%
+%   \def\@@arg{\textbf{color}& }\let\@@clr\@empty\@testc@lor}%
+%  {\endtabular\ignorespacesafterend}
 \def\color@setgroup{\begingroup\set@color}
 \let\color@begingroup\begingroup
 \def\color@endgroup{\endgraf\endgroup}

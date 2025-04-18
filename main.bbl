@@ -23,6 +23,11 @@ Bruce~J Berne and Robert Pecora.
   biology, and physics}.
 \newblock Courier Corporation, 2000.
 
+\bibitem{blevins2015natural}
+R.D. Blevins.
+\newblock {\em Formulas for Dynamics, Acoustics and Vibration}.
+\newblock Wiley Online Library, 2015.
+
 \bibitem{boas2001imaging}
 David~A Boas, Dana~H Brooks, Eric~L Miller, Charles~A DiMarzio, Misha Kilmer,
   Richard~J Gaudette, and Quan Zhang.
@@ -110,6 +115,12 @@ Kenji Hara, Ko Nishino, and Katsushi Ikeuchi.
 Louis~George Henyey and Jesse~L Greenstein.
 \newblock Diffuse radiation in the galaxy.
 \newblock {\em Annales d'Astrophysique, Vol. 3, p. 117}, 3:117, 1940.
+
+\bibitem{ho1997structural}
+C.Y. Ho, J.M. Holt, and H. Mindlin.
+\newblock {\em Structural Alloys Handbook: 1996 Edition; Incorporating
+  Supplements Throught 1995}.
+\newblock Number v. 2. Cindas/Purdue Univ., 1997.
 
 \bibitem{hulst1981light}
 Hendrik~Christoffel Hulst and Hendrik~C van~de Hulst.
@@ -214,6 +225,11 @@ Douglas~R Wyman, Michael~S Patterson, and Brian~C Wilson.
 \newblock Similarity relations for the interaction parameters in radiation
   transport.
 \newblock {\em Applied optics}, 28(24):5243--5249, 1989.
+
+\bibitem{young2002roark}
+Warren~Clarance Young, Richard~Gordon Budynas, Ali~M Sadegh, et~al.
+\newblock {\em Roark's formulas for stress and strain}, volume~7.
+\newblock McGraw-hill New York, 2002.
 
 \bibitem{zhao2014high}
 Shuang Zhao, Ravi Ramamoorthi, and Kavita Bala.
