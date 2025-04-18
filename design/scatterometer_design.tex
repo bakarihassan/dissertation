@@ -2,12 +2,29 @@
 Our scatterometer (detailed in Figures \ref{fig:cad} and \ref{fig:light_path}) consists of two mutually coherent, collimated beams of wavelength 532 nm separated vertically by a small angle of approximately $4^\circ$ (assumed to be within the memory effect range for materials of interest). Both beams are attached to a stage that rotates the beams azimuthally about a scattering sample located on the stage's rotation axis. The intensity of scattered light is measured by a stationary camera as the beams are swept through a range of approximately $180^\circ$. The correlation of both beams' speckle images at a given azimuthal angle is proportional to the scattering phase function as a function of angle.
 
 There are three primary components for acquisition. The first is the acquisition camera which we use to record speckle images. The second is the illuminator assembly which adjusts the angular illuminator separation and the azimuthal illumination direction relative to the acquisition camera. The third is the sample assembly which orients and positions the sample such that it is located on the azimuthal rotation axis of the illuminator assembly and maximal light is scattered towards the acquisition camera.
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\textwidth]{../figures/setup.png}
-    \caption{CAD rendering of speckle correlation scatterometer}
-    \label{fig:cad}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/placeholder.png}
+        \caption{}    % TODO: Make 16:9 aspect ratio
+        \label{fig:lab_setup}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/scatterometer.png}
+        \caption{}
+        \label{fig:cad_setup}
+    \end{subfigure}
+    \caption{(a) Laboratory scatterometer setup; (b) CAD rendering of speckle correlation scatterometer}
+    \label{fig:setups_scatterometer}
 \end{figure}
+
+\subsection{Illumination}
+% Discuss general properties: Laser head properties (wavelength, max power, polarization state), overall light path,
+% TODO: 1) Reorient second part of diagram to make it more compact; 2) Add motorized irises to beam diagram
+% Polarization control will be discussed in a later section, and maximizing scattering light will be discussed in acquisition section.
 
 \begin{figure}
     \centering
@@ -16,12 +33,50 @@ There are three primary components for acquisition. The first is the acquisition
     \label{fig:light_path}
 \end{figure}
 
+\begin{table}[htbp]
+    \renewcommand{\arraystretch}{1.25}
+    \caption{Illumination Configurations}
+    \begin{center}
+        \begin{tabular}{ l l l l l }
+        \toprule[2pt]
+         \textbf{Routine} & \textbf{Laser Power (mW)} & \textbf{ND Filter} & \textbf{Beam Diam. (mm)} & \textbf{Polarization Control}\\
+         \midrule[0.75pt]
+         Kinematic calibration & 160 & 0.0 & 1 & No \\
+         Alignment & 160 & 0.0 & 1 & No \\
+         Camera calibration & 160 & 6.3 & 1 & No \\
+         Acquisition & 20 & 3.0 & 5 & Yes \\
+         \bottomrule[2pt]
+        \end{tabular}
+        \label{tab:cpu-gpu}
+    \end{center}
+\end{table}
+
+\subsection{Reference Camera}
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[trim={2cm 0 0 0}, clip, width=\textwidth]{../figures/Nikon24mm.eps}
+        \caption{}    % TODO: Make 16:9 aspect ratio
+        \label{fig:beamspots_nikon24mm}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[trim={0 0 2cm 0}, clip, width=\textwidth]{../figures/Nikon35mm.eps}
+        \caption{}
+        \label{fig:beamspots_nikon35mm}
+    \end{subfigure}
+    \caption{(a); (b)}
+    \label{fig:refcam_beamspots}
+\end{figure}
+
+
 \subsection{Acquisition camera}
 The acquisition camera must record high-contrast speckle images and assign directions to light arriving at the camera. A desirable camera and lens combination is one that maximizes angular resolution and light efficiency. Therefore, we choose a camera with a large sensor and small pixel pitch, and a fast lens focused at infinity with a long focal length.
 
 \paragraph{Lens Focal Length} Computing the speckle correlation from images produced by the two illuminators requires both beams to fall within the camera's FOV. Since we maximize single-scattered light by minimizing the illuminator separation, a lens with a small FOV corresponds to illuminators with a small angular separation. However, due to the finite size of the kinematic mounts, there is a minimum vertical separation. This minimum vertical separation and the FOV-limited angle between the beams define a triangle whose length is the distance from the illuminators' kinematic mounts to the scattering sample. An 85 mm lens allows a small beam angle $2.47^\circ$ relative to horizontal and an overall setup size that complies with space constraints.
 
-We use a FLIR Grasshopper scientific camera model GS3-PGE-91S6M-C with an AF-S Nikkor 85mm f/1.4G lens for acquisition.
+We use a FLIR Grasshopper scientific camera model GS3-PGE-91S6M-C with an AF-S Nikkor 85 \si{\mm} f/1.4G lens for acquisition.
 
 \begin{table}[htbp]
     \renewcommand{\arraystretch}{1.25}
@@ -34,13 +89,13 @@ We use a FLIR Grasshopper scientific camera model GS3-PGE-91S6M-C with an AF-S N
          Camera Model & GS3-PGE-91S6M-C \\
          Resolution & $3376 \times 2704$ \\
          Megapixels & 9.1 \\
-         Pitch & 3.69 \si{\micro m} \\
+         Pitch & 3.69 \si{\um} \\
          Sensor & Sony ICX814 \\
          Sensor Type & CCD \\
-         Sensor Size & $12 \times 10$ mm \\
+         Sensor Size & $12 \times 10$ \si{\mm} \\
          Spectrum & Mono \\
          Lens Make & Nikkor \\
-         Lens Focal Length & 85 \si{mm} \\
+         Lens Focal Length & 85 \si{\mm} \\
          Lens Aperture & f/1.4 \\
          Lens Working Distance & $\infty$ \\
          \bottomrule[2pt]
@@ -62,42 +117,294 @@ The acquisition camera's CCD is protected from debris by a glass window. It is c
 \end{figure}
 
 \subsection{Camera mount}
-Mounting the camera to the optical table using the FLIR plastic adapter was not stiff enough and caused the camera to pitch downward over the course of several hours. This was an issue for camera calibration due to pose drift, so we chose to mount the camera via the lens' threads used for attachments.
+During acquisition, we must place the camera in close proximity to the sample to maximize the solid angle over which we can acquire speckle. However, its position is in the path of the illuminator stand when it travels over a range of $230^\circ$ during calibration. Therefore, we place the acquisition camera mount on an optical rail that allows us to slide it in and out of position. The base of the camera mount consists of a 1.5" post mounted to a rotation stage that slides along the rail and allows us to adjust the camera's orientation. We originally tried attaching the camera to the post using a lens collar, but we determined that the camera was unstable. Instead, we mounted the camera using threads on the inner front edge of the lens body and below the camera body. These two attachment points are mounted to a second rail that allows us to adjust the camera's position relative to the base to ensure both beams pass through the camera's aperure.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[trim={0 0 0 0}, clip, width=\textwidth]{../figures/placeholder.png}
+        \caption{}
+        \label{fig:acq_cam_mount_real}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[trim={0 0 0 0}, clip, width=\textwidth]{../figures/Acquisition_Camera_Mount.png}
+        \caption{}
+        \label{fig:acq_cam_mount_cad}
+    \end{subfigure}
+    \caption{(a); (b);}
+    \label{fig:aca_cam_mount}
+\end{figure}
 
 \subsection{Illuminator Motion assembly}
-The illuminator motion assembly controls the illumination beams' directions both in azimuth and elevation. The primary design considerations are high angular resolution and repeatability for fine control of the illumination configuration, and structural stability to minimize vibrations. Each illuminator is attached to a 2-axis kinematic mount that allows $\pm 5^\circ$ in tip and  $\pm 3^\circ$ in tilt. Both kinematic mounts are attached to a custom collimator mount that orients them as close a possible while complying with the FOV constraint of $4.93^\circ$ between the illuminators. The collimator mount is attached to the azimuthal rotation stage via a rail whose length is 2.24 ft (682.85mm). We chose a Thorlabs aluminum extrusion rail since they are designed for modularity. However, the illumination beams experienced large, approximately 2 Hz oscillations when the azimuth stage moved. Modular aluminum extrusions have cross-sections that make them light-weight but at the cost of having low bending and torsional stiffness. This means they behave as springs when cantilevered with large weights are attached at the end. The angular displacement of a beam with length L due to an external torque T is
+The illuminator motion assembly controls the illumination beams' directions both in azimuth and elevation. The primary design considerations are high angular resolution and repeatability for fine control of the illumination configuration, and structural stability to minimize vibrations. Each illuminator is attached to a 2-axis kinematic mount that allows $\pm 5^\circ$ in tip and  $\pm 3^\circ$ in tilt. Both kinematic mounts are attached to a custom collimator mount that orients them as close a possible while complying with the FOV constraint of $4.93^\circ$ between the illuminators. The collimator mount is attached to the azimuthal rotation stage via a rail whose length is 1 \si{\m}. A desirable rail is 1) modular, offering flexibility in design and assembly, and 2) resistant to vibrations, thereby minimizing speckle blur during acquisition. Aluminum extrusions have T-slots and/or attachment points on multiple faces which help with ease of application. However, this advantage requires cross-sections that reduce the rail's resistance to deflection, and we seek to choose a rail that balances convenience with physical properties required for stable speckle acquisition. Two relevant types of deflections studied in structural mechanics are beam bending and beam torsion. Beam bending refers to deflection caused by tranverse forces/loads (e.g., a person standing on the end of a diving board), while torsion refers to angular deflection under torques (e.g., wringing a towel). First we will discuss relevant theory for beam bending and torsion. Then we will use the theory to establish our primary selection criteria. For the remainder of this section, "beam" will refer to a mechanical beam/rail unless otherwise specified.
+
+\subsubsection{Beam bending}
+Beam bending occurs when a force acts on a beam along a direction perpendicular to a chosen axis. In our case, we will discuss cantilever beams which are fixed at one end (allowing 0 degrees of freedom at its origin) and free at the other. A component with mass $m$ under gravitational acceleration $g$ creates a downward force with magnitude $F=mg$. When this force acts at a point located at $\vec{\ell}$ along the beam, it creates a bending \textit{moment of force}, or simply a \textit{bending moment}
 %
 \begin{equation}
-    \tau = \frac{TL}{GI}
+    \vec{M} = \vec{F} \times \vec{\ell}
+    \label{eqn:torque_definition}
 \end{equation}
 %
-where G is the elastic modulus which is determined by the material of the beam, and I is the torsional moment of inertia determined by the beam's cross-section profile. The beam length is fixed due to setup geometry, as well as the elastic modulus since the extrusion is made of aluminum. The external torque is generated when the azimuth stage accelerates due to the collimator mount's inertia, so we want to choose the cross-section profile that maximizes the torsional moment of inertia. Torsional moment of inertia increases proportionally to the length of the longest connected path in a cross-section profile, but it can only be calculated analytically for a narrow class of profiles. We performed finite element analysis (FEA) to assess a variety of Thorlabs and 80/20 extrusions. The results in Figure \ref{fig:beam_torsion} show that 80/20 extrusions outperformed Thorlabs extrusions, and a small aspect ratio reduces beam deflection by two orders of magnitude. We chose the 80/20 1530-S extrusion. This has a 1:2 aspect ratio with sufficient torsional stiffness without violating space constraints.
+that causes the beam to bend downwards with deflection increasing from zero at its fixed end to its maximum distance at the location of the point load. We can use the maximum deflection equation to calculate the maximum beam deflection if the force, or load, acts at the free tip of a beam with length $L$
+%
+\begin{equation}
+    \delta = \frac{F L^3}{3EI_x}.
+    \label{eqn:bending_max_deflection}
+\end{equation}
+%
+Under the assumtion that the cross-section is in the x-y plane, we define $I_x$ as the planar area moment of inertia which describes the beam's resistance to deflection in terms of the cross-section's mass distribution on both sides of the x-axis. We use the beam's x-axis since we are concerned with vertical loads caused by gravity that act along the y-axis. Under these assumptions, the planar area moment of inertia is a double integral over the cross-section area $A$
+%
+\begin{equation}
+    I_x = \iint_A y^2 dx dy.
+\end{equation}
+%
+$E$ is the elastic modulus
+%
+\begin{equation}
+    E = \frac{\sigma}{\epsilon}
+\end{equation}
+%
+which describes the material's resistance to elastic (reversible) deflection. It is commonly written in units of \si{\GPa} and expresses the amount of internal stress $\sigma$ the beam experiences for a given change in its length $\epsilon$ where
+% 
+\begin{gather}
+    \sigma = \frac{F}{A}, \quad \epsilon = \frac{\Delta L}{L}
+\end{gather}
+%
+Our primary interest is characterizing the beam's static resistance to bending (maximum deflection amplitude). The beam will also have a dynamic response that induces oscillations, but our illuminator motion assembly does not move in the vertical direction. We will assess the impact of ambient vibrations by inspecting speckle images for speckle blur.
+
+\subsubsection{Beam torsion}
+Extrusions commonly suffer from low torsional stiffness, meaning they have low resistance to twisting deformation. Twisting is generated when the azimuthal stage undergoes acceleration/deceleration. As the stage rotates at a rate of $\dot{\theta}$ \si{\radian \per \second}, components mounted at a distance $r$ from the rotation axis have a tangential velocity magnitude equal to $\|\vec{v}\| = \dot{\theta}r$. When the stage comes to a rest, these components have inertia that requires a finite duration to come to rest after the stage has stopped moving, therefore causing them to lag behind the rail. During this lag, those components are undergoing deceleration, and they generate a force $\vec{F}$ that can be calculated using Newton's second law
+%
+\begin{equation}
+    \vec{F} = m \frac{\Delta \vec{v}}{\Delta t}
+    \label{eqn:newtons_second_law}
+\end{equation}
+%
+for a component with mass $m$ and time variable $t$. This force is located at the component's center of mass, and it is perpendicular to the stage's rotation axis. If the neutral axis of the beam is located at a vertical position $\vec{d}$ relative to the component's center of mass, the force due to deceleration creates a twisting moment that causes the beam to twist (deform) about its neutral axis. We will refer to twisting forces that cause the beam to bend \textit{along} its neutral axis as "moments", and we'll use "torques" to refer to twisting forces that cause angular beam deflection \textit{about} its neutral axis. Assuming the deformation is elastic, the beam will have a restoring force that causes it to behave as a damped oscillator. These oscillations are ultimately transmitted to the illumination assembly and could cause speckle blur during acquisition. Our primary interest is characterizing the beam's static resistance to torsion, while we are also interested in calculating the damping ratio to determine a sufficient wait time for oscillations to decay between stage motion and data acquisition.
+
+Torsional stiffness is a measure of a beam's resistance to deformation by torque. It is defined as the magnitude of torque $T$ [\si{\newton.\metre}] required to deflect a beam with length $L$ by 1 radian
+%
+\begin{equation}
+    \frac{T}{\theta} = \frac{GJ}{L}
+\end{equation}
+%
+where $J$ describes a beam's resistance to torsional deflection based on its geometrical properties. For circular and annular cross-sections, it is the polar moment of inertia
+%
+\begin{equation}
+    J_\circ = \iint_{A} r^2 dA
+    \label{eqn:torsional_moment}
+\end{equation}
+%
+which is an area integral over the beam's cross section for infinitesimal area element $dA$ located a distance $r$ from the centroidal axis. For non-circular sections, it is called the torsional constant, which we will discuss below. $G$ [\si{\pascal}] is the shear modulus which is a measure of a material's stiffness independent of beam geometry
+%
+\begin{equation}
+    G = \frac{\tau_{xy}}{\gamma_{xy}} = \frac{F/A}{\Delta x / L} = \frac{F L}{A \Delta x}
+\end{equation}
+%
+where the shear stress $\tau_{xy} = F/A$ is the stress component that is coplanar with a cross section which has units of force per unit area (pressure), and $\gamma_{xy} = \Delta x / L$ is the cross-section's transverse displacement perpendicular to the cross-section plane's normal vector. Equation \ref{eqn:torsional_moment} only holds for circular cross-sections whose cross-sections undergo linear deformations. However, the theory is still useful when analyzing extrusion profiles which tend to be rectangular. For example, since the polar moment of inertia increases with the square of the distance of a differential area element from the centroidal axis, large cross-sections provide high resistance to torsion, which is further improved when solid regions of the cross-section are located near the edge of the beam profile. Modular extrusions generally have cross-sections that are empty near the center for weight reduction, which is not an issue. The slots that make them modular are located at the boundaries of their cross-sections, so we can conclude they generally have a low torional moment of inertia, and consequently low torsional stiffness.
+
+Profiles are generally characterized by their shear stress along \textit{closed boundaries} inside their area profile. The total shear stress along a boundary $s$ is defined
+%
+\begin{equation}
+    \oint_{s} \tau_{xy} ds = 2 A G k
+    \label{eqn:shear_stress_boundary}
+\end{equation}
+%
+where $k$ is the twist rate $d\theta / dz$ along the beam's length. Note that $A$ is the \textit{solid} area ($A_{solid} - A_{empty}$). By rearranging Equation \ref{eqn:shear_stress_boundary} to solve for the twist rate (angular beam deflection)
+%
+\begin{equation}
+    k = \frac{2 A G}{\oint_{s} \tau_{xy} ds},
+    \label{eqn:twist_rate}
+\end{equation}
+%
+we see that minimizing the twist rate (maximizing the torsional stiffness) is achieved by maximizing the length of the longest closed boundary in the cross-section assuming a given shear modulus and cross-sectional area. To consider the effect of wall thickness, we can use Bredt's formula to relate the shear stress induced by an external torque $T$ for a beam with cross-section wall thickness $t$
+%
+\begin{equation}
+    \tau = \frac{T}{2At},
+    \label{eqn:bredts_formula}
+\end{equation}
+%
+and we can substitute this equation into Equation \ref{eqn:shear_stress_boundary} to write a general expression for the polar moment of inertia of any thin-walled cross-section
+%
+\begin{equation}
+    J_\circ = \frac{4A^2}{\oint_{s} \tfrac{ds}{t}}.
+    \label{eqn:torsional_moment_general_equation}
+\end{equation}
+%
+Now we can use the well-known total angular deflection equation to express the total deflection angle $\theta$ over the full length of the beam in terms of the polar moment of inertia
+%
+\begin{equation}
+    \theta = \frac{TL}{J_\circ G} = \frac{TLS}{4tA^2G}
+    \label{eqn:beam_twisting_equation}
+\end{equation}
+%
+where $S$ is the length of the closed path enclosing the area $A$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{../figures/torsion_theory_cross-sections.png}
+    \caption{TODO: Replace with updated figure, add subfigure labels;}
+    \label{fig:torsion_theory_cross-sections}
+\end{figure}
+
+\paragraph{Torsional deformation of non-circular sections}
+Recall that the polar moment of inertia $J_\circ$ is computed in a plane. Circular cross-sections remain planar under torsion. However, non-circular section warps are not confined to a plane, and radial lines do not remain straight. In this case, we describe geometric resistance to torsion in terms of the \textit{torsional constant} $J$ which is bounded above by the polar moment of inertia ($J < J_\circ$). This is particularly relevant because aluminum extrusions are generally complex. Their cross-sections include multiple empty areas for weight reduction and modularity, as well as fins that increase the torsional constant and serve as slot reinforcements. In practice, the torsional constant is computed numerically, but there are formulas and approximations for common cross-sections used in structural mechanics \cite{young2002roark}. The torsional constant for solid rectangular sections of size $a \times b$ is
+%
+\begin{equation}
+    J = \frac{ab^3}{16} \bigg[ \frac{16}{3} - 3.36 \frac{a}{b} \bigg( 1 - \frac{b^4}{12a^4} \bigg) \bigg]; \quad a \geq b.
+    \label{eqn:roark_solid_rectangle}
+\end{equation}
+%
+%
+% Hollow rectangular sections with thin walls have torsional constant
+% %
+% \begin{equation}
+%     J = \frac{2t_a t_b (a - t_a)^2 (b - t_b)^2}{at_a + bt_b - t_a^2 - t_b^2}; \quad a \geq b
+%     \label{eqn:roark_solid_rectangle_hollow}
+% \end{equation}
+% %
+% where $t_a$ and $t_b$ are wall thicknesses of the short side and long side of the rectangle respectively.
+
+\subsection{Natural Bending Frequency}
+In progress \cite{blevins2015natural}.
+%
+\begin{equation}
+    f_1 = \frac{\lambda_1^2}{2 \pi L^2} \sqrt{\frac{EJ}{\rho_L}}
+    \label{eqn:natural_frequency}
+\end{equation}
+
+
+\paragraph{Selection criteria} From beam bending theory equation \ref{eqn:bending_max_deflection}, the maximum bending magnitude is proportional to the cube of the beam's length. However, its length is driven by our imaging configuration. The elastic modulus is fixed as well since we are only considering aluminum extrusions. Therefore, we minimize beam bending by choosing an extrusion with 1) a large cross-sectional mass distribution along its y-axis (large planar area moment of inertia). Additionally, equations \ref{eqn:beam_twisting_equation} and \ref{eqn:torsional_moment_general_equation}, and \ref{eqn:roark_solid_rectangle} show that we minimize torsion by choosing cross-sections with 2) a large characterisitic size, 3) high aspect ratio, and thick walls. Furthermore, 4) cross-sections that contain loops with maximal enclosed solid area are preferable, as well as 5) alloys with a high shear modulus. All selection criteria subject to space constraints and the azimuth stage's maximum load rating.
+
+\subsubsection{Analysis}
+We analyze the structural properties of six aluminum extrusions whose cross-sections are summarized in Table \ref{tab:sections}. The cross-sections generally differ in overall size, aspect ratio, and wall thicknesses, with minor differences in material properties depending on the alluminum alloy. Our imaging configuration defines the illuminator assembly's position and weight which create a moment $M_i$ that will cause an imbalance. We choose the counterweight's weight and position such that a counter-acting momment $M_c$ that is equal and opposite of $M_i$ such that $M_c = M_i$. If the illuminator assembly has mass $m_i$ located at a distance $r_i$ from the rotation axis, we can compute the counterweight's mass $m_c$ as a function of its location $r_c$ along the rail
+%
+\begin{align}
+    M_c &= M_i \\
+    m_c r_c &= m_i r_i \\
+    m_c r_c &= 2.4 \cdot 0.686 \\
+    m_c &= \frac{1.6}{r_c}.
+\end{align}
+%
+We choose to minimize the overall weight of the assembly by placing the counterweight at the opposite end of the rail, which is 0.258 \si{m} from the azimuth rotation axis, meaning $m_c = 6.5$ \si{\kg}. Table \ref{tab:structural_analysis_params} shows the corresponding physical parameters used in our analysis. We focus solely on the illuminator for both the beam bending and torsion cases. It produces the largest bending deflection since its moment arm is approximately 2.7 times longer than the counterweight's, and $\delta \propto L^3$. For torsion, both assemblies generate the same deceleration force, but the illuminator's torque arm and moment arm are larger than the counterweight's. Since $\theta \propto FdL$, the illuminator assembly produces larger deflection angles.
+
+\begin{table}[htbp]
+    \renewcommand{\arraystretch}{1.2}
+    \caption{Cross-sectional \& material properties of aluminum extrusions \cite{ho1997structural}}
+    \begin{center}
+        \begin{tabular}{ l l l l l l l }
+        \toprule[2pt]
+        \textbf{Extrusion} & \textbf{XE25L-} & \textbf{1010} & \textbf{1020} & \textbf{1515} & \textbf{1530} & \textbf{1545} \\
+        \midrule[0.75pt]
+        \textbf{Vendor} & Thorlabs & 80/20 & 80/20 & 80/20 & 80/20 & 80/20 \\
+        \textbf{Width} $\times$ \textbf{Height} ($\text{in.}$) & 0.98 $\times$ 0.98 & 1.00 $\times$ 1.00 & 1.00 $\times$ 2.00 & 1.50 $\times$ 1.50 & 1.50 $\times$ 3.00 & 1.50 $\times$ 4.50 \\
+        \textbf{Solid Area} (\si{\mm^2}) & 281.51 & 279.67 & 744.16 & 507.65 & 1343.92 & 1928.42 \\
+        \textbf{Wall Thickness (\si{\mm})} & 2.02 & 2.21 & 2.21 & 4.06 & 4.06 & 4.06 \\
+        \textbf{Area Moment (\si{\cm^4})} & 1.48 & 1.84 & 3.47 & 10.58 & 20.08 & 29.54 \\
+        \textbf{Aluminum Alloy} & 6000 & 6063-T6 & 6063-T6 & 6063-T6 & 6063-T6 & 6063-T6 \\
+        \textbf{Elastic Modulus (\si{\GPa})} & 68.95 & 68.95 & 68.95 & 68.95 & 68.95 & 68.95 \\ 
+        \textbf{Shear Modulus (\si{\GPa})} & 30.00 & 25.78 & 25.78 & 25.78 & 25.78 & 25.78 \\
+        \bottomrule[2pt]
+        \end{tabular}
+    \end{center}
+    \label{tab:sections}
+\end{table}
+
+\begin{table}[htbp]
+    \renewcommand{\arraystretch}{1.25}
+    \caption{Physical paraemters for structural analysis assuming 12 \si{\deg\per\s} azimuthal stage angular rate with 300 \si{\ms} deceleration duration.}
+    \begin{center}
+        \begin{tabular}{ l l l }
+        \toprule[2pt]
+        \textbf{Assembly} & \textbf{Illuminator} & \textbf{Counterweight} \\
+        \midrule[0.75pt]
+        \textbf{Mass (\si{\kg})} & 2.4 & 6.5 \\
+        \textbf{Weight (\si{\N})} & 24.0 & 63.8 \\
+        \textbf{Distance Along Rail (\si{\metre})} & 0.686 & 0.258 \\
+        \textbf{Bending Moment (\si{\N\m})} & 16.5 & 16.5 \\
+        \textbf{Deceleration Force (\si{\N})} & 1.2 & 1.2 \\
+        \textbf{Torsion Arm (\si{\metre})} & 0.231 & 0.083 \\
+        \textbf{Torsion Torque (\si{\N\m})} & 0.3 & 0.1 \\
+        \bottomrule[2pt]
+        \end{tabular}
+    \end{center}
+    \label{tab:structural_analysis_params}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{../figures/cross-sections.png}
+    \caption{Aluminum extrusion profiles in order of increasing aspect ratio. All dimensions are in inches. TODO: ADD REINSERT CROSS-SECTION LABELS.}
+    \label{fig:beam_profiles}
+\end{figure}
+
+\paragraph{Beam bending}
+Figure \_\_\_ shows the beam bending free body diagram for our setup. The middle of the rail is fixed to the rotation by 14 bolts, so we assume either end of the rail does not affect the other, and we treat them independently. Since the area moment of inertia was published for each aluminum extrusion, maximum deflection for each extrusion was computed using Equation \ref{eqn:bending_max_deflection}.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[trim={1cm 0 0 0}, clip, width=\textwidth]{../figures/torsional_constant.eps}
+        \caption{}
+        \label{fig:structural_torsional_constant}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[trim={0 0 0.5cm 0}, clip, width=\textwidth]{../figures/stiffness.eps}
+        \caption{}
+        \label{fig:structural_stiffness}
+    \end{subfigure}
+    \caption{(a); (b)}
+    \label{fig:structural_intermediate_results}
+\end{figure}
+
+
+\paragraph{Beam torsion} Equation \ref{eqn:beam_twisting_equation} for maximum torsion deflection requires the torsional constant which must be computed numerically, so we compare candidate extrusions using finite element analysis (FEA). Although we simplify our analyses by assuming torques at each end are independent, it is not as strong as the assumption we make for independent beam bending. Since torsion is caused by deceleration forces parallel to the plane of rotation, they will also generate oscilliatory stage rotation that in turn affects beam torsion. Modeling this phenomena requires more complex analysis methods and is beyond the scope of our work.
+
+In our simulations, we use a fixed support at one end of the beam, and we apply a torque at its free end that acts along the beam's long axis. We ran FEA simulations using Autodesk Fusion CAD software to compute the illuminator assembly's mass center of mass. We estimate the force component of the torque assuming the azimuthal stage is traveling 12 \si{deg\per\second} with an deceleration time of 300 \si{\ms}. We computed the torsional stiffness of six different aluminum extrusions with cross-sections of varying sizes and aspect ratios. All six cross-sections are shown in Figure \ref{fig:beam_profiles}.
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{../figures/beam_torsion.png}
-    \caption{Left: FEA beam torsion; Right: FEA beam deflection analyses indicate 80/20 rail perform significantly better than Thorlabs optical rails, and that angular beam deflection decreases for decreasing cross-section aspect ratio.}
-    \label{fig:beam_torsion}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[trim={0 0 0 0}, clip, width=\textwidth]{../figures/deflection.eps}
+        \caption{}
+        \label{fig:structural_deflection}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[trim={0 0 0 0}, clip, width=\textwidth]{../figures/frequency.eps}
+        \caption{}
+        \label{fig:structural_natural_frequency}
+    \end{subfigure}
+    \caption{(a) Maximum beam bending and torsional deflection due to the illuminator assembly TODO: RERUN TORSIONAL ANALYSIS WITH UPDATED PARAMETERS; (b) Natural beam bending frequency due to the illuminator assembly}
+    \label{fig:structural_final_results}
 \end{figure}
 
+TODO: Use this paragraph to summarize why we chose to use 1530.
 
 \subsection{Collimator Mount}
 Calculates the design space for the collimator mount.
 Given acquisition camera position and FOV, it calculates valid combinations of 
     1) linear collimator separation
     2) angular collimator separation
-$d_camera = 969.417$ mm
-$r_aperture = 26.73$ mm
+$d_{camera} = 969.417$ mm
+$r_{aperture} = 26.73$ mm
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../figures/collimator_assembly_summary.png}
-    \caption{(a) CAD front view of collimator mount; (b) CAD side view showing the relative orientations of illumination beams; (c) CAD perspective view; (d) Fully assembled collimator mount which controls vertical and angular illuminator separation. Beam diameter is also controlled using motorized iris diaphragms.}
+    \caption{(a) CAD front view of collimator mount; (b) CAD side view showing the relative orientations of illumination beams; (c) CAD perspective view; (d) Fully assembled collimator mount which controls vertical and angular illuminator separation. Beam diameter is also controlled using motorized iris diaphragms.; TODO: Replace single collage with subfigures.}
     \label{fig:collimator_mount}
 \end{figure}
 
 \subsection{Sample assembly}
 The sample motion assembly's primary purpose during acquisition is to rotate the scattering sample so the amount of laser light scattered towards the camera is maximized since there are transmittive losses at air-glass interfaces as the illuminators' azimuthal position changes. This rotation is controlled by a small rotation stage which is mounted on an XYZ stage and an tip/tilt stage. These additional stages are used to control the rotation stage's orientation so it can made to be collinear with the illuminator assembly's azimuthal rotation axis. There is an additional translation stage mounted to the rotation stage's motion plate that is used to align the center of a mounted sample with the upper- and lower motion stages' rotation axes.
+%
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../figures/sample_assembly_summary.png}
@@ -107,6 +414,33 @@ The sample motion assembly's primary purpose during acquisition is to rotate the
 
 The sample mount is a custom, dual purpose mount used to hold scattering samples during acquisition and checkerboard targets during calibration. It is designed such that the front face of a calibration target is in the same plane as the central plane of a scattering sample. It consists of a base and angle mounts used to attach a square aluminum frame that holds a $10 \times 10$ cm glass window in place through compression by tightening four thumbscrews. Scattering samples are mounted by removing the aluminum frame's front face and attaching an inset frame that holds microscope slides via compression.
 
+\subsection{Illumination polarization control}
+The Verdi output beam is linearly polarized and passed through single-mode (SM) fibers prior to illuminating scattering samples with the resulting beam having an unknown polarization state due to use of non-polarization-maintaining fibers. This raises several questions 1) What is the beam's polarization state?; 2) Is it constant?; and 3) What is the optimal polarization state of the output beam to maximize light transmission into the sample?
+%TODO: Cite a source on polarization state affecting scattering phase function
+
+Literature suggests the output beam will have an elliptical polarization state (1) that is variable/unstable (2) due to variable birefringence induced in SM fibers caused by variable internal stresses and temperature fluctuations.
+
+The output polarization state's stability was characterized by placing a power meter photodiode with a static LPF to measure the power of a collimator on the dual collimator stand attached to the RT-5 rail. The measured power for 10 sweeps of the RT-5 through a range of 280 degrees is shown in Figure \ref{fig:lpfpwr_RT5}. There is a clear relationship between the measured power through an LPF and the RT-5 stage position which suggests the polarization state does not remain constant across illumination angles. The ellipticity was not investigated due to requiring a circular polarizing filter (CPF). Fluctuations in measured power across sweeps was due to insertion losses caused by motion of unstable FC/PC fiber connectors on the RT-5 rail. Fixing those connectors to the rail saw significant reductions in fluctuations.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/LPFpwr_vs_RT5.png}
+    \caption{}
+    \label{fig:lpfpwr_RT5}
+\end{figure}
+
+Polarization state for Figure \ref{fig:lpfpwr_RT5}:
+\begin{itemize}
+    \item $S_0 = 0.200696$
+    \item $S_1 = -0.028441$
+    \item $S_2 = 0.06834$
+    \item $S_DoP = \sqrt{S_1^2 + S_2^2}/S_0 \approx 0.37$
+\end{itemize}
+
+*We tried depolarizing the free space input and output beams. For input depolarization, we still saw changes in the illumination polarization state as the RT-5 moved. For output depolarization, the beam's polarization state varied spatially meaning we'd illuminate different parts of the sample with different polarization states which would affect our correlations*
+
+\subsubsection{Liquid crystal rotator}
+
 \section{Sample Analysis Station}
 We characterize each scattering sample by measuring its optical density and its particle density along its thickness. We measure optical density by comparing the power of ballistic laser laser before and after it has passed through a scattering sample. The laser is the same wavelength as the acquisition laser, and images are acquired using a Point Grey GS3-PGE-91S6M-C scientific camera with an AF Micro-Nikkor 200mm f/4D focused at infinity. We measure particle density as a function of depth by computing particle area density for each image in a focal stack. The microscope imager is an Allied Vision Prosilica GT3400 scientific camera whose lens consists of a Canon 180mm f/3.5 L EF Macro lens and a 0.65NA 40X Olympus Plan Achromat Obective
 \begin{figure}
@@ -115,3 +449,4 @@ We characterize each scattering sample by measuring its optical density and its 
     \caption{CAD rendering of the sample analysis station}
     \label{fig:sample_analysis_station}
 \end{figure}
+
